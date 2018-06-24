@@ -107,6 +107,29 @@ public class Pasajero
 		this.idPasajero = idPasajero;
 	}
 
+	
+	public void llamarConserje() /**...... implements Conserje ?, quiza ?*/
+	{
+		
+	}
+
+	public JSONObject getFormatoJSON() throws JSONException 
+	{
+			
+			JSONObject jsonObject = new JSONObject();
+			jsonObject.put("nombre", nombre);			
+			jsonObject.put("apellido", apellido);
+			jsonObject.put("dni", dni);
+			jsonObject.put("numTarjetaCredito", numTarjetaCredito);
+			jsonObject.put("telefono", telefono);			
+			jsonObject.put("nacionalidad", nacionalidad);			
+			jsonObject.put("historial", historial);			
+			jsonObject.put("idPasajero", idPasajero);			
+
+			return jsonObject;		
+	}
+
+	
 	@Override
 	public String toString() 
 	{
@@ -115,6 +138,7 @@ public class Pasajero
 				+ historial + ", idPasajero=" + idPasajero + "]";
 	}
 	
+<<<<<<< HEAD
 	public JSONObject getFormatoJSON() throws JSONException 
 	{
 			
@@ -138,5 +162,7 @@ public class Pasajero
 	}
 	
 	
+=======
+>>>>>>> cbe0c2bf1e4f36c894190ad6efc7f7bd1cfd6f30
 	
 }

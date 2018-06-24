@@ -46,11 +46,28 @@ public class MiniBar <T>
 		
 	}
 
+<<<<<<< HEAD
+=======
+	public JSONObject getFormatoJSON() throws JSONException 
+	{
+			
+			JSONObject jsonObject = new JSONObject();
+			jsonObject.put("bebidas", bebidas);			
+			jsonObject.put("comidas", comidas);
+			jsonObject.put("postres", postres);
+
+			return jsonObject;
+		
+	}
+>>>>>>> cbe0c2bf1e4f36c894190ad6efc7f7bd1cfd6f30
 	
 	@Override
 	public String toString() {
 		return "MiniBar [bebidas=" + bebidas + ", comidas=" + comidas + ", postres=" + postres + "]";
 	}
+<<<<<<< HEAD
 	
+=======
+>>>>>>> cbe0c2bf1e4f36c894190ad6efc7f7bd1cfd6f30
 
 }

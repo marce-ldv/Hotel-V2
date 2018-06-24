@@ -43,11 +43,6 @@ public class Consumicion
 		this.idReserva = idReserva;
 	}
 	
-	@Override
-	public String toString() 
-	{
-		return "Consumicion [costo=" + costo + ", idReserva=" + idReserva + "]";
-	}
 	
 	public double getCostoConsumicion() 
 	{
@@ -55,7 +50,7 @@ public class Consumicion
 		
 		return 0;
 	}
-	
+
 	public JSONObject getFormatoJSON() throws JSONException 
 	{
 			
@@ -67,6 +62,25 @@ public class Consumicion
 		
 	}
 	
+<<<<<<< HEAD
+	public JSONObject getFormatoJSON() throws JSONException 
+	{
+			
+			JSONObject jsonObject = new JSONObject();
+			jsonObject.put("costo", costo);			
+			jsonObject.put("idReserva", idReserva);			
+
+			return jsonObject;
+		
+	}
+	
+=======
+	@Override
+	public String toString() 
+	{
+		return "Consumicion [costo=" + costo + ", idReserva=" + idReserva + "]";
+	}
+>>>>>>> cbe0c2bf1e4f36c894190ad6efc7f7bd1cfd6f30
 }
 
 
