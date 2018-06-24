@@ -20,12 +20,11 @@ public class Usuario {
         usuario = "Admin";
         password = "admin";
     }
-
     public Usuario(Integer idUsuario,String usuario,String password) {
         this.usuario = usuario;
         this.password = password;
         this.idUsuario = idUsuario;
-    }
+}
 
     public String getUsuario() {
         return usuario;
