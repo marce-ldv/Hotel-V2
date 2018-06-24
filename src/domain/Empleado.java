@@ -1,6 +1,6 @@
 package domain;
 
-public class Empleado extends Usuario
+public class Empleado 
 {
 	public Empleado() // no se como hacer el constructor...
 	{
@@ -27,4 +27,5 @@ public class Empleado extends Usuario
 		
 		return postreEntregado;
 	}
+
 }
