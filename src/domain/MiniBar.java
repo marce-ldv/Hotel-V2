@@ -2,6 +2,9 @@ package domain;
 
 import java.util.ArrayList;
 
+import org.json.JSONException;
+import org.json.JSONObject;
+
 public class MiniBar <T>
 {
 	private ArrayList<String> bebidas;
@@ -30,6 +33,18 @@ public class MiniBar <T>
 		return 0;
 	}
 
+	public JSONObject getFormatoJSON() throws JSONException 
+	{
+			
+			JSONObject jsonObject = new JSONObject();
+			jsonObject.put("bebidas", bebidas);			
+			jsonObject.put("comidas", comidas);
+			jsonObject.put("postres", postres);
+
+			return jsonObject;
+		
+	}
+	
 	@Override
 	public String toString() {
 		return "MiniBar [bebidas=" + bebidas + ", comidas=" + comidas + ", postres=" + postres + "]";

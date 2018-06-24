@@ -2,6 +2,9 @@ package domain;
 
 import java.util.List;
 
+import org.json.JSONException;
+import org.json.JSONObject;
+
 public class Pasajero 
 {
 	private String nombre;
@@ -9,7 +12,7 @@ public class Pasajero
 	private String dni;
 	private String numTarjetaCredito;
 	private String telefono;
-	private String Nacionalidad;
+	private String nacionalidad;
 	private List historial;
 	private int idPasajero;
 	
@@ -21,7 +24,7 @@ public class Pasajero
 		dni = null;
 		numTarjetaCredito = null;
 		telefono = null;
-		Nacionalidad = null;
+		nacionalidad = null;
 		historial = null;
 		idPasajero = 0;
 	}
@@ -35,7 +38,7 @@ public class Pasajero
 		dni = dniRecib;
 		numTarjetaCredito = numTarjetaCreditoRecib;
 		telefono = telefonoRecib;
-		Nacionalidad = nacionalidadRecib;
+		nacionalidad = nacionalidadRecib;
 		historial = historialRecib;
 		idPasajero = idPasajeroRecib;
 	}
@@ -81,11 +84,11 @@ public class Pasajero
 	}
 
 	public String getNacionalidad() {
-		return Nacionalidad;
+		return nacionalidad;
 	}
 
 	public void setNacionalidad(String nacionalidad) {
-		Nacionalidad = nacionalidad;
+		this.nacionalidad = nacionalidad;
 	}
 
 	public List getHistorial() {
@@ -104,19 +107,36 @@ public class Pasajero
 		this.idPasajero = idPasajero;
 	}
 
+	
+	public void llamarConserje() /**...... implements Conserje ?, quiza ?*/
+	{
+		
+	}
+
+	public JSONObject getFormatoJSON() throws JSONException 
+	{
+			
+			JSONObject jsonObject = new JSONObject();
+			jsonObject.put("nombre", nombre);			
+			jsonObject.put("apellido", apellido);
+			jsonObject.put("dni", dni);
+			jsonObject.put("numTarjetaCredito", numTarjetaCredito);
+			jsonObject.put("telefono", telefono);			
+			jsonObject.put("nacionalidad", nacionalidad);			
+			jsonObject.put("historial", historial);			
+			jsonObject.put("idPasajero", idPasajero);			
+
+			return jsonObject;		
+	}
+
+	
 	@Override
 	public String toString() 
 	{
 		return "Pasajero [nombre=" + nombre + ", apellido=" + apellido + ", dni=" + dni + ", numTarjetaCredito="
-				+ numTarjetaCredito + ", telefono=" + telefono + ", Nacionalidad=" + Nacionalidad + ", historial="
+				+ numTarjetaCredito + ", telefono=" + telefono + ", Nacionalidad=" + nacionalidad + ", historial="
 				+ historial + ", idPasajero=" + idPasajero + "]";
 	}
-	
-	public void llamarConserje() // ..... // implements Conserje ?, quiza ?
-	{
-		
-	}
-	
 	
 	
 }
