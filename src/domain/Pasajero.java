@@ -103,8 +103,6 @@ public class Pasajero
 	public void setIdPasajero(int idPasajero) {
 		this.idPasajero = idPasajero;
 	}
-	
-	// helouda
 
 	@Override
 	public String toString() 
