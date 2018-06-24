@@ -30,7 +30,10 @@ public class MiniBar <T>
 		return 0;
 	}
 
-
+	@Override
+	public String toString() {
+		return "MiniBar [bebidas=" + bebidas + ", comidas=" + comidas + ", postres=" + postres + "]";
+	}
 
 }
 
