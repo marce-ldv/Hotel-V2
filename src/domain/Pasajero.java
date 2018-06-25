@@ -139,5 +139,8 @@ public class Pasajero
 		
 	}
 	
+	/** 
+	 * TODO  agregar relaciones entre pasajero empleado y minibar */
+	
 	
 }
