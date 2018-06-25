@@ -4,6 +4,7 @@ import java.awt.List;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Comparator;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -15,24 +16,38 @@ import java.util.Iterator;
 public class Conserje extends Usuario {
 	Pasajero pasajero;
 	Reserva reserva;
-	ListaGenerica<Pasajero> listaPasajero;
+	ListaGenerica<Pasajero> listaPasajero;//este es el historial
 	public Conserje() {
 		super();
 		listaPasajero= new ListaGenerica<>();
 	}
 
-	public void Agregar(Pasajero pajero) {
+	public void AgregarAlHistoial(Pasajero pajero,Integer numeroHabitacion,Date tiempo) {//el hotel pide 
 		listaPasajero.add(pajero);
+	}
+	public void AgregarALaReserva(Pasajero pasajero, Integer DNI)
+	{
+		try {
+			reserva.add(pasajero, DNI);
+		} catch (LimiteExcepcion e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+	public void listarReserva()
+	{
+		reserva.listar();
 	}
 	public void pasarDeReservaAHistorial(Integer DNI)
 	{
 		try {
 			pasajero=reserva.buscarPasajero(DNI);
+			reserva.eliminar(pasajero);
 		} catch (LimiteExcepcion e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		reserva.eliminar(pasajero);
+		//Agregar pasajero al historial
 	}
 	//aca los paso al Historial de pasajero
 	//comentario

@@ -2,6 +2,7 @@ package domain;
 
 import org.json.JSONException;
 
+import Generecidad.MapaGenerico;
 import exepciones.LimiteExcepcion;
 
 public class Reserva {

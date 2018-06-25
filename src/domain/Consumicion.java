@@ -62,7 +62,6 @@ public class Consumicion
 		
 	}
 	
-<<<<<<< HEAD
 	public JSONObject getFormatoJSON() throws JSONException 
 	{
 			
@@ -74,13 +73,11 @@ public class Consumicion
 		
 	}
 	
-=======
 	@Override
 	public String toString() 
 	{
 		return "Consumicion [costo=" + costo + ", idReserva=" + idReserva + "]";
 	}
->>>>>>> cbe0c2bf1e4f36c894190ad6efc7f7bd1cfd6f30
 }
 
 

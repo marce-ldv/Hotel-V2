@@ -1,4 +1,4 @@
-package domain;
+package Generecidad;
 
 import java.util.HashMap;
 import java.util.Iterator;
