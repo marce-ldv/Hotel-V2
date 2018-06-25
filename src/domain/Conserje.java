@@ -47,9 +47,9 @@ public class Conserje extends Usuario {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+		// debo implementar de alguna forma las habitaciones(tengo que fijarme el codigo de rodri cuando lo suba)
 		//Agregar pasajero al historial
 	}
 	//aca los paso al Historial de pasajero
-	//comentario
-	
+
 }
