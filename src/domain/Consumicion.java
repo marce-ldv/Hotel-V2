@@ -8,19 +8,21 @@ public class Consumicion
 	private double costo;
 	private int idReserva;
 	
+	// constructores
+	
 	public Consumicion() 
 	{
-		super();
 		costo = 0;
 		idReserva = 0;
 	}
 	
 	public Consumicion(double costoRecib, int idReservaRecib) 
 	{
-		super();
 		costo = costoRecib;
 		idReserva = idReservaRecib;
 	}
+	
+	// getters y setters
 	
 	public double getCosto()
 	{
@@ -50,6 +52,8 @@ public class Consumicion
 		
 		return 0;
 	}
+	
+	// metodos
 	
 	public JSONObject getFormatoJSON() throws JSONException 
 	{

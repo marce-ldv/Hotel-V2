@@ -16,9 +16,11 @@ public class Pasajero
 	private List historial;
 	private int idPasajero;
 	
+	// constructores
+	
+	
 	public Pasajero() 
 	{
-		super();
 		nombre = null;
 		apellido = null;
 		dni = null;
@@ -32,7 +34,6 @@ public class Pasajero
 	public Pasajero(String nombreRecib, String apellidoRecib, String dniRecib, String numTarjetaCreditoRecib, String telefonoRecib,
 			String nacionalidadRecib, List historialRecib, int idPasajeroRecib) 
 	{
-		super();
 		nombre = nombreRecib;
 		apellido = apellidoRecib;
 		dni = dniRecib;
@@ -43,6 +44,9 @@ public class Pasajero
 		idPasajero = idPasajeroRecib;
 	}
 
+	// setters y getters
+	
+	
 	public String getNombre() {
 		return nombre;
 	}
@@ -107,6 +111,9 @@ public class Pasajero
 		this.idPasajero = idPasajero;
 	}
 
+	
+	// metodos
+	
 	
 	public JSONObject getFormatoJSON() throws JSONException 
 	{

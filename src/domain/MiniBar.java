@@ -10,7 +10,27 @@ public class MiniBar <T>
 
 	private ArrayList<String> bebidas;
 	private ArrayList<String> comidas;
-	private ArrayList<String> postres;
+	private ArrayList<String> postres;	
+	
+	// constructores
+	
+	
+	public MiniBar() 
+	{	
+		bebidas = null;
+		comidas = null;
+		postres = null;
+	}
+	
+	public MiniBar(ArrayList<String> bebidasRecib, ArrayList<String> comidasRecib, ArrayList<String> postresRecib) 
+	{	
+		bebidas = bebidasRecib;
+		comidas = comidasRecib;
+		postres = postresRecib;
+	}
+
+	//metodos
+	
 	
 	public void listarElementos(ArrayList<T> arr) 
 	{

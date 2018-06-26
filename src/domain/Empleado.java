@@ -2,6 +2,7 @@ package domain;
 
 public class Empleado extends Usuario 
 {
+	//constructores
 	
 	
 	public Empleado() 
@@ -15,6 +16,9 @@ public class Empleado extends Usuario
 		super(idUsuarioRecib, usuarioRecib, passwordRecib);	
 	}
 
+	// metodos
+	
+	
 	public boolean pedirComida(String comida)
 	{
 		boolean comidaEntregada = false;
