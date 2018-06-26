@@ -1,6 +1,7 @@
 package domain;
 
 import java.util.List;
+import java.util.Scanner;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -140,9 +141,44 @@ public class Pasajero
 				+ historial + ", idPasajero=" + idPasajero + "]";
 	}
 	
+	/**
+	 * MENU pasajero (esto se vera por pantalla)
+	 * 
+	 * @return opcion que elije el pasajero
+	 * */
+	
+	public int pantallaMenuPasajero()
+    {    	
+    	Scanner scan = new Scanner(System.in);
+
+    	int opcion = -1;
+
+    	System.out.println("\n\nMenu pasajero:");
+    	
+    	// estos pedidos van al conserje
+    	
+    	System.out.println("\n\n1-Realizar reserva");
+    	System.out.println("2-Cancelar reserva");
+    	System.out.println("3-Pedir check in");
+    	System.out.println("4-Pedir check out");
+    	
+    	// estos pedidos van al empleado
+    	
+    	System.out.println("5-Pedir comida"); 
+    	System.out.println("6-Pedir bebida");
+    	System.out.println("7-Pedir postre");
+
+    	System.out.println("0-Salir");
+
+    	opcion = scan.nextInt();    	
+    	
+    	return opcion;
+    }
+	
 	
 	public void llamarConserje() // ..... // implements Conserje ?, quiza ?
 	{
+		
 		
 	}
 	
