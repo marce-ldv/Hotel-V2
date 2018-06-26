@@ -1,12 +1,20 @@
 package domain;
 
-public class Empleado 
+public class Empleado extends Usuario 
 {
-	public Empleado() // no se como hacer el constructor...
-	{
-		
-	}
 	
+	
+	public Empleado() 
+	{
+		super();
+	
+	}
+
+	public Empleado(Integer idUsuarioRecib, String usuarioRecib, String passwordRecib) 
+	{
+		super(idUsuarioRecib, usuarioRecib, passwordRecib);	
+	}
+
 	public boolean pedirComida(String comida)
 	{
 		boolean comidaEntregada = false;
