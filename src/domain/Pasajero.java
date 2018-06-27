@@ -169,8 +169,7 @@ public class Pasajero
     	
     	System.out.println("\n\n1-Realizar reserva");
     	System.out.println("2-Cancelar reserva");
-    	System.out.println("3-Pedir check in");
-    	System.out.println("4-Pedir check out");
+    	
     	
     	// estos pedidos van al empleado
     	

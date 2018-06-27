@@ -13,11 +13,11 @@ import exepciones.LimiteExcepcion;
 
 import java.util.Iterator;
 
-public class Conserje extends Usuario {
+public class Recepcionista extends Usuario {
 	Pasajero pasajero;
 	Reserva reserva;
 	ListaGenerica<Pasajero> listaPasajero;//este es el historial
-	public Conserje() {
+	public Recepcionista() {
 		super();
 		listaPasajero= new ListaGenerica<>();
 	}

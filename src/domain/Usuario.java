@@ -9,7 +9,7 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 import swing.LoginGUI;
-import swing.RegistrarPasajeroGUI;
+import swing.RegistroGUI;
 
 public class Usuario {
 
