@@ -32,6 +32,8 @@ public class MiniBar <T>
 	//metodos
 	
 	
+	//menu listar alimentos
+	
 	public void listarElementos(ArrayList<T> arr) 
 	{
 		int i = 0;
@@ -42,13 +44,35 @@ public class MiniBar <T>
 		}		
 	}
 	
+	
+	/**
+	 * FIXME no se si estos metodos van asi 
+	 * */
+	
+	public void listarComidas()
+	{
+		listarElementos((ArrayList<T>) comidas);		
+	}
+	
+	public void listarBebidas()
+	{
+		listarElementos((ArrayList<T>) bebidas);		
+	}
+
+	public void listarPostres()
+	{
+		listarElementos((ArrayList<T>) postres);		
+	}
+
 	public void pausarConsumicion() // ni idea 
 	{
 		
 	}
 	
+	
 	public float costoTotal() // deberia recibir todos los costos por parametro
 	{
+		
 		
 		
 		return 0;
