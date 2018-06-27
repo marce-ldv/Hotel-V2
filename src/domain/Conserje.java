@@ -22,7 +22,7 @@ public class Conserje extends Usuario {
 		listaPasajero= new ListaGenerica<>();
 	}
 
-	public void AgregarAlHistoial(Pasajero pajero,Integer numeroHabitacion,Date tiempo) {//el hotel pide 
+	public void AgregarAlHistoial(Pasajero pajero,Habitacion habitacion) {//el hotel pide 
 		listaPasajero.add(pajero);
 	}
 	public void AgregarALaReserva(Pasajero pasajero, Integer DNI)
