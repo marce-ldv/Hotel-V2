@@ -12,7 +12,8 @@ import swing.LoginGUI;
 
 public class Hotel
 {
-
+//////////////////////////////////////////////////////////////////////////////////////////////////////////
+	/* Marcelo */
     public String leerDatosUsuario(String tipoUsuario) throws JSONException{
         JsonUtiles jsonUt = new JsonUtiles();
         return jsonUt.leer(tipoUsuario);
@@ -20,6 +21,7 @@ public class Hotel
 
     /**
      * Devuelve un usuario logueado
+     * @author Marcelo
      * @param user
      * @param pass
      * @return
@@ -68,6 +70,79 @@ public class Hotel
             }
         return usu;
     }
+    
+    ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    /*Nacho Ignacio*/
+   /**
+    * Aca va los mentodos de Nacho
+    * @author Nacho Ignacio
+    */
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    /*Rodri*/
+    /**
+     * Aca va los mentodos de Rodri
+     * @author Rodri
+     */
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
 
+    
+    
+    
+    
+    
+ ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+   /*El verga larga(Chiappe)*/
+    /**
+     * Aca va los mentodos de Chiappe
+     * @author Chiappe
+     */
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////   
+    
+    
+    
 
 }
