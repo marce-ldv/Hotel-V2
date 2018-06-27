@@ -176,14 +176,77 @@ public class Pasajero
     }
 	
 	
-	public void llamarConserje() // ..... // implements Conserje ?, quiza ?
+	/**
+	 * Este es el funcionamiento del menu por dentro
+	 *
+	 * TODO  agregar relaciones entre pasajero empleado y minibar y terminar metodo menuAtenderPasajero()
+	 * 
+	 * */
+	
+	public void menuAtenderPasajero() // ..... // implements Conserje ?, quiza ?
 	{
+		//Scanner scan = new Scanner(System.in);
 		
+		int opcion = -1;
+		
+		while(opcion != 0)
+		{
+			opcion = pantallaMenuPasajero();
+			
+			switch(opcion)
+			{
+			
+			// estos pedidos van al conserje
+			
+			case 1: // realizar reserva
+				
+				
+				
+				break;
+				
+			case 2: // cancelar reserva
+				
+				
+				
+				break;
+				
+			case 3: // pedir check in
+				
+				
+				
+				break;
+				
+			case 4: // pedir check out
+				
+				
+				
+				break;
+
+			//estos pedidos van al empleado
+				
+			case 5: // pedir comida
+
+					
+
+				break;
+				
+			case 6: // pedir bebida
+
+
+
+				break;
+				
+			case 7: // pedir postre
+
+
+
+				break;			
+			}
+			
+		}	
 		
 	}
 	
-	/** 
-	 * TODO  agregar relaciones entre pasajero empleado y minibar */
 	
 	
 }

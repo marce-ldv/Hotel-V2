@@ -45,6 +45,7 @@ public class Consumicion
 		this.idReserva = idReserva;
 	}
 	
+	// metodos
 	
 	public double getCostoConsumicion() 
 	{
@@ -53,7 +54,6 @@ public class Consumicion
 		return 0;
 	}
 	
-	// metodos
 	
 	public JSONObject getFormatoJSON() throws JSONException 
 	{
