@@ -208,9 +208,18 @@ public class LoginGUI extends JFrame implements ActionListener{
                 try {
                     hotel.loguearse(textFieldUsername.getText(),contrasenia);
                     JOptionPane.showMessageDialog(null,"Te has logeado");
-                    AdministradorGUI adminGUI = new AdministradorGUI();
-                    adminGUI.setVisible(true);
-                    this.dispose(); //cierro la ventana actual
+                    if(jcomboLogin.getSelectedIndex() == 0) {
+                    	 AdministradorGUI adminGUI = new AdministradorGUI();
+                    	 adminGUI.setVisible(true);
+                    	 //this.dispose();
+                    }else if(jcomboLogin.getSelectedIndex() == 1) {
+                    	EmpleadoGUI empleadoGUI = new EmpleadoGUI();
+                    	empleadoGUI.setVisible(true);
+                    }else if(jcomboLogin.getSelectedIndex() == 2) {
+                    	ConserjeGUI conserjeGUI = new ConserjeGUI();
+                    	conserjeGUI.setVisible(true);
+                    }
+                   
                 } catch (JSONException e) {
                     e.printStackTrace();
                 }
