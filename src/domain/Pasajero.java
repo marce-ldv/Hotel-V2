@@ -1,8 +1,11 @@
 package domain;
 
+import java.lang.reflect.Array;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
+import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -16,6 +19,7 @@ public class Pasajero
 	private String nacionalidad;
 	private List historial;
 	private int idPasajero;
+	ArrayList<Habitacion> habitacion;
 	
 	// constructores
 	
@@ -30,6 +34,7 @@ public class Pasajero
 		nacionalidad = null;
 		historial = null;
 		idPasajero = 0;
+		habitacion=new ArrayList<>();
 	}
 	
 	public Pasajero(String nombreRecib, String apellidoRecib, String dniRecib, String numTarjetaCreditoRecib, String telefonoRecib,
@@ -112,7 +117,10 @@ public class Pasajero
 		this.idPasajero = idPasajero;
 	}
 
-	
+	public void addHabitacion(Habitacion habitacionApasar)
+	{
+		habitacion.add(habitacionApasar);
+	}
 	// metodos
 	
 	
@@ -120,6 +128,7 @@ public class Pasajero
 	{
 			
 			JSONObject jsonObject = new JSONObject();
+			JSONArray jsonArray = new JSONArray();
 			jsonObject.put("nombre", nombre);			
 			jsonObject.put("apellido", apellido);
 			jsonObject.put("dni", dni);
@@ -127,7 +136,8 @@ public class Pasajero
 			jsonObject.put("telefono", telefono);			
 			jsonObject.put("nacionalidad", nacionalidad);			
 			jsonObject.put("historial", historial);			
-			jsonObject.put("idPasajero", idPasajero);			
+			jsonObject.put("idPasajero", idPasajero);		
+			jsonArray.put("consumo");
 
 			return jsonObject;		
 	}
