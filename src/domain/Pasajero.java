@@ -21,6 +21,7 @@ public class Pasajero
 	private String nacionalidad;
 	private int idPasajero;
 	private Integer CantidadPersona;
+	private Integer estadoPasajero; // 0 = ya se fue / 1 = todavia no llego / 2 = esta en el hotel
 	HashMap<Date,Habitacion> habitacion;
 	
 	
