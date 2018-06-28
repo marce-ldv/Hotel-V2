@@ -5,12 +5,18 @@ import java.util.ArrayList;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-public class MiniBar <T extends Comparable> // recibira postres, comidas y bebidas
+import serviciosAlPasajero.BebidasGeneral;
+import serviciosAlPasajero.ComidasGeneral;
+import serviciosAlPasajero.PostresGeneral;
+import serviciosAlPasajero.ServiciosGeneral;
+
+public class MiniBar <T>// recibira postres, comidas y bebidas
 {
 
-	private ArrayList<T> bebidas;
-	private ArrayList<T> comidas;
-	private ArrayList<T> postres;	
+	private ArrayList<BebidasGeneral> bebidas;
+	private ArrayList<ComidasGeneral> comidas;
+	private ArrayList<PostresGeneral> postres;
+	private ArrayList<ServiciosGeneral> serviciosEnGeneral;
 	
 	// constructores
 	
@@ -22,24 +28,34 @@ public class MiniBar <T extends Comparable> // recibira postres, comidas y bebid
 		postres = null;
 	}
 	
-	public MiniBar(ArrayList<T> bebidasRecib, ArrayList<T> comidasRecib, ArrayList<T> postresRecib) 
+	public MiniBar(ArrayList<BebidasGeneral> bebidasRecib, ArrayList<ComidasGeneral> comidasRecib, ArrayList<PostresGeneral> postresRecib, ArrayList<ServiciosGeneral> servisRecib) 
 	{	
 		bebidas = bebidasRecib;
 		comidas = comidasRecib;
 		postres = postresRecib;
 	}
 	
-	/*
-	public MiniBar()
-	{
-		
-	}
-*/
 	//metodos
 	
 	public void agregarComidaToListas()
 	{
-		//bebidas.add(ComidaGenerica);
+		BebidasGeneral cocaCola = new BebidasGeneral("CocaCola",35);
+		BebidasGeneral limaLimon = new BebidasGeneral("limaLimon",35);
+		bebidas.add(cocaCola);
+		bebidas.add(limaLimon);
+		
+		ComidasGeneral pizza = new ComidasGeneral("pizza", 80);
+		ComidasGeneral hamburguesa = new ComidasGeneral("hamburguesa", 50);
+		comidas.add(pizza);
+		comidas.add(hamburguesa);
+		
+		PostresGeneral flan = new PostresGeneral("flan", 30);
+		PostresGeneral cassata = new PostresGeneral("cassata", 30);
+		postres.add(flan);
+		postres.add(cassata);
+		
+		ServiciosGeneral limpieza = new ServiciosGeneral("limpieza", 150);
+		serviciosEnGeneral.add(limpieza);
 	}
 	
 	//menu listar alimentos
@@ -56,7 +72,7 @@ public class MiniBar <T extends Comparable> // recibira postres, comidas y bebid
 	
 	
 	/**
-	 * FIXME no se si estos metodos van asi 
+	 * FIXME no se si estos metodos van asi (28/06 hasta ahora no) 
 	 * */
 	
 	public void listarComidas()
@@ -74,13 +90,13 @@ public class MiniBar <T extends Comparable> // recibira postres, comidas y bebid
 		listarElementos((ArrayList<T>) postres);		
 	}
 
-	public void pausarConsumicion() // ni idea 
+	public void pausarConsumicionMiniBar() // ni idea 
 	{
 		
 	}
 	
 	
-	public float costoTotal() // deberia recibir todos los costos por parametro
+	public float costoTotal(int idPasajero) // deberia recibir todos los costos por parametro de los consumos del pasajero
 	{
 		
 		
@@ -106,3 +122,4 @@ public class MiniBar <T extends Comparable> // recibira postres, comidas y bebid
 	}
 
 }
+
