@@ -2,6 +2,16 @@ package alimentosMiniBar;
 
 public class CocaCola 
 {
-	private final int precio = 30;
+	private int precio; //35
+	
+	public CocaCola()
+	{
+		precio = 35;
+	}
+	
+	public int getPrecioNapo()
+	{
+		return precio;
+	}
 
 }
