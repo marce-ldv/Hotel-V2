@@ -1,5 +1,9 @@
 package serviciosAlPasajero;
 
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
 public class PostresGeneral 
 {
 	private String nombre;
@@ -27,6 +31,16 @@ public class PostresGeneral
 
 	public void setValor(int valorRecib) {
 		valor = valorRecib;
+	}
+	
+	public JSONObject getFormatoJSON() throws JSONException 
+	{
+			
+			JSONObject jsonObject = new JSONObject();
+			jsonObject.put("nombre", nombre);			
+			jsonObject.put("valor", valor);
+
+			return jsonObject;		
 	}
 
 

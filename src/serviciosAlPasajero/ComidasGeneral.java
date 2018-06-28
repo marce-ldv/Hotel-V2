@@ -1,5 +1,8 @@
 package serviciosAlPasajero;
 
+import org.json.JSONException;
+import org.json.JSONObject;
+
 public class ComidasGeneral 
 {
 	private String nombre;
@@ -36,6 +39,17 @@ public class ComidasGeneral
 	}
 
 
+	public JSONObject getFormatoJSON() throws JSONException 
+	{
+			
+			JSONObject jsonObject = new JSONObject();
+			jsonObject.put("nombre", nombre);			
+			jsonObject.put("valor", valor);
+
+			return jsonObject;		
+	}
+
+	
 
 	@Override
 	public String toString() 
