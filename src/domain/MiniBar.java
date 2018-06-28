@@ -39,7 +39,7 @@ public class MiniBar <T>
 	
 	public void agregarComidaToListas()
 	{
-		//bebidas.add(Cassata);
+		//bebidas.add(ComidaGenerica);
 	}
 	
 	//menu listar alimentos
