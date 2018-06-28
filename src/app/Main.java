@@ -15,7 +15,7 @@ public class Main {
 	}
 	
 	/**
-	 * Este bloque de codigo simplemente le da un mejor disenio a la interfaz grafica del sistema
+	 * Este bloque de codigo simplemente le da un mejor disenio a la interfaz grafica del sistema.
 	 */
 	static void lookAndFeels() {
 		try {

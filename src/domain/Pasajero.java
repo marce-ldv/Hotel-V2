@@ -22,13 +22,9 @@ public class Pasajero
 	private String telefono;
 	private String nacionalidad;
 	private int idPasajero;
-<<<<<<< HEAD
-	MapaGenerico<Date,Habitacion> habitacion;
-=======
+	MapaGenerico<Date,Habitacion> mapaHabitaciones;
 	private Integer CantidadPersona;
 	private Integer estadoPasajero; // 0 = ya se fue / 1 = todavia no llego / 2 = esta en el hotel
-	HashMap<Date,Habitacion> habitacion;
->>>>>>> ecedb8e14ac78d9559971839072a5b10853b0f08
 	
 	
 	// constructores
@@ -43,7 +39,7 @@ public class Pasajero
 		telefono = null;
 		nacionalidad = null;
 		idPasajero = 0;
-		habitacion=new MapaGenerico<>();
+		mapaHabitaciones=new MapaGenerico<>();
 	}
 	
 	public Pasajero(String nombreRecib, String apellidoRecib, String dniRecib, String numTarjetaCreditoRecib, String telefonoRecib,
@@ -56,6 +52,7 @@ public class Pasajero
 		telefono = telefonoRecib;
 		nacionalidad = nacionalidadRecib;
 		idPasajero = idPasajeroRecib;
+		mapaHabitaciones=new MapaGenerico<>();
 	}
 
 	// setters y getters
@@ -119,7 +116,7 @@ public class Pasajero
 
 	public void addHabitacion(Habitacion habitacionApasar,Date fecha)
 	{
-		habitacion.Add(fecha, habitacionApasar);
+		mapaHabitaciones.Add(fecha, habitacionApasar);
 	}
 	// metodos
 	
@@ -148,114 +145,5 @@ public class Pasajero
 		return "Pasajero [nombre=" + nombre + ", apellido=" + apellido + ", dni=" + dni + ", numTarjetaCredito="
 				+ numTarjetaCredito + ", telefono=" + telefono + ", Nacionalidad=" + nacionalidad   + ", idPasajero=" + idPasajero + "]";
 	}
-	
-	/**
-	 * MENU pasajero (esto se vera por pantalla)
-	 * 
-	 * @return opcion que elije el pasajero
-	 * */
-	
-	public int pantallaMenuPasajero()
-    {    	
-    	Scanner scan = new Scanner(System.in);
-
-    	int opcion = -1;
-
-    	System.out.println("\n\nMenu pasajero:");
-    	
-    	// estos pedidos van al conserje
-    	
-    	System.out.println("\n\n1-Realizar reserva");
-    	System.out.println("2-Cancelar reserva");
-    	
-    	
-    	// estos pedidos van al empleado
-    	
-    	System.out.println("5-Pedir comida"); 
-    	System.out.println("6-Pedir bebida");
-    	System.out.println("7-Pedir postre");
-
-    	System.out.println("0-Salir");
-
-    	opcion = scan.nextInt();    	
-    	
-    	return opcion;
-    }
-	
-	
-	/**
-	 * Este es el funcionamiento del menu por dentro
-	 *
-	 * TODO  agregar relaciones entre pasajero empleado y minibar y terminar metodo menuAtenderPasajero()
-	 * 
-	 * */
-	
-	public void menuAtenderPasajero() // ..... // implements Conserje ?, quiza ?
-	{
-		//Scanner scan = new Scanner(System.in);
-		
-		int opcion = -1;
-		
-		while(opcion != 0)
-		{
-			opcion = pantallaMenuPasajero();
-			
-			switch(opcion)
-			{
-			
-			// estos pedidos van al conserje
-			
-			case 1: // realizar reserva
-				
-				
-				
-				break;
-				
-			case 2: // cancelar reserva
-				
-				
-				
-				break;
-				
-			case 3: // pedir check in
-				
-				
-				
-				break;
-				
-			case 4: // pedir check out
-				
-				
-				
-				break;
-
-			//estos pedidos van al empleado
-				
-			case 5: // pedir comida
-
-					
-
-				break;
-				
-			case 6: // pedir bebida
-
-
-
-				break;
-				
-			case 7: // pedir postre
-
-
-
-				break;			
-			}
-			
-		}	
-		
-	}
-
-	
-	
-	
 	
 }

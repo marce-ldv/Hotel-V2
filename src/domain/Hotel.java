@@ -18,10 +18,9 @@ import swing.LoginGUI;
 
 public class Hotel {
 
-	ListaGenerica <Habitacion> listaHabitaciones;
+	ListaGenerica<Habitacion> listaHabitaciones;
 
 	public Hotel() {
-
 		listaHabitaciones = new ListaGenerica<>();
 	}
 
@@ -108,9 +107,9 @@ public class Hotel {
 		listaHabitaciones.add(habitacion);
 	}
 
-	public void listar() {
+	public void listar() throws LimiteExcepcion {
 		if (listaHabitaciones != null) {
-			for (Habitacion e : listaHabitaciones) 
+			for (Habitacion e:listaHabitaciones) 
 			{
 				e.toString();
 			}
@@ -122,8 +121,7 @@ public class Hotel {
 
 	}
 
-	public void listar_Habitaciones_Disponibles() 
-	{
+	public void listar_Habitaciones_Disponibles() throws LimiteExcepcion,Exception{
 		if (listaHabitaciones != null) {
 			for (Habitacion e : listaHabitaciones)
 			{
@@ -138,53 +136,42 @@ public class Hotel {
 		}
 	}
 
-	public void listar_Habitaciones_Ocupadas() 
-	{
-		if (listaHabitaciones != null) 
-		{
-			for (Habitacion e : listaHabitaciones) 
-			{
-				if (e.getOcupada())
-				{
+	public void listar_Habitaciones_Ocupadas()throws LimiteExcepcion,Exception {
+		if (listaHabitaciones != null) {
+			for (Habitacion e : listaHabitaciones){
+				if (e.getOcupada()){
 					e.toString();
 				}
-
 			}
 		} else {
 			throw new LimiteExcepcion("lista vacia");
 		}
 	}
 
-	public void listar_Habitaciones_Disponibles(int cantidadPersona) 
-	{
-		if (listaHabitaciones != null)
-		{
-			for (Habitacion e : listaHabitaciones)
-			{
-				if ((e.getOcupada() == false) && (e.getCantidadPersona())) 
-				{
+	public void listar_Habitaciones_Disponibles(int cantidadPersona) throws LimiteExcepcion,Exception{
+		if (listaHabitaciones != null){
+			for (Habitacion e : listaHabitaciones){
+				if ((e.getOcupada() == false) && (e.getCantidadPersona() == cantidadPersona)) {
 					e.toString();
 				}
 			}
 		}
-		else 
-		{
+		else {
 			throw new LimiteExcepcion("lista vacia");
 		}
 	}
 
-	public Habitacion buscar_Habitacion(int numero_de_habitacion)
-	{
+	public Habitacion buscar_Habitacion(int numero_de_habitacion)throws LimiteExcepcion,Exception{
 		
 		if (listaHabitaciones != null)
 		{
 			for (Habitacion e : listaHabitaciones)
 			{
-				if ( ( ( e.getOcupada() == false ) && ( e.getNumero_habitacion() ) ) )
+				if ((( e.getOcupada() == false ) && ( e.getNumero_habitacion() == numero_de_habitacion)))
 				{	
 					return e;
 				}
-				else if( ( e.getOcupada() ) &&  (e.getNumero_habitacion()) )
+				else if(( e.getOcupada()) &&  (e.getNumero_habitacion() == numero_de_habitacion))
 				{
 					System.out.println("La habitacion esta ocupada");
 					return null;
@@ -198,10 +185,9 @@ public class Hotel {
 		System.out.println("no se encontro la habitacion");
 		return null;
 	}
-	public void reservar_Habitacion(Pasajero pasajero, Date fecha)
-	{
+	public void reservar_Habitacion(Pasajero pasajero, Date fecha){
 		
-		Habitacion reserva= buscar_Habitacion(23);// MArcer: aca necesito un scaner entero
+		//Habitacion reserva= buscar_Habitacion(23);// MArcer: aca necesito un scaner entero
 		
 	}
 
