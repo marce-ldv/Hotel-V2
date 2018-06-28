@@ -14,7 +14,24 @@ public class Recepcionista extends Usuario {
 		listaPasajero= new ArrayList<>();
 	}
 
-	public void AgregarAlHistoial(Pasajero pajero,String dNI) {//el hotel pide 
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	/*public void AgregarAlHistoial(Pasajero pajero,String dNI) {//el hotel pide 
 		listaPasajero.add(pajero);
 	}
 	public void AgregarALaReserva(Pasajero pasajero, String string)
@@ -42,7 +59,7 @@ public class Recepcionista extends Usuario {
 		}
 		// debo implementar de alguna forma las habitaciones(tengo que fijarme el codigo de rodri cuando lo suba)
 		//Agregar pasajero al historial
-	}
+	}*/
 	//aca los paso al Historial de pasajero
 
 }

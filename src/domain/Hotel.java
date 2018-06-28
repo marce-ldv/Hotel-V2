@@ -15,15 +15,18 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import Generecidad.MapaGenerico;
 import swing.LoginGUI;
 
 public class Hotel{
 
 	private List<Habitacion> listaHabitaciones;
 	Recepcionista conserje;
+	MapaGenerico<String, Reserva> mapaHabitacionesReservada;
 	public Hotel() {
 		listaHabitaciones = new ArrayList<>();
 		conserje=new Recepcionista();
+		mapaHabitacionesReservada=new MapaGenerico<>();
 	}
 
 	//////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -104,6 +107,7 @@ public class Hotel{
 	 * @author Chiappe
 	 */
 
+	//public void add_mapa_reserva(Reserva reserva)
 	public void add(Habitacion habitacion){
 		listaHabitaciones.add(habitacion);
 	}
@@ -182,14 +186,24 @@ public class Hotel{
 		return null;
 	}
 	
-	public void reservar_Habitacion(Pasajero pasajero, Date fecha){
-		
+	public void reservar_Habitacion(Pasajero pasajero){
+		int i=0;
+		ArrayList<Habitacion> aux=new ArrayList<>();
 		try {
+			               //aca deberia crear la reserva <------------------------------atento!
+			//tambien deberia agregarla a la lista de reserva<------------------------
 			//agrego la fecha
-			Habitacion reserva= buscar_Habitacion(23);// MArcer: aca necesito un scaner ente
-			pasajero.addHabitacion(reserva, fecha);
-			reserva.setOcupada(true);
-			conserje.AgregarALaReserva(pasajero, pasajero.getDni());
+			while(condicion!=true)
+			{
+				Habitacion habitacion= buscar_Habitacion(23);// MArcer: aca necesito un scaner ente
+				aux.add(habitacion);
+			}
+			Habitacion habitacion= buscar_Habitacion(23);// MArcer: aca necesito un scaner ente
+			Reserva reserva=new Reserva(12-34-5332, 23-34-5332, aux);
+			mapaHabitacionesReservada.addReserva_A_pasajero(pasajero.getDni(),reserva);//le sapamos el DNI
+			//pasajero.addHabitacion(habitacion, fecha); // terminar
+			habitacion.setOcupada(true);
+			
 		} catch (LimiteExcepcion e) {
 			e.printStackTrace();
 		} catch (Exception e) {
@@ -197,8 +211,23 @@ public class Hotel{
 			e.printStackTrace();
 		}
 	}
-	public void llegada_Pasajero_Al_hotel(Pasajero pasajero)
+	public void llegada_Pasajero_Al_hotel(Pasajero pasajero)// solo lo elimino de la lista de reserva pero no habilito las habitaciones ni completo la reserva del pasajero hasta que se vaya
 	{
-		conserje.pasarDeReservaAHistorial(pasajero.getDni()); // aca para evitar el null y insistir en que se ingrese bien el pasajero o que salga del menu
+		try {
+			mapaHabitacionesReservada.eliminarPorClave(pasajero.getDni());
+		} catch (LimiteExcepcion e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
+	public void cancelar_Reserva(String DNI)
+	{
+		try {
+			mapaHabitacionesReservada.Cancelar_reserva(DNI);
+		} catch (LimiteExcepcion e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+	
 }

@@ -7,6 +7,8 @@ import java.util.Map;
 import org.json.JSONArray;
 import org.json.JSONException;
 
+import domain.Pasajero;
+import domain.Reserva;
 import exepciones.LimiteExcepcion;
 import files.JsonUtiles;
 import files.JsonUtiles;
@@ -33,25 +35,20 @@ public class MapaGenerico<K, T> {
 		}
 	}
 
-	public void eliminarPorClase(K k) throws LimiteExcepcion {
-		if(mapaGenerico.containsKey(k))
-		{
+	public void eliminarPorClave(K k) throws LimiteExcepcion {
+		if (mapaGenerico.containsKey(k)) {
 			mapaGenerico.remove(k);
 			System.out.println("Fue borrado");
-		}
-		else
-		{
+		} else {
 			throw new LimiteExcepcion("No se encontro");
 		}
 	}
+
 	public void eliminarPorValor(T t) throws LimiteExcepcion {
-		if(mapaGenerico.containsKey(t))
-		{
+		if (mapaGenerico.containsKey(t)) {
 			mapaGenerico.remove(t);
 			System.out.println("Fue borrado");
-		}
-		else
-		{
+		} else {
 			throw new LimiteExcepcion("No se encontro");
 		}
 	}
@@ -64,12 +61,46 @@ public class MapaGenerico<K, T> {
 			K d = (K) me.getKey();
 			T t = (T) me.getValue();
 			if (k == d) {
-				return t;			}
+				return t;
+			}
 		}
 		if (i == 0) {
 			throw new LimiteExcepcion("No se encuentra en esta lista");
 		}
 		return null;
+	}
+
+	public <K extends Pasajero> void addReserva_A_pasajero(String k, Reserva reserva) throws LimiteExcepcion {
+		int i = 0;
+		Iterator it = mapaGenerico.entrySet().iterator();
+		while (it.hasNext()) {
+			Map.Entry me = (Map.Entry<K, T>) it.next();
+			K d = (K) me.getKey();
+			T t = (T) me.getValue();
+			if (k == d.getDni()) {
+				d.add_Reserva(reserva);
+				i = 1;
+			}
+		}
+		if (i == 0) {
+			throw new LimiteExcepcion("Es la primera vez en el hotel");
+		}
+
+	}
+
+	public <K extends Pasajero> void Cancelar_reserva(String k) throws LimiteExcepcion {
+		Iterator it = mapaGenerico.entrySet().iterator();
+		while (it.hasNext()) {
+			Map.Entry me = (Map.Entry<K, T>) it.next();
+			K d = (K) me.getKey();
+			T t = (T) me.getValue();
+			if (k == d.getDni()) {
+				d.eliminar_ultimaReserva();
+			}
+		}
+		mapaGenerico.remove(k);
+
+		System.out.println("La reserva fue cancelada");
 	}
 
 	public JSONArray exportarJson(String a) throws JSONException {
@@ -92,3 +123,4 @@ public class MapaGenerico<K, T> {
 
 	}
 }
+

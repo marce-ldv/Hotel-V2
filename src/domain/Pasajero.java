@@ -1,7 +1,11 @@
 package domain;
 
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Scanner;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -18,10 +22,10 @@ public class Pasajero
 	private String telefono;
 	private String nacionalidad;
 	private int idPasajero;
-	MapaGenerico<Date,Habitacion> mapaHabitaciones;
+	ArrayList<Reserva> listaReserva;
 	private Integer CantidadPersona;
 	private Integer estadoPasajero; // 0 = ya se fue / 1 = todavia no llego / 2 = esta en el hotel
-	private ArrayList<Integer> listaConsumosPasajero;
+	
 
 	
 	// constructores
@@ -36,7 +40,7 @@ public class Pasajero
 		telefono = null;
 		nacionalidad = null;
 		idPasajero = 0;
-		mapaHabitaciones=new MapaGenerico<>();
+		listaReserva=new ArrayList<>();
 	}
 	
 	public Pasajero(String nombreRecib, String apellidoRecib, String dniRecib, String numTarjetaCreditoRecib, String telefonoRecib,
@@ -49,7 +53,7 @@ public class Pasajero
 		telefono = telefonoRecib;
 		nacionalidad = nacionalidadRecib;
 		idPasajero = idPasajeroRecib;
-		mapaHabitaciones=new MapaGenerico<>();
+		listaReserva=new ArrayList<>();
 	}
 
 	// setters y getters
@@ -111,27 +115,35 @@ public class Pasajero
 		this.idPasajero = idPasajero;
 	}
 
-	
+	public void add_Reserva(Reserva reserva)
+	{
+		listaReserva.add(reserva);
+	}
 	// metodos
-	
-	public void addHabitacion(Habitacion habitacionApasar,Date fecha)
+	public void listar_Reserva()
 	{
-		mapaHabitaciones.Add(fecha, habitacionApasar);
+		if(listaReserva!=null)
+		{
+			for(Reserva e: listaReserva )
+			{
+				e.toString();
+			}
+		
+		}
 	}
-	
-	public void listarHabitacion()
+	public void eliminar_ultimaReserva()
 	{
-		mapaHabitaciones.listar();
-	}
-	
-	public void pedirComida(int idPasajero)  
-	{
-		
-		
-		
-		
-		
-		
+		if(listaReserva!=null)
+		{
+			for(Reserva e: listaReserva )
+			{
+				if(e.isCompletado()==false)
+				{
+					listaReserva.remove(e);
+					System.out.println("La reserva:" + e.toString() + "fue eliminada");
+				}
+			}
+		}
 	}
 	
 	public JSONObject getFormatoJSON() throws JSONException 
