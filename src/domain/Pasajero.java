@@ -23,6 +23,7 @@ public class Pasajero
 	private Integer CantidadPersona;
 	HashMap<Date,Habitacion> habitacion;
 	
+	
 	// constructores
 	
 	
