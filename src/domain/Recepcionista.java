@@ -1,34 +1,26 @@
 package domain;
 
-import java.awt.List;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Comparator;
-import java.util.Date;
-import java.util.HashMap;
-import java.util.Map;
-
-import Generecidad.ListaGenerica;
 import exepciones.LimiteExcepcion;
 
-import java.util.Iterator;
+import java.util.ArrayList;
+import java.util.List;
 
-public class Conserje extends Usuario {
+public class Recepcionista extends Usuario {
 	Pasajero pasajero;
 	Reserva reserva;
-	ListaGenerica<Pasajero> listaPasajero;//este es el historial
-	public Conserje() {
+	List<Pasajero> listaPasajero;//este es el historial
+	public Recepcionista() {
 		super();
-		listaPasajero= new ListaGenerica<>();
+		listaPasajero= new ArrayList<>();
 	}
 
-	public void AgregarAlHistoial(Pasajero pajero,Integer numeroHabitacion,Date tiempo) {//el hotel pide 
+	public void AgregarAlHistoial(Pasajero pajero,String dNI) {//el hotel pide 
 		listaPasajero.add(pajero);
 	}
-	public void AgregarALaReserva(Pasajero pasajero, Integer DNI)
+	public void AgregarALaReserva(Pasajero pasajero, String string)
 	{
 		try {
-			reserva.add(pasajero, DNI);
+			reserva.add(pasajero, string);
 		} catch (LimiteExcepcion e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -38,10 +30,11 @@ public class Conserje extends Usuario {
 	{
 		reserva.listar();
 	}
-	public void pasarDeReservaAHistorial(Integer DNI)
+	public void pasarDeReservaAHistorial(String DNI)
 	{
 		try {
 			pasajero=reserva.buscarPasajero(DNI);
+			AgregarAlHistoial(pasajero, DNI);
 			reserva.eliminar(pasajero);
 		} catch (LimiteExcepcion e) {
 			// TODO Auto-generated catch block

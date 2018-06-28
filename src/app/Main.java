@@ -9,9 +9,15 @@ public class Main {
 	 * @param args
 	 */
 	public static void main(String[] args) {
-		/**
-		 * Este bloque de codigo simplemente le da un mejor disenio a la interfaz grafica del sistema
-		 */
+		lookAndFeels();
+		LoginGUI login =new LoginGUI();
+		login.setVisible(true);
+	}
+	
+	/**
+	 * Este bloque de codigo simplemente le da un mejor disenio a la interfaz grafica del sistema.
+	 */
+	static void lookAndFeels() {
 		try {
 			for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
 				if ("Nimbus".equals(info.getName())) {
@@ -28,12 +34,6 @@ public class Main {
 		} catch (javax.swing.UnsupportedLookAndFeelException ex) {
 			java.util.logging.Logger.getLogger(Main.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
 		}
-		/**
-		 * Instancio un login
-		 */
-		LoginGUI login =new LoginGUI();
-		login.setVisible(true);
-
 	}
 
 }

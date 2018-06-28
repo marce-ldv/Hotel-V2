@@ -39,5 +39,8 @@ public class Empleado extends Usuario
 		
 		return postreEntregado;
 	}
+	
+	
+	// listar todo
 
 }

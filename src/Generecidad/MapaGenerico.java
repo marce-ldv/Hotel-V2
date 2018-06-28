@@ -72,7 +72,7 @@ public class MapaGenerico<K, T> {
 		return null;
 	}
 
-	public JSONArray levantarJson(String a) throws JSONException {
+	public JSONArray exportarJson(String a) throws JSONException {
 		JSONArray listArray = new JSONArray();
 		JsonUtiles utiles = new JsonUtiles();// hago esto para poder grabarlo en un archivo JSON
 		Iterator it = mapaGenerico.entrySet().iterator();

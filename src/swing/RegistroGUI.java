@@ -10,7 +10,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.*;
 
-public class RegistrarPasajeroGUI extends JFrame implements ActionListener{
+public class RegistroGUI extends JFrame implements ActionListener{
 
     private JPanel jPanel;
     private JButton btnSalir;
@@ -38,7 +38,7 @@ public class RegistrarPasajeroGUI extends JFrame implements ActionListener{
      * Constructor que llama al constructor por defecto de la clase padre JFrame
      * llamada a los metodos configurar ventana e inicializar componentes.
      */
-    public RegistrarPasajeroGUI() {
+    public RegistroGUI() {
         super();                    // usamos el contructor de la clase padre JFrame
         configurarVentana();        // configuramos la ventana
         inicializarComponentes();   // inicializamos los atributos o componentes
@@ -140,7 +140,8 @@ public class RegistrarPasajeroGUI extends JFrame implements ActionListener{
         jcomboTipoUsuario.setBounds(160,320,170,30);
         jcomboTipoUsuario.addItem("Administrador");
         jcomboTipoUsuario.addItem("Empleado");
-        jcomboTipoUsuario.addItem("Conserje");
+        jcomboTipoUsuario.addItem("Recepcionista");
+        jcomboTipoUsuario.addItem("Pasajero");
 
         this.add(jPanel);
         jPanel.add(textFieldNombre);
@@ -220,6 +221,8 @@ public class RegistrarPasajeroGUI extends JFrame implements ActionListener{
                 tipoUsuario="registroAdmin.json";
             }else if(jcomboTipoUsuario.getSelectedIndex() == 1 || jcomboTipoUsuario.getSelectedIndex() == 2){
                 tipoUsuario="registroUsuarioEstandar.json";
+            }else if(jcomboTipoUsuario.getSelectedIndex() == 3) {
+            	tipoUsuario="registroPasajeros.json";
             }
             us.grabarRegistrosEnJson(objDatos,tipoUsuario);
             JOptionPane.showMessageDialog(null,"Ha sido registrado con exito !!");

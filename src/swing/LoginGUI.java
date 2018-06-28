@@ -115,7 +115,8 @@ public class LoginGUI extends JFrame implements ActionListener{
         jcomboLogin.setBounds(90,130,170,30);
         jcomboLogin.addItem("Administrador");
         jcomboLogin.addItem("Empleado");
-        jcomboLogin.addItem("Conserje");
+        jcomboLogin.addItem("Recepcionista");
+        jcomboLogin.addItem("Pasajero");
 
         jlabelComboLogin = new javax.swing.JLabel("Loguearse como: ");
         jlabelComboLogin.setBounds(90,100,170,30);
@@ -208,9 +209,24 @@ public class LoginGUI extends JFrame implements ActionListener{
                 try {
                     hotel.loguearse(textFieldUsername.getText(),contrasenia);
                     JOptionPane.showMessageDialog(null,"Te has logeado");
-                    AdministradorGUI adminGUI = new AdministradorGUI();
-                    adminGUI.setVisible(true);
-                    this.dispose(); //cierro la ventana actual
+                    if(jcomboLogin.getSelectedIndex() == 0) {
+                    	 AdministradorGUI adminGUI = new AdministradorGUI();
+                    	 adminGUI.setVisible(true);
+                    	 this.dispose();
+                    }else if(jcomboLogin.getSelectedIndex() == 1) {
+                    	EmpleadoGUI empleadoGUI = new EmpleadoGUI();
+                    	empleadoGUI.setVisible(true);
+                    	this.dispose();
+                    }else if(jcomboLogin.getSelectedIndex() == 2) {
+                    	RecepcionistaGUI recepcionistaGUI = new RecepcionistaGUI();
+                    	recepcionistaGUI.setVisible(true);
+                    	this.dispose();
+                    }else if(jcomboLogin.getSelectedIndex() == 3) {
+                    	PasajeroGUI pasajeroGUI = new PasajeroGUI();
+                    	pasajeroGUI.setVisible(true);
+                    	this.dispose();
+                    }
+                   
                 } catch (JSONException e) {
                     e.printStackTrace();
                 }
@@ -280,7 +296,7 @@ public class LoginGUI extends JFrame implements ActionListener{
         }
 
     private void btnRegistrarseActionPerformed(java.awt.event.ActionEvent evt){
-        RegistrarPasajeroGUI registroGUI = new RegistrarPasajeroGUI();
+        RegistroGUI registroGUI = new RegistroGUI();
         registroGUI.setVisible(true);
         this.dispose();
     }

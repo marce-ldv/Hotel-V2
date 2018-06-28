@@ -7,7 +7,7 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
-public class AdministradorGUI extends JFrame {
+public class EmpleadoGUI extends JFrame {
 
 	private JPanel contentPane;
 
@@ -18,7 +18,7 @@ public class AdministradorGUI extends JFrame {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					AdministradorGUI frame = new AdministradorGUI();
+					EmpleadoGUI frame = new EmpleadoGUI();
 					frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -30,7 +30,7 @@ public class AdministradorGUI extends JFrame {
 	/**
 	 * Create the frame.
 	 */
-	public AdministradorGUI() {
+	public EmpleadoGUI() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 450, 300);
 		contentPane = new JPanel();
