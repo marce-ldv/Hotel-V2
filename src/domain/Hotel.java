@@ -18,7 +18,7 @@ import swing.LoginGUI;
 
 public class Hotel {
 
-	ListaGenerica<Habitacion> listaHabitaciones;
+	private ListaGenerica<Habitacion> listaHabitaciones;
 
 	public Hotel() {
 		listaHabitaciones = new ListaGenerica<>();
@@ -102,20 +102,17 @@ public class Hotel {
 	 * @author Chiappe
 	 */
 
-	public void add(Habitacion habitacion)
-	{
+	public void add(Habitacion habitacion){
 		listaHabitaciones.add(habitacion);
 	}
 
 	public void listar() throws LimiteExcepcion {
 		if (listaHabitaciones != null) {
-			for (Habitacion e:listaHabitaciones) 
-			{
+			for (Habitacion e : listaHabitaciones) {
 				e.toString();
 			}
 		} 
-		else 
-		{
+		else {
 			throw new LimiteExcepcion("lista vacia");
 		}
 
