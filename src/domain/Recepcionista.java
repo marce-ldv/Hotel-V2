@@ -30,7 +30,7 @@ public class Recepcionista extends Usuario {
 	{
 		reserva.listar();
 	}
-	public void pasarDeReservaAHistorial(String DNI)
+	public void pasarDeReservaAHistorial(String DNI)//ver como pasar el costo de la habitacion al pasajero
 	{
 		try {
 			pasajero=reserva.buscarPasajero(DNI);

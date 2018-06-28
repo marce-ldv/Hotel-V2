@@ -119,7 +119,10 @@ public class Pasajero
 		mapaHabitaciones.Add(fecha, habitacionApasar);
 	}
 	// metodos
-	
+	public void listarHabitacion()
+	{
+		mapaHabitaciones.listar();
+	}
 	
 	public JSONObject getFormatoJSON() throws JSONException 
 	{

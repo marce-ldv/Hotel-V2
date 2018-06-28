@@ -5,12 +5,12 @@ import java.util.ArrayList;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-public class MiniBar <T>
+public class MiniBar <T extends Comparable> // recibira postres, comidas y bebidas
 {
 
-	private ArrayList<String> bebidas;
-	private ArrayList<String> comidas;
-	private ArrayList<String> postres;	
+	private ArrayList<T> bebidas;
+	private ArrayList<T> comidas;
+	private ArrayList<T> postres;	
 	
 	// constructores
 	
@@ -22,7 +22,7 @@ public class MiniBar <T>
 		postres = null;
 	}
 	
-	public MiniBar(ArrayList<String> bebidasRecib, ArrayList<String> comidasRecib, ArrayList<String> postresRecib) 
+	public MiniBar(ArrayList<T> bebidasRecib, ArrayList<T> comidasRecib, ArrayList<T> postresRecib) 
 	{	
 		bebidas = bebidasRecib;
 		comidas = comidasRecib;
@@ -39,7 +39,7 @@ public class MiniBar <T>
 	
 	public void agregarComidaToListas()
 	{
-		//bebidas.add(Cassata);
+		bebidas.add(ComidaGenerica);
 	}
 	
 	//menu listar alimentos
