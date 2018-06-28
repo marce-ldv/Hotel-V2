@@ -20,9 +20,10 @@ import swing.LoginGUI;
 public class Hotel{
 
 	private List<Habitacion> listaHabitaciones;
-
+	Recepcionista conserje;
 	public Hotel() {
 		listaHabitaciones = new ArrayList<>();
+		conserje=new Recepcionista();
 	}
 
 	//////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -178,7 +179,16 @@ public class Hotel{
 	}
 	public void reservar_Habitacion(Pasajero pasajero, Date fecha){
 		
-		//Habitacion reserva= buscar_Habitacion(23);// MArcer: aca necesito un scaner entero
+		try {
+			//agrego la fecha
+			Habitacion reserva= buscar_Habitacion(23);// MArcer: aca necesito un scaner ente
+			conserje.AgregarALaReserva(pasajero, pasajero.getDni());
+		} catch (LimiteExcepcion e) {
+			e.printStackTrace();
+		} catch (Exception e) {
+			
+			e.printStackTrace();
+		}
 		
 	}
 }
