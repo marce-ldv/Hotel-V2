@@ -12,6 +12,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import Generecidad.MapaGenerico;
+import clases.Habitacion;
 
 public class Pasajero 
 {
@@ -114,14 +115,22 @@ public class Pasajero
 		this.idPasajero = idPasajero;
 	}
 
+	
+	// metodos
+	
 	public void addHabitacion(Habitacion habitacionApasar,Date fecha)
 	{
 		mapaHabitaciones.Add(fecha, habitacionApasar);
 	}
-	// metodos
+	
 	public void listarHabitacion()
 	{
 		mapaHabitaciones.listar();
+	}
+	
+	public void pedirComida(int idPasajero)
+	{
+		
 	}
 	
 	public JSONObject getFormatoJSON() throws JSONException 
