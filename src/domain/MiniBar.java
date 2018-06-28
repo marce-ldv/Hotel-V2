@@ -28,9 +28,19 @@ public class MiniBar <T>
 		comidas = comidasRecib;
 		postres = postresRecib;
 	}
-
+	
+	/*
+	public MiniBar()
+	{
+		
+	}
+*/
 	//metodos
 	
+	public void agregarComidaToListas()
+	{
+		//bebidas.add(Cassata);
+	}
 	
 	//menu listar alimentos
 	
