@@ -39,7 +39,7 @@ public class MiniBar <T extends Comparable> // recibira postres, comidas y bebid
 	
 	public void agregarComidaToListas()
 	{
-		bebidas.add(ComidaGenerica);
+		//bebidas.add(ComidaGenerica);
 	}
 	
 	//menu listar alimentos
