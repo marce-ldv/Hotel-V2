@@ -145,18 +145,23 @@ public class Hotel{
 	}
 
 	public void listar_Habitaciones_Disponibles(int cantidadPersona) throws LimiteExcepcion,Exception{
+		int i=0;
 		if (listaHabitaciones != null){
 			for (Habitacion e : listaHabitaciones){
-				if ((e.getOcupada() == false) && (e.getCantidadPersona() == cantidadPersona)) {
+				if ((e.getOcupada() == false) && (e.getCantidadPersona() >= cantidadPersona)) {
 					e.toString();
+					i=1;
 				}
 			}
 		}
 		else {
 			throw new LimiteExcepcion("lista vacia");
 		}
+		if(i==0)
+		{
+			System.out.println("no hay habitacion disponible");
+		}
 	}
-
 	public Habitacion buscar_Habitacion(int numero_de_habitacion)throws LimiteExcepcion,Exception{
 		
 		if (listaHabitaciones != null){
@@ -177,11 +182,14 @@ public class Hotel{
 		System.out.println("no se encontro la habitacion");
 		return null;
 	}
+	
 	public void reservar_Habitacion(Pasajero pasajero, Date fecha){
 		
 		try {
 			//agrego la fecha
 			Habitacion reserva= buscar_Habitacion(23);// MArcer: aca necesito un scaner ente
+			pasajero.addHabitacion(reserva, fecha);
+			reserva.setOcupada(true);
 			conserje.AgregarALaReserva(pasajero, pasajero.getDni());
 		} catch (LimiteExcepcion e) {
 			e.printStackTrace();
@@ -189,6 +197,9 @@ public class Hotel{
 			
 			e.printStackTrace();
 		}
-		
+	}
+	public void llegada_Pasajero_Al_hotel(Pasajero pasajero)
+	{
+		conserje.pasarDeReservaAHistorial(pasajero.getDni()); // aca para evitar el null y insistir en que se ingrese bien el pasajero o que salga del menu
 	}
 }

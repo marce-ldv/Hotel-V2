@@ -67,7 +67,7 @@ public class MapaGenerico<K, T> {
 				return t;			}
 		}
 		if (i == 0) {
-			throw new LimiteExcepcion("No se encontro la patente");
+			throw new LimiteExcepcion("No se encuentra en esta lista");
 		}
 		return null;
 	}
