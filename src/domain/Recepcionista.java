@@ -13,16 +13,16 @@ import exepciones.LimiteExcepcion;
 
 import java.util.Iterator;
 
-public class Conserje extends Usuario {
+public class Recepcionista extends Usuario {
 	Pasajero pasajero;
 	Reserva reserva;
 	ListaGenerica<Pasajero> listaPasajero;//este es el historial
-	public Conserje() {
+	public Recepcionista() {
 		super();
 		listaPasajero= new ListaGenerica<>();
 	}
 
-	public void AgregarAlHistoial(Pasajero pajero,Habitacion habitacion) {//el hotel pide 
+	public void AgregarAlHistoial(Pasajero pajero,Integer dNI) {//el hotel pide 
 		listaPasajero.add(pajero);
 	}
 	public void AgregarALaReserva(Pasajero pasajero, Integer DNI)
@@ -42,6 +42,7 @@ public class Conserje extends Usuario {
 	{
 		try {
 			pasajero=reserva.buscarPasajero(DNI);
+			AgregarAlHistoial(pasajero, DNI);
 			reserva.eliminar(pasajero);
 		} catch (LimiteExcepcion e) {
 			// TODO Auto-generated catch block

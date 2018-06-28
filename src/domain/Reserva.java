@@ -65,15 +65,6 @@ public class Reserva {
 		}
 	}
 	
-
-public void Json_AvionComercial() {
-	try {
-		reserva.levantarJson("cambiar");
-	} catch (JSONException e) {
-		// TODO Auto-generated catch block
-		e.printStackTrace();
-	}
-}
 }
 
 

@@ -13,7 +13,9 @@ public class Habitacion {
 	
 
 	
-		
+		public Habitacion() {
+			
+		}
 	
 	public Habitacion(int numero_habitacion, boolean ocupada, int valor_habitacion) {//en tipo habitacion se tiene que usar variable 
 		this.numero_habitacion = numero_habitacion;
