@@ -11,6 +11,8 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import Generecidad.MapaGenerico;
+
 public class Pasajero 
 {
 	private String nombre;
@@ -20,8 +22,7 @@ public class Pasajero
 	private String telefono;
 	private String nacionalidad;
 	private int idPasajero;
-	private Integer CantidadPersona;
-	HashMap<Date,Habitacion> habitacion;
+	MapaGenerico<Date,Habitacion> habitacion;
 	
 	
 	// constructores
@@ -36,7 +37,7 @@ public class Pasajero
 		telefono = null;
 		nacionalidad = null;
 		idPasajero = 0;
-		habitacion=new HashMap<>();
+		habitacion=new MapaGenerico<>();
 	}
 	
 	public Pasajero(String nombreRecib, String apellidoRecib, String dniRecib, String numTarjetaCreditoRecib, String telefonoRecib,
@@ -52,14 +53,6 @@ public class Pasajero
 	}
 
 	// setters y getters
-	
-	public Integer getCantidadPersona() {
-		return CantidadPersona;
-	}
-
-	public void setCantidadPersona(Integer cantidadPersona) {
-		CantidadPersona = cantidadPersona;
-	}
 	
 	public String getNombre() {
 		return nombre;
@@ -120,7 +113,7 @@ public class Pasajero
 
 	public void addHabitacion(Habitacion habitacionApasar,Date fecha)
 	{
-		habitacion.put(fecha, habitacionApasar);
+		habitacion.Add(fecha, habitacionApasar);
 	}
 	// metodos
 	
@@ -147,7 +140,7 @@ public class Pasajero
 	public String toString() 
 	{
 		return "Pasajero [nombre=" + nombre + ", apellido=" + apellido + ", dni=" + dni + ", numTarjetaCredito="
-				+ numTarjetaCredito + ", telefono=" + telefono + ", Nacionalidad=" + nacionalidad  + ", idPasajero=" + idPasajero + "]";
+				+ numTarjetaCredito + ", telefono=" + telefono + ", Nacionalidad=" + nacionalidad   + ", idPasajero=" + idPasajero + "]";
 	}
 	
 	/**

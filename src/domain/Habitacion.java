@@ -9,6 +9,7 @@ public class Habitacion {
 	private boolean ocupada; //incluye si esta reservada como ocuapda
 	private int valor_habitacion; //Simple, Doble, Deluxe
 	private int cantidad_de_dias;
+	private int cantidadPersona;
 	private double costo;
 	
 
@@ -17,9 +18,10 @@ public class Habitacion {
 			
 		}
 	
-	public Habitacion(int numero_habitacion, boolean ocupada, int valor_habitacion) {//en tipo habitacion se tiene que usar variable 
+	public Habitacion(int numero_habitacion, boolean ocupada, int valor_habitacion,int cantidadPersona) {//en tipo habitacion se tiene que usar variable 
 		this.numero_habitacion = numero_habitacion;
 		this.ocupada = ocupada;	
+		this.cantidadPersona=cantidadPersona;
 		costo=(cantidad_de_dias*valor_habitacion);
 	}
 
@@ -95,6 +97,14 @@ public class Habitacion {
 		
 		
 		return A;
+	}
+
+	public int getCantidadPersona() {
+		return cantidadPersona;
+	}
+
+	public void setCantidadPersona(int nuevacantidadPersona) {
+		cantidadPersona = nuevacantidadPersona;
 	}
 	
 
