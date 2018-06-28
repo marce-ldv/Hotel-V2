@@ -19,23 +19,23 @@ public class Empleado extends Usuario
 	// metodos
 	
 	
-	public boolean pedirComida(String comida)
+	public boolean pedirComida(String comida, int idPasajero)
 	{
-		boolean comidaEntregada = false;
+		boolean comidaEntregada = true;
 		
 		return comidaEntregada;
 	}
 	
 	public boolean pedirBebida(String bebida)
 	{
-		boolean bebidaEntregada = false;
+		boolean bebidaEntregada = true;
 		
 		return bebidaEntregada;		
 	}
 	
 	public boolean pedirPostres(String postre)
 	{
-		boolean postreEntregado = false;
+		boolean postreEntregado = true;
 		
 		return postreEntregado;
 	}

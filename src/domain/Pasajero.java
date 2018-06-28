@@ -1,18 +1,13 @@
 package domain;
 
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Date;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Scanner;
 
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
 import Generecidad.MapaGenerico;
-import clases.Habitacion;
 
 public class Pasajero 
 {
@@ -26,6 +21,7 @@ public class Pasajero
 	MapaGenerico<Date,Habitacion> mapaHabitaciones;
 	private Integer CantidadPersona;
 	private Integer estadoPasajero; // 0 = ya se fue / 1 = todavia no llego / 2 = esta en el hotel
+	private ArrayList<Integer> listaConsumosPasajero;
 
 	
 	// constructores
@@ -128,8 +124,13 @@ public class Pasajero
 		mapaHabitaciones.listar();
 	}
 	
-	public void pedirComida(int idPasajero)
+	public void pedirComida(int idPasajero)  
 	{
+		
+		
+		
+		
+		
 		
 	}
 	
