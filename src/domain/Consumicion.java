@@ -8,6 +8,7 @@ public class Consumicion
 	private double costo;
 	private int idReserva;
 	
+	
 	// constructores
 	
 	public Consumicion() 
@@ -44,6 +45,7 @@ public class Consumicion
 	{
 		this.idReserva = idReserva;
 	}
+	
 	
 	// metodos
 	

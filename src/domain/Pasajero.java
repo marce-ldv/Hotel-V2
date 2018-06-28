@@ -17,6 +17,7 @@ public class Pasajero
 	private List historial;
 	private int idPasajero;
 	
+	
 	// constructores
 	
 	
