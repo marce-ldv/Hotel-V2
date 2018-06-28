@@ -8,6 +8,7 @@ import exepciones.LimiteExcepcion;
 import files.JsonUtiles;
 
 import java.util.Date;
+import java.util.Iterator;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -16,7 +17,7 @@ import org.json.JSONObject;
 import Generecidad.ListaGenerica;
 import swing.LoginGUI;
 
-public class Hotel {
+public class Hotel{
 
 	private ListaGenerica<Habitacion> listaHabitaciones;
 
@@ -105,7 +106,7 @@ public class Hotel {
 	public void add(Habitacion habitacion){
 		listaHabitaciones.add(habitacion);
 	}
-
+/*
 	public void listar() throws LimiteExcepcion {
 		if (listaHabitaciones != null) {
 			for (Habitacion e : listaHabitaciones) {
@@ -120,13 +121,10 @@ public class Hotel {
 
 	public void listar_Habitaciones_Disponibles() throws LimiteExcepcion,Exception{
 		if (listaHabitaciones != null) {
-			for (Habitacion e : listaHabitaciones)
-			{
-				if (e.getOcupada() == false)
-				{
+			for (Habitacion e : listaHabitaciones){
+				if (e.getOcupada() == false){
 					e.toString();
 				}
-
 			}
 		} else {
 			throw new LimiteExcepcion("lista vacia");
@@ -183,7 +181,7 @@ public class Hotel {
 		//Habitacion reserva= buscar_Habitacion(23);// MArcer: aca necesito un scaner entero
 		
 	}
-
+*/
 	////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 }
