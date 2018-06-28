@@ -35,7 +35,7 @@ public class Hotel{
 	/**
 	 * Devuelve un usuario logueado
 	 * 
-	 * @author Marcelo
+	 * @author Marcelo Fabian Ludovino
 	 * @param user
 	 * @param pass
 	 * @return
@@ -169,8 +169,7 @@ public class Hotel{
 				}
 			}
 		}
-		else 
-		{
+		else{
 			throw new LimiteExcepcion("lista vacia");
 		}
 		System.out.println("no se encontro la habitacion");
