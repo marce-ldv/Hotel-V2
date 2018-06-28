@@ -21,6 +21,7 @@ public class Pasajero
 	private int idPasajero;
 	ArrayList<Habitacion> habitacion;
 	
+	
 	// constructores
 	
 	
