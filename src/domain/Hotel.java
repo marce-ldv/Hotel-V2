@@ -1,7 +1,9 @@
 package domain;
 
 import exepciones.CampoVacioException;
+import exepciones.InvalidPasswordException;
 import exepciones.InicioSesionException;
+import exepciones.InvalidPasswordException;
 import exepciones.InvalidUsernameAndPasswordException;
 import exepciones.InvalidUsernameException;
 import exepciones.LimiteExcepcion;
@@ -50,7 +52,7 @@ public class Hotel{
 	 * @throws JSONException
 	 */
 	public Usuario loguearse(String user, String pass) throws InvalidUsernameAndPasswordException, CampoVacioException,
-			InicioSesionException, JSONException, InvalidUsernameException {
+			InicioSesionException, JSONException, InvalidUsernameException, InvalidPasswordException {
 
 		LoginGUI loginGUI = new LoginGUI();
 		Usuario usu = null;
@@ -71,7 +73,7 @@ public class Hotel{
 					usu.setPassword(pass);
 					usu.setUsuario(user);
 				} else {
-					// invalid pasword exception
+					throw new InvalidPasswordException();
 				}
 			} else {
 				throw new InvalidUsernameException("Nombre de usuario incorrecto");
@@ -185,7 +187,7 @@ public class Hotel{
 		System.out.println("no se encontro la habitacion");
 		return null;
 	}
-	
+	/*
 	public void reservar_Habitacion(Pasajero pasajero){
 		int i=0;
 		ArrayList<Habitacion> aux=new ArrayList<>();
@@ -211,6 +213,8 @@ public class Hotel{
 			e.printStackTrace();
 		}
 	}
+	*/
+	
 	public void llegada_Pasajero_Al_hotel(Pasajero pasajero)// solo lo elimino de la lista de reserva pero no habilito las habitaciones ni completo la reserva del pasajero hasta que se vaya
 	{
 		try {

@@ -3,10 +3,7 @@ package swing;
 import app.JavaUtiles;
 import domain.Hotel;
 import domain.Usuario;
-import exepciones.CampoVacioException;
-import exepciones.InicioSesionException;
-import exepciones.InvalidUsernameAndPasswordException;
-import exepciones.InvalidUsernameException;
+import exepciones.*;
 import files.JsonUtiles;
 import org.json.JSONException;
 
@@ -229,8 +226,10 @@ public class LoginGUI extends JFrame implements ActionListener{
                    
                 } catch (JSONException e) {
                     e.printStackTrace();
+                } catch(InvalidPasswordException e){
+                    e.printStackTrace();
                 }
-                
+
             } catch (CampoVacioException e) {
                 JOptionPane.showMessageDialog(null,"Debe completar todos los campos");
                 try {
@@ -244,6 +243,8 @@ public class LoginGUI extends JFrame implements ActionListener{
                 } catch (InicioSesionException e1) {
                     e1.printStackTrace();
                 } catch (JSONException e1) {
+                    e1.printStackTrace();
+                } catch(InvalidPasswordException e1){
                     e1.printStackTrace();
                 }
             } catch (InvalidUsernameException e) {
@@ -260,6 +261,8 @@ public class LoginGUI extends JFrame implements ActionListener{
                     e1.printStackTrace();
                 } catch (JSONException e1) {
                     e1.printStackTrace();
+                } catch(InvalidPasswordException e1){
+                    e1.printStackTrace();
                 }
             } catch (InvalidUsernameAndPasswordException e) {
                 JOptionPane.showMessageDialog(null,"Usuario o contrasenia incorrectos");
@@ -275,6 +278,8 @@ public class LoginGUI extends JFrame implements ActionListener{
                     e1.printStackTrace();
                 } catch (JSONException e1) {
                     e1.printStackTrace();
+                } catch(InvalidPasswordException e1){
+                    e1.printStackTrace();
                 }
             }catch (InicioSesionException ex){
                 JOptionPane.showMessageDialog(null,"No has podido iniciar sesion"+ex.informa());
@@ -289,6 +294,8 @@ public class LoginGUI extends JFrame implements ActionListener{
                 } catch (InicioSesionException e) {
                     e.printStackTrace();
                 } catch (JSONException e) {
+                    e.printStackTrace();
+                } catch(InvalidPasswordException e){
                     e.printStackTrace();
                 }
             }
