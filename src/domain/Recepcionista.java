@@ -14,13 +14,13 @@ public class Recepcionista extends Usuario {
 		listaPasajero= new ArrayList<>();
 	}
 
-	public void AgregarAlHistoial(Pasajero pajero,Integer dNI) {//el hotel pide 
+	public void AgregarAlHistoial(Pasajero pajero,String dNI) {//el hotel pide 
 		listaPasajero.add(pajero);
 	}
-	public void AgregarALaReserva(Pasajero pasajero, Integer DNI)
+	public void AgregarALaReserva(Pasajero pasajero, String string)
 	{
 		try {
-			reserva.add(pasajero, DNI);
+			reserva.add(pasajero, string);
 		} catch (LimiteExcepcion e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -30,7 +30,7 @@ public class Recepcionista extends Usuario {
 	{
 		reserva.listar();
 	}
-	public void pasarDeReservaAHistorial(Integer DNI)
+	public void pasarDeReservaAHistorial(String DNI)
 	{
 		try {
 			pasajero=reserva.buscarPasajero(DNI);
