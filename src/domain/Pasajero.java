@@ -2,6 +2,8 @@ package domain;
 
 import java.lang.reflect.Array;
 import java.util.ArrayList;
+import java.util.Date;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Scanner;
 
@@ -17,9 +19,9 @@ public class Pasajero
 	private String numTarjetaCredito;
 	private String telefono;
 	private String nacionalidad;
-	private List historial;
 	private int idPasajero;
-	ArrayList<Habitacion> habitacion;
+	private Integer CantidadPersona;
+	HashMap<Date,Habitacion> habitacion;
 	
 	// constructores
 	
@@ -32,13 +34,12 @@ public class Pasajero
 		numTarjetaCredito = null;
 		telefono = null;
 		nacionalidad = null;
-		historial = null;
 		idPasajero = 0;
-		habitacion=new ArrayList<>();
+		habitacion=new HashMap<>();
 	}
 	
 	public Pasajero(String nombreRecib, String apellidoRecib, String dniRecib, String numTarjetaCreditoRecib, String telefonoRecib,
-			String nacionalidadRecib, List historialRecib, int idPasajeroRecib) 
+			String nacionalidadRecib, int idPasajeroRecib) 
 	{
 		nombre = nombreRecib;
 		apellido = apellidoRecib;
@@ -46,12 +47,18 @@ public class Pasajero
 		numTarjetaCredito = numTarjetaCreditoRecib;
 		telefono = telefonoRecib;
 		nacionalidad = nacionalidadRecib;
-		historial = historialRecib;
 		idPasajero = idPasajeroRecib;
 	}
 
 	// setters y getters
 	
+	public Integer getCantidadPersona() {
+		return CantidadPersona;
+	}
+
+	public void setCantidadPersona(Integer cantidadPersona) {
+		CantidadPersona = cantidadPersona;
+	}
 	
 	public String getNombre() {
 		return nombre;
@@ -101,14 +108,7 @@ public class Pasajero
 		this.nacionalidad = nacionalidad;
 	}
 
-	public List getHistorial() {
-		return historial;
-	}
-
-	public void setHistorial(List historial) {
-		this.historial = historial;
-	}
-
+	
 	public int getIdPasajero() {
 		return idPasajero;
 	}
@@ -117,9 +117,9 @@ public class Pasajero
 		this.idPasajero = idPasajero;
 	}
 
-	public void addHabitacion(Habitacion habitacionApasar)
+	public void addHabitacion(Habitacion habitacionApasar,Date fecha)
 	{
-		habitacion.add(habitacionApasar);
+		habitacion.put(fecha, habitacionApasar);
 	}
 	// metodos
 	
@@ -134,8 +134,7 @@ public class Pasajero
 			jsonObject.put("dni", dni);
 			jsonObject.put("numTarjetaCredito", numTarjetaCredito);
 			jsonObject.put("telefono", telefono);			
-			jsonObject.put("nacionalidad", nacionalidad);			
-			jsonObject.put("historial", historial);			
+			jsonObject.put("nacionalidad", nacionalidad);				
 			jsonObject.put("idPasajero", idPasajero);		
 			jsonArray.put("consumo");
 
@@ -147,8 +146,7 @@ public class Pasajero
 	public String toString() 
 	{
 		return "Pasajero [nombre=" + nombre + ", apellido=" + apellido + ", dni=" + dni + ", numTarjetaCredito="
-				+ numTarjetaCredito + ", telefono=" + telefono + ", Nacionalidad=" + nacionalidad + ", historial="
-				+ historial + ", idPasajero=" + idPasajero + "]";
+				+ numTarjetaCredito + ", telefono=" + telefono + ", Nacionalidad=" + nacionalidad  + ", idPasajero=" + idPasajero + "]";
 	}
 	
 	/**
@@ -255,6 +253,8 @@ public class Pasajero
 		}	
 		
 	}
+
+	
 	
 	
 	
