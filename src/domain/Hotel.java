@@ -7,22 +7,22 @@ import exepciones.InvalidUsernameException;
 import exepciones.LimiteExcepcion;
 import files.JsonUtiles;
 
+import java.util.ArrayList;
 import java.util.Date;
-import java.util.Iterator;
+import java.util.List;
 
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import Generecidad.ListaGenerica;
 import swing.LoginGUI;
 
 public class Hotel{
 
-	private ListaGenerica<Habitacion> listaHabitaciones;
+	private List<Habitacion> listaHabitaciones;
 
 	public Hotel() {
-		listaHabitaciones = new ListaGenerica<>();
+		listaHabitaciones = new ArrayList<>();
 	}
 
 	//////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -106,7 +106,7 @@ public class Hotel{
 	public void add(Habitacion habitacion){
 		listaHabitaciones.add(habitacion);
 	}
-/*
+
 	public void listar() throws LimiteExcepcion {
 		if (listaHabitaciones != null) {
 			for (Habitacion e : listaHabitaciones) {
@@ -181,7 +181,4 @@ public class Hotel{
 		//Habitacion reserva= buscar_Habitacion(23);// MArcer: aca necesito un scaner entero
 		
 	}
-*/
-	////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
 }

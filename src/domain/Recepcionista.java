@@ -1,25 +1,17 @@
 package domain;
 
-import java.awt.List;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Comparator;
-import java.util.Date;
-import java.util.HashMap;
-import java.util.Map;
-
-import Generecidad.ListaGenerica;
 import exepciones.LimiteExcepcion;
 
-import java.util.Iterator;
+import java.util.ArrayList;
+import java.util.List;
 
 public class Recepcionista extends Usuario {
 	Pasajero pasajero;
 	Reserva reserva;
-	ListaGenerica<Pasajero> listaPasajero;//este es el historial
+	List<Pasajero> listaPasajero;//este es el historial
 	public Recepcionista() {
 		super();
-		listaPasajero= new ListaGenerica<>();
+		listaPasajero= new ArrayList<>();
 	}
 
 	public void AgregarAlHistoial(Pasajero pajero,Integer dNI) {//el hotel pide 
