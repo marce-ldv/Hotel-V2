@@ -163,16 +163,12 @@ public class Hotel {
 
 	public Habitacion buscar_Habitacion(int numero_de_habitacion)throws LimiteExcepcion,Exception{
 		
-		if (listaHabitaciones != null)
-		{
-			for (Habitacion e : listaHabitaciones)
-			{
-				if ((( e.getOcupada() == false ) && ( e.getNumero_habitacion() == numero_de_habitacion)))
-				{	
+		if (listaHabitaciones != null){
+			for (Habitacion e : listaHabitaciones){
+				if ((( e.getOcupada() == false ) && ( e.getNumero_habitacion() == numero_de_habitacion))){	
 					return e;
 				}
-				else if(( e.getOcupada()) &&  (e.getNumero_habitacion() == numero_de_habitacion))
-				{
+				else if(( e.getOcupada()) &&  (e.getNumero_habitacion() == numero_de_habitacion)){
 					System.out.println("La habitacion esta ocupada");
 					return null;
 				}

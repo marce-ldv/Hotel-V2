@@ -22,19 +22,9 @@ public class Pasajero
 	private String telefono;
 	private String nacionalidad;
 	private int idPasajero;
-<<<<<<< HEAD
 	MapaGenerico<Date,Habitacion> mapaHabitaciones;
 	private Integer CantidadPersona;
 	private Integer estadoPasajero; // 0 = ya se fue / 1 = todavia no llego / 2 = esta en el hotel
-=======
-
-	MapaGenerico<Date,Habitacion> habitacion;
-
-	private Integer CantidadPersona;
-	private Integer estadoPasajero; // 0 = ya se fue / 1 = todavia no llego / 2 = esta en el hotel
-	HashMap<Date,Habitacion> reservaPasajero;
->>>>>>> a7033111be56883c3a151b70d4ca99f48c5f3198
-	
 	
 	// constructores
 	

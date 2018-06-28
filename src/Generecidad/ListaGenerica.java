@@ -12,10 +12,11 @@ import files.JsonUtiles;
 
 public class ListaGenerica<T> {
 
-	List<T> lista = new ArrayList<>();
+	List<T> lista;
 
 	public ListaGenerica() {
 		T t;
+		lista = new ArrayList<>();
 	}
 
 	public void add(T t) {
