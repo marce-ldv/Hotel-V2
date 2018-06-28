@@ -198,7 +198,7 @@ public class Hotel{
 				Habitacion habitacion= buscar_Habitacion(23);// MArcer: aca necesito un scaner ente
 				aux.add(habitacion);
 			}
-			Habitacion habitacion= buscar_Habitacion(23);// MArcer: aca necesito un scaner ente
+			
 			Reserva reserva=new Reserva(12-34-5332, 23-34-5332, aux);
 			mapaHabitacionesReservada.addReserva_A_pasajero(pasajero.getDni(),reserva);//le sapamos el DNI
 			//pasajero.addHabitacion(habitacion, fecha); // terminar
