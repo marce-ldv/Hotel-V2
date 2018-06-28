@@ -2,6 +2,7 @@ package Generecidad;
 
 import java.util.ArrayList;
 import java.util.Iterator;
+import java.util.List;
 import java.util.Map;
 
 import org.json.JSONArray;
@@ -11,15 +12,14 @@ import files.JsonUtiles;
 
 public class ListaGenerica<T> {
 
-	ArrayList<T> lista = new ArrayList<>();
+	List<T> lista = new ArrayList<>();
 
 	public ListaGenerica() {
 		T t;
 	}
 
 	public void add(T t) {
-		
-			lista.add(t);
+		lista.add(t);
 	}
 
 	public void agregar_A_lista(T t) {

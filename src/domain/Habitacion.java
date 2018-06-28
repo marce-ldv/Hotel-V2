@@ -37,6 +37,7 @@ public class Habitacion {
 
 
 	public boolean getOcupada() {
+			ocupada = true;
 		return ocupada;
 	}
 
