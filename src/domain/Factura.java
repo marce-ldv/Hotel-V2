@@ -13,7 +13,7 @@ import org.json.JSONObject;
 public class Factura {
 
 	// Datos del vendedor (hotel)
-	private final String Nombre_empresa = "Trivago";
+	private final String Nombre_empresa = "Hotel Gran Lago";
 	private final String Razon_social = "Trivago S.A";
 	private final String Numero_cuit = "30690009964";
 	private final String ingresos_brutos = "30-69000996-4";
