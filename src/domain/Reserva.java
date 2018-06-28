@@ -10,7 +10,7 @@ public class Reserva {
 	// private Integer DNI;
 	private static int limite;
 	private int tope;
-	MapaGenerico<Integer, Pasajero> reserva;
+	MapaGenerico<String, Pasajero> reserva;
 
 	public Reserva() {
 		reserva = new MapaGenerico<>();
@@ -28,13 +28,10 @@ public class Reserva {
 		this.tope = tope;
 	}
 
-	public MapaGenerico<Integer, Pasajero> getReserva() {
-		return reserva;
-	}
 
-	public void add(Pasajero pasajero, Integer DNI) throws LimiteExcepcion {
+	public void add(Pasajero pasajero, String string) throws LimiteExcepcion {
 		if (limite < tope) {
-			reserva.Add(DNI, pasajero);
+			reserva.Add(string, pasajero);
 			limite++;
 		} else {
 			throw new LimiteExcepcion("Aeropuerto lleno");
@@ -46,7 +43,7 @@ public class Reserva {
 		reserva.listar();
 	}
 
-	public Pasajero buscarPasajero(Integer DNI) throws LimiteExcepcion {
+	public Pasajero buscarPasajero(String DNI) throws LimiteExcepcion {
 		try {
 			return reserva.ObtenerClase(DNI);
 		} catch (LimiteExcepcion e) {
