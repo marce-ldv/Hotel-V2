@@ -186,6 +186,8 @@ public class Pasajero
 			for (Reserva e : listaReserva) {
 				jsonArray.put(e);
 			}
+			jsonObject.put("cantidad de personas", CantidadPersona);
+			jsonObject.put("estado de pasajeros", estadoPasajero);
 			
 
 			return jsonObject;		
