@@ -69,8 +69,8 @@ public class Usuario {
         Hotel hotel = new Hotel();
         JsonUtiles jsonUt = new JsonUtiles();
         LoginGUI loguinGui=new LoginGUI();
-        JSONArray arregloJSON = new JSONArray(hotel.leerDatosUsuario(tipoUsuario));
-        //JSONArray arregloJSON = new JSONArray();
+        //JSONArray arregloJSON = new JSONArray(hotel.leerDatosUsuario(tipoUsuario));
+        JSONArray arregloJSON = new JSONArray();
         arregloJSON.put(jsonObj);
         jsonUt.grabar(arregloJSON,tipoUsuario);
 
