@@ -128,9 +128,8 @@ public class Pasajero {
 	public void listar_Reserva() {
 		if (listaReserva != null) {
 			for (Reserva e : listaReserva) {
-				e.toString();
+				System.out.println(e.toString());
 			}
-
 		}
 	}
 
@@ -182,7 +181,10 @@ public class Pasajero {
 		jsonArray.put(consumo);
 		return jsonArray;
 	}
+<<<<<<< HEAD
+=======
 
+>>>>>>> 67516de2e503fabb8f5625ad213cf073acf4f7ea
 
 	public JSONObject getFormatoJSON() throws JSONException {
 
