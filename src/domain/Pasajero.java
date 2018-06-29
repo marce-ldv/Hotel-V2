@@ -190,6 +190,10 @@ public class Pasajero {
 		jsonArray.put(consumo);
 		return jsonArray;
 	}
+<<<<<<< HEAD
+
+=======
+>>>>>>> 6ae44bbf5f3465f3b8a1633c18415bbdd728d941
 	public JSONObject getFormatoJSON() throws JSONException {
 
 		JSONObject jsonObject = new JSONObject();
@@ -209,7 +213,7 @@ public class Pasajero {
 			jsonArrayb.put(f.pasarA_JSON());
 		}
 		jsonObject.put("reserva", jsonArray);
-		jsonObject.put("consumido", jsonArrayb);		
+		jsonObject.put("consumido", jsonArrayb);
 		jsonObject.put("cantidad de personas", CantidadPersona);
 		jsonObject.put("estado de pasajeros", estadoPasajero);
 

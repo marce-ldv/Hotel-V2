@@ -56,11 +56,20 @@ public class RecepcionistaGUI extends JFrame {
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				JOptionPane.showMessageDialog(null,"Este boton agrega una reserva");
+<<<<<<< HEAD
+
+				//form pasajero
+				hotel.reservar_Habitacion(new Pasajero("pepe", "benitez", "2323234", "32432422", "6756754456",
+						"Venezuela", 1));
+				//hotel.reservar_Habitacion(new Pasajero("peasdpe", "benisadtez", "234567", "32432422", "6756754456",
+				//		"Peru", 2));
+=======
 				Pasajero pasajero=new Pasajero("pepe", "benitez", "2323234", "32432422", "6756754456",
 						"Venezuela", 1);
 				hotel.reservar_Habitacion(pasajero);
 				JOptionPane.showMessageDialog(null,"El pasajero se agrego exitosamente");
 				//hotel.reservar_Habitacion(new Pasajero("peasdpe", "benisadtez", "234567", "32432422", "6756754456","Peru", 2));
+>>>>>>> 6ae44bbf5f3465f3b8a1633c18415bbdd728d941
 				try{
 					hotel.listar_Habitaciones_Ocupadas();
 				} catch(Exception e){
