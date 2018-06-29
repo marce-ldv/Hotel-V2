@@ -12,6 +12,8 @@ public class MiniBar <T extends AlimentosParaConsumo>// recibira alimentos
 {
 
 	private ArrayList<AlimentosParaConsumo> alimentos;
+	private ArrayList<AlimentosParaConsumo> postres;
+	private ArrayList<AlimentosParaConsumo> bebidas;
 
 	
 	// constructores	
