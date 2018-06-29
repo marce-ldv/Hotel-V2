@@ -10,7 +10,6 @@ import exepciones.LimiteExcepcion;
 
 public class Reserva {
 
-	// private Integer DNI;
 	private Date check_In;
 	private Date check_Out;
 	ArrayList<Habitacion> listaHabitaciones;

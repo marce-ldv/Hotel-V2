@@ -72,7 +72,7 @@ public class MapaGenerico<K, T> {
 		return null;
 	}
 
-	public <K extends Pasajero> void addReserva_A_pasajero(String k, Reserva reserva, ArrayList<Habitacion> listaHabitaciones,Pasajero pasajero) throws LimiteExcepcion {
+	public void addReserva_A_pasajero(String k, Reserva reserva, ArrayList<Habitacion> listaHabitaciones,Pasajero pasajero) throws LimiteExcepcion {
 		int i = 0;
 		Reserva a;
 		Iterator it = mapaGenerico.entrySet().iterator();
@@ -80,7 +80,7 @@ public class MapaGenerico<K, T> {
 			Map.Entry me = (Map.Entry<K, T>) it.next();
 			K d = (K) me.getKey();
 			T t = (T) me.getValue();
-			if (k == d.getDni()){ //si el dni coindcide con el string.. then
+			if (k == d){ //si el dni coindcide con el string.. then
 				a = pasajero.ultima_Posicion_Valida_Reserva();
 
 				if(a.isCompletado()==false && a!=null){
@@ -99,19 +99,28 @@ public class MapaGenerico<K, T> {
 
 	}
 
-	public <K extends Pasajero> void Cancelar_reserva(String k) throws LimiteExcepcion {
+	public void Cancelar_reserva(Pasajero pasajero) throws LimiteExcepcion {
 		Iterator it = mapaGenerico.entrySet().iterator();
+		int i=0;
+		System.out.println(mapaGenerico.size());
+		
 		while (it.hasNext()) {
 			Map.Entry me = (Map.Entry<K, T>) it.next();
 			K d = (K) me.getKey();
 			T t = (T) me.getValue();
-			if (k == d.getDni()) {
-				d.eliminar_ultimaReserva();
+			if (pasajero.getDni() == d) {
+				pasajero.eliminar_ultimaReserva();
+			System.out.println("La reserva fue cancelada");
+			mapaGenerico.remove(pasajero.getDni());
+			i=1;
+			}
+			if(i==0) {
+				System.out.println("no se encontro la reserva");
 			}
 		}
-		mapaGenerico.remove(k);
+		
 
-		System.out.println("La reserva fue cancelada");
+		
 	}
 
 	public JSONArray exportarJson(String a) throws JSONException {

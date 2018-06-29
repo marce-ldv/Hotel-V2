@@ -114,9 +114,7 @@ public class Hotel{
 	 * @author Rodri
 	 */
 	
-<<<<<<< HEAD
 
-=======
 	public void pedirComida (Pasajero p, String nombre, int cantidad)
 	{
 		p.pedirComidass(nombre, cantidad);
@@ -137,7 +135,6 @@ public class Hotel{
 		float resultado= costoFinal(p);
 		p.crearFactura(p.getNombre(), resultado);
 	}
->>>>>>> 67516de2e503fabb8f5625ad213cf073acf4f7ea
 
 	///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 	
@@ -267,6 +264,7 @@ public class Hotel{
 			}*/
 			Reserva reserva=new Reserva(checkIn, checkOut, aux);//aca deberia crear la reserva
 			mapaHabitacionesReservada.addReserva_A_pasajero(pasajero.getDni(),reserva,aux,pasajero);//le pasamos el DNI
+			mapaHabitacionesReservada.Add(pasajero.getDni(), reserva);
 			//System.out.println("la lista de la resrva:");
 			//System.out.println(reserva.listaHabitaciones);
 			
@@ -286,12 +284,12 @@ public class Hotel{
 			e.printStackTrace();
 		}
 	}
-	public void cancelar_Reserva(String DNI)
+	public void cancelarReserva(Pasajero pasajero)
 	{
 		try {
-			mapaHabitacionesReservada.Cancelar_reserva(DNI);
+			mapaHabitacionesReservada.Cancelar_reserva(pasajero);
 		} catch (LimiteExcepcion e) {
-			// TODO Auto-generated catch block
+			System.out.println("error en cancelar_Reserva");
 			e.printStackTrace();
 		}
 	}

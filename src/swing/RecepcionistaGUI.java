@@ -62,12 +62,14 @@ public class RecepcionistaGUI extends JFrame {
 				JOptionPane.showMessageDialog(null,"El pasajero se agrego exitosamente");
 				//hotel.reservar_Habitacion(new Pasajero("peasdpe", "benisadtez", "234567", "32432422", "6756754456","Peru", 2));
 				try{
-					System.out.println("Entra a listar habitaciones? ");
 					hotel.listar_Habitaciones_Ocupadas();
 				} catch(Exception e){
 					e.printStackTrace();
 				}
 				System.out.println("lista la reserva?");
+				hotel.listarReservaPasajero(pasajero);
+				hotel.cancelarReserva(pasajero);
+				System.out.println("sera eliminada?");
 				hotel.listarReservaPasajero(pasajero);
 			}
 		});

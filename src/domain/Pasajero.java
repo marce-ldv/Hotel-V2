@@ -131,6 +131,10 @@ public class Pasajero {
 				System.out.println(e.toString());
 			}
 		}
+		else
+		{
+			System.out.println("el clietne no tiene reserva");
+		}
 	}
 
 	public void eliminar_ultimaReserva() {
@@ -138,9 +142,13 @@ public class Pasajero {
 			for (Reserva e : listaReserva) {
 				if (e.isCompletado() == false) {
 					listaReserva.remove(e);
-					System.out.println("La reserva:" + e.toString() + "fue eliminada");
+					System.out.println("La reserva:" + e.toString() + " fue eliminada");
 				}
 			}
+		}
+		else
+		{
+			System.out.println("no se encontro  reserva");
 		}
 	}
 	
@@ -164,6 +172,7 @@ public class Pasajero {
 	}
 
 	public Reserva ultima_Posicion_Valida_Reserva() {
+	
 		if (listaReserva != null) {
 			for (Reserva e : listaReserva) {
 				if (e.isCompletado() == false) {
@@ -181,11 +190,6 @@ public class Pasajero {
 		jsonArray.put(consumo);
 		return jsonArray;
 	}
-<<<<<<< HEAD
-=======
-
->>>>>>> 67516de2e503fabb8f5625ad213cf073acf4f7ea
-
 	public JSONObject getFormatoJSON() throws JSONException {
 
 		JSONObject jsonObject = new JSONObject();
