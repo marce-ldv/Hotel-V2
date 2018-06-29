@@ -223,11 +223,18 @@ public class Hotel{
 	public void reservar_Habitacion(Pasajero pasajero){
 
 		ArrayList<Habitacion> aux=new ArrayList<>();
+<<<<<<< HEAD
 		int anio=0, mes=0, dia=0;
 		Date checkIn=null;
 		Date checkOut=null;
 		boolean op = true;
 		//agregar metodo de type input
+=======
+		int anio, mes , dia;
+		Date checkIn;
+		Date checkOut;
+		
+>>>>>>> 4ef6362978fb94a2d930b367d0b575a6f2c1d63f
 		try {
 			while(op){
 				listar_Habitaciones_Disponibles(1);
@@ -236,6 +243,14 @@ public class Hotel{
 				aux.add(habitacion);
 				op = false;
 			}
+<<<<<<< HEAD
+=======
+			
+			
+			checkIn=new Date(anio,mes,dia);
+			
+			checkOut=new Date(anio,mes,dia);
+>>>>>>> 4ef6362978fb94a2d930b367d0b575a6f2c1d63f
 
 			checkIn = new Date(anio,mes,dia);
 			checkOut = new Date(anio,mes,dia);
