@@ -97,9 +97,11 @@ public class RecepcionistaGUI extends JFrame {
 		JButton button_2 = new JButton("Ver habitaciones disponibles");
 		button_2.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				
 				JOptionPane.showMessageDialog(null,"Este boton comprueba habitaciones disponibles");
 				try {
 					hotel.listar_Habitaciones_Disponibles();
+					
 				} catch (LimiteExcepcion e1) {
 					// TODO Auto-generated catch block
 					e1.printStackTrace();
@@ -115,6 +117,7 @@ public class RecepcionistaGUI extends JFrame {
 		JButton button_3 = new JButton("Finalizar estadia");
 		button_3.setBounds(22, 353, 406, 41);
 		contentPane.add(button_3);
+		
 		
 		JButton button_4 = new JButton("Calcular costo total");
 		button_4.setBounds(22, 301, 406, 41);
