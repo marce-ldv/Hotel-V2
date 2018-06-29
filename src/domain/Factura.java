@@ -46,6 +46,27 @@ public class Factura {
 	
 
 	// Constructores
+	
+	public Factura(String nombre_comprador, String cuit_comprador, String domicilio_comprador,
+			String condicion_de_venta, String comprador_condicion_frente_al_iva, int nro_de_compra, int cantidad_dias,
+			double descuento, double monto_total) {
+		this.nombre_comprador = nombre_comprador;
+		this.cuit_comprador = cuit_comprador;
+		this.domicilio_comprador = domicilio_comprador;
+		this.condicion_de_venta = condicion_de_venta;
+		this.cantidad_dias = cantidad_dias;
+		this.comprador_condicion_frente_al_iva = comprador_condicion_frente_al_iva;
+		Index++;
+		this.nro_de_compra = Index;
+		fecha_de_emision = new Date();
+		this.descuento = descuento;
+		if (comprador_condicion_frente_al_iva.equals("responsable inscripto")) {
+			tipo = 'A';
+		} else {
+			tipo = 'B';
+		}
+		this.monto_total=monto_total*(1-(descuento/100))*1.21;
+	}
 
 	public Factura(String nombre_comprador, String cuit_comprador, String domicilio_comprador,
 			String condicion_de_venta, String comprador_condicion_frente_al_iva, int nro_de_compra,
