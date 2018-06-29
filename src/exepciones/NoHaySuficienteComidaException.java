@@ -2,7 +2,7 @@ package exepciones;
 
 import java.io.IOException;
 
-public class NoHaySuficienteComidaException extends IOException 
+public class NoHaySuficienteComidaException extends Exception 
 {
 	public NoHaySuficienteComidaException(String msg)
 	{
