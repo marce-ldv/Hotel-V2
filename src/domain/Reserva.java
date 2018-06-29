@@ -3,14 +3,15 @@ package domain;
 import java.util.ArrayList;
 import java.util.Date;
 
+import org.json.JSONArray;
 import org.json.JSONException;
+import org.json.JSONObject;
 
 import Generecidad.MapaGenerico;
 import exepciones.LimiteExcepcion;
 
 public class Reserva {
 
-	// private Integer DNI;
 	private Date check_In;
 	private Date check_Out;
 	ArrayList<Habitacion> listaHabitaciones;
@@ -48,7 +49,7 @@ public class Reserva {
 		{
 			for(Habitacion e: listaHabitaciones )
 			{
-				e.toString();
+				System.out.println(e.toString());
 			}
 		
 		}
@@ -66,6 +67,10 @@ public class Reserva {
 		}
 	}
 	
+	public int cantidadHabitaciones()
+	{
+		return listaHabitaciones.size();
+	}
 	public void desabilitar_habitaciones()
 	{
 		if(listaHabitaciones!=null)
@@ -105,7 +110,7 @@ public class Reserva {
 	
 	public String toString()
 	{
-		return "Pasajero [check_In: " + check_In + ", check_Out:" + check_Out + ", Habitaciones:" + listaHabitaciones +"]";
+		return "Reserva [check_In: " + check_In + ", check_Out:" + check_Out + ",Cantida Habitaciones:" + cantidadHabitaciones() +"]";
 	}
 	public boolean isCompletado() {
 		return completado;
@@ -113,6 +118,25 @@ public class Reserva {
 	public void setCompletado(boolean completado) {
 		this.completado = completado;
 	}
+	
+	public JSONObject getFormatoJSON() throws JSONException {
+
+		JSONObject jsonObject = new JSONObject();
+		JSONArray jsonArray = new JSONArray();
+		jsonObject.put("check_In", check_In);
+		jsonObject.put("check_Out", check_Out);
+		jsonObject.put("completado", completado);
+		
+		for (Habitacion e : listaHabitaciones) 
+		{
+			jsonArray.put(e);
+		}
+		
+		jsonObject.put("listaHabitaciones", jsonArray);		
+		
+		return jsonObject;
+	}
+
 
 	
 }

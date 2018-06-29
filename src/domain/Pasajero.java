@@ -113,14 +113,27 @@ public class Pasajero {
 	public Integer getEstadoPasajero() {
 		return estadoPasajero;
 	}
+	
+	
+
+	public ArrayList<Servicio> getServicios() {
+		return servicios;
+	}
+
+	public void setServicios(ArrayList<Servicio> servicios) {
+		this.servicios = servicios;
+	}
 
 	// metodos
 	public void listar_Reserva() {
 		if (listaReserva != null) {
 			for (Reserva e : listaReserva) {
-				e.toString();
+				System.out.println(e.toString());
 			}
-
+		}
+		else
+		{
+			System.out.println("el clietne no tiene reserva");
 		}
 	}
 
@@ -129,13 +142,17 @@ public class Pasajero {
 			for (Reserva e : listaReserva) {
 				if (e.isCompletado() == false) {
 					listaReserva.remove(e);
-					System.out.println("La reserva:" + e.toString() + "fue eliminada");
+					System.out.println("La reserva:" + e.toString() + " fue eliminada");
 				}
 			}
 		}
+		else
+		{
+			System.out.println("no se encontro  reserva");
+		}
 	}
 	
-	public void pedirComida (String nombre, int cantidadComida) {
+	public void pedirComidass (String nombre, int cantidadComida) {
 		MiniBar a = new MiniBar<>();
 		float precio;
 		try {
@@ -155,6 +172,7 @@ public class Pasajero {
 	}
 
 	public Reserva ultima_Posicion_Valida_Reserva() {
+	
 		if (listaReserva != null) {
 			for (Reserva e : listaReserva) {
 				if (e.isCompletado() == false) {
@@ -172,7 +190,10 @@ public class Pasajero {
 		jsonArray.put(consumo);
 		return jsonArray;
 	}
+<<<<<<< HEAD
 
+=======
+>>>>>>> 6ae44bbf5f3465f3b8a1633c18415bbdd728d941
 	public JSONObject getFormatoJSON() throws JSONException {
 
 		JSONObject jsonObject = new JSONObject();
@@ -185,11 +206,11 @@ public class Pasajero {
 		jsonObject.put("telefono", telefono);
 		jsonObject.put("nacionalidad", nacionalidad);
 		jsonObject.put("idPasajero", idPasajero);
-		for (Reserva e : listaReserva) {
+		for (Reserva e : listaReserva) {//pasar a JSONOBject
 			jsonArray.put(e);
 		}
 		for (Servicio f: servicios) {
-			jsonArrayb.put(f);
+			jsonArrayb.put(f.pasarA_JSON());
 		}
 		jsonObject.put("reserva", jsonArray);
 		jsonObject.put("consumido", jsonArrayb);
@@ -204,6 +225,11 @@ public class Pasajero {
 		{
 			System.out.println(e);
 		}
+	}
+	
+	public void crearFactura (String nombre, float monto_total) {
+		Factura A =new Factura(nombre, monto_total);
+		A.imprimirFactura();
 	}
 
 	@Override

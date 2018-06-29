@@ -105,22 +105,7 @@ public class Hotel{
 	 * @author Ignacio Chiaradia
 	 */
 	
-	public float pedirComida(Pasajero p, MiniBar minibar, String nombreComidaAPedir, int cantidadComidAPedir) throws PasajeroNoEstaEnHotelException, ComidaInexistenteException, NoHaySuficienteComidaException
-	{
-		float costoPedidodelPasajero = 0;
-		
-		if(p.getEstadoPasajero() == 2)
-		{
-			costoPedidodelPasajero = minibar.darComidaToPasajeroYretornaCosto(nombreComidaAPedir, cantidadComidAPedir);
-			
-			return costoPedidodelPasajero;
-			
-		}
-		else
-		{
-			throw new PasajeroNoEstaEnHotelException("Exception");  
-		}		
-	}
+	
 
 	///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 	/* Rodri */
@@ -129,9 +114,41 @@ public class Hotel{
 	 * 
 	 * @author Rodri
 	 */
+	
+
+	public void pedirComida (Pasajero p, String nombre, int cantidad)
+	{
+		p.pedirComidass(nombre, cantidad);
+	}
+	
+	public float costoFinal (Pasajero p) {
+		float costoServicios=0;
+		for(Servicio e: p.getServicios())
+		{
+			costoServicios+=e.getValor();
+		}
+		costoServicios+=fin_Estadia(p);
+		return costoServicios;
+	}
+	
+	
+	public void facturar (Pasajero p) {
+		float resultado= costoFinal(p);
+		p.crearFactura(p.getNombre(), resultado);
+	}
 
 	///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+<<<<<<< HEAD
 	/* El verga corta(Chiappe) */
+=======
+	
+	
+	
+	
+	
+	
+	/* El verga corta (Chiappe) */
+>>>>>>> 6ae44bbf5f3465f3b8a1633c18415bbdd728d941
 	/**
 	 * Aca va los mentodos de Chiappe
 	 * 
@@ -258,12 +275,15 @@ public class Hotel{
 			checkOut = new Date(anio,mes,dia);
 			//Hacer una validacion si esta el pasajero o no esta
 			//en caso que no este, agregarlo a la lista
-			if(validarPasajeroEnLista(pasajero)==false){ //si no esta, se agrega
+			/*if(validarPasajeroEnLista(pasajero)==false){ //si no esta, se agrega
 				System.out.println("Se agrego el pasajero a la lista");
-			}
+			}*/
 			Reserva reserva=new Reserva(checkIn, checkOut, aux);//aca deberia crear la reserva
 			mapaHabitacionesReservada.addReserva_A_pasajero(pasajero.getDni(),reserva,aux,pasajero);//le pasamos el DNI
-			System.out.println(reserva.listaHabitaciones);
+			mapaHabitacionesReservada.Add(pasajero.getDni(), reserva);
+			//System.out.println("la lista de la resrva:");
+			//System.out.println(reserva.listaHabitaciones);
+			
 		} catch (LimiteExcepcion e) {
 			e.printStackTrace();
 		} catch (Exception e) {
@@ -280,12 +300,12 @@ public class Hotel{
 			e.printStackTrace();
 		}
 	}
-	public void cancelar_Reserva(String DNI)
+	public void cancelarReserva(Pasajero pasajero)
 	{
 		try {
-			mapaHabitacionesReservada.Cancelar_reserva(DNI);
+			mapaHabitacionesReservada.Cancelar_reserva(pasajero);
 		} catch (LimiteExcepcion e) {
-			// TODO Auto-generated catch block
+			System.out.println("error en cancelar_Reserva");
 			e.printStackTrace();
 		}
 	}
@@ -310,6 +330,10 @@ public class Hotel{
 		
 		pasajero.arreglo_Consumo(jsonObject);
 		return costo;
+	}
+	public void listarReservaPasajero(Pasajero pasajero)
+	{
+		pasajero.listar_Reserva();
 	}
 
 	/**
