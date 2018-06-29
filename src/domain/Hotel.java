@@ -236,15 +236,18 @@ public class Hotel{
 			while(op){
 				//num hab , num cant personas
 				//listar_Habitaciones_Disponibles(1);
-				MenuAddReservaGUI addReservaGUI = new MenuAddReservaGUI();
-				addReservaGUI.setVisible(true);
-				
-				int numHab = addReservaGUI.getJcomboBoxNumHabitacion();
-				System.out.println("el num de hab es: "+numHab);
-				int cantPers = addReservaGUI.getJcomboBoxCantPersonas();
-				System.out.println("el num de cant pers es: "+cantPers);
-				Habitacion habitacion= buscar_Habitacion(numHab);// MArcer: aca necesito un scaner ente
-				System.out.println("prueba toString");
+
+				/////
+				//MenuAddReservaGUI addReservaGUI = new MenuAddReservaGUI();
+				//addReservaGUI.setVisible(true);
+
+				//int numHab = addReservaGUI.getJcomboBoxNumHabitacion();
+				//System.out.println("el num de hab es: "+numHab);
+				//int cantPers = addReservaGUI.getJcomboBoxCantPersonas();
+				//System.out.println("el num de cant pers es: "+cantPers);
+
+				//Habitacion habitacion= buscar_Habitacion(numHab);// MArcer: aca necesito un scaner ente
+				Habitacion habitacion= buscar_Habitacion(2);// MArcer: aca necesito un scaner ente
 				System.out.println(habitacion.toString());
 				habitacion.setOcupada(true);
 				aux.add(habitacion);

@@ -115,6 +115,10 @@ public class MenuAddReservaGUI extends JFrame {
 		btnNewButton = new JButton("Aceptar");
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				int numHab = getJcomboBoxNumHabitacion();
+				int cantPers = getJcomboBoxCantPersonas();
+				JOptionPane.showMessageDialog(null,"num hab "+numHab);
+				JOptionPane.showMessageDialog(null,"cant pers "+cantPers);
 				dispose();
 			}
 		});
@@ -123,11 +127,11 @@ public class MenuAddReservaGUI extends JFrame {
 	}
 	
 	public int getJcomboBoxNumHabitacion() {
-		return jcomboboxNumHabitacion.getSelectedIndex();
+		return this.jcomboboxNumHabitacion.getSelectedIndex();
 	}
 	
 	public int getJcomboBoxCantPersonas() {
-		return jcomboboxCantPersonas.getSelectedIndex();
+		return this.jcomboboxCantPersonas.getSelectedIndex();
 	}
 	
 	

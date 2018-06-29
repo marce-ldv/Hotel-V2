@@ -3,26 +3,10 @@
   <component name="ChangeListManager">
     <list default="true" id="ddcf32c1-ddd4-4489-8636-92153bcb28b5" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/Generecidad/MapaGenerico.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Generecidad/MapaGenerico.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/domain/Administrador.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/domain/Administrador.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/domain/Empleado.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/domain/Empleado.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bin/domain/Hotel.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/domain/Hotel.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/domain/Pasajero.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/domain/Pasajero.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/domain/Recepcionista.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/domain/Recepcionista.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/domain/Usuario.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/domain/Usuario.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/swing/LoginGUI$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/swing/LoginGUI$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/swing/LoginGUI$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/swing/LoginGUI$2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/swing/LoginGUI$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/swing/LoginGUI$3.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/swing/LoginGUI$4.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/swing/LoginGUI$4.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/swing/LoginGUI.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/swing/LoginGUI.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/swing/RecepcionistaGUI$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/swing/RecepcionistaGUI$1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bin/swing/RecepcionistaGUI.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/swing/RecepcionistaGUI.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/swing/RegistroGUI$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/swing/RegistroGUI$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/swing/RegistroGUI$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/swing/RegistroGUI$2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/swing/RegistroGUI$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/swing/RegistroGUI$3.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/swing/RegistroGUI.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/swing/RegistroGUI.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/domain/Hotel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/domain/Hotel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/domain/Pasajero.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/domain/Pasajero.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/swing/MenuAddReservaGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/swing/MenuAddReservaGUI.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/swing/RecepcionistaGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/swing/RecepcionistaGUI.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/bin/" />
@@ -35,11 +19,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="Hotel.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Hotel.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/domain/Hotel.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="201">
-              <caret line="240" column="16" selection-start-line="240" selection-start-column="16" selection-end-line="240" selection-end-column="16" />
+            <state relative-caret-position="668">
+              <caret line="241" column="49" lean-forward="true" selection-start-line="241" selection-start-column="49" selection-end-line="241" selection-end-column="49" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#4575#4576#0" expanded="true" />
@@ -54,11 +38,9 @@
       <file leaf-file-name="MenuAddReservaGUI.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/swing/MenuAddReservaGUI.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1964">
-              <caret line="18" selection-start-line="18" selection-end-line="18" />
+            <state relative-caret-position="-393">
+              <caret line="92" column="40" selection-start-line="92" selection-start-column="40" selection-end-line="92" selection-end-column="40" />
               <folding>
-                <element signature="e#3756#3757#0" expanded="true" />
-                <element signature="e#3776#3777#0" expanded="true" />
                 <element signature="e#3491#3492#0" expanded="true" />
                 <element signature="e#3546#3547#0" expanded="true" />
                 <element signature="e#3589#3590#0" expanded="true" />
@@ -86,11 +68,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="RecepcionistaGUI.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="RecepcionistaGUI.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/swing/RecepcionistaGUI.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="240">
-              <caret line="51" column="36" lean-forward="true" selection-start-line="51" selection-start-column="36" selection-end-line="51" selection-end-column="36" />
+            <state relative-caret-position="153">
+              <caret line="61" column="37" lean-forward="true" selection-start-line="61" selection-start-column="37" selection-end-line="61" selection-end-column="37" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#1764#1765#0" expanded="true" />
@@ -103,62 +85,10 @@
       <file leaf-file-name="LoginGUI.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/swing/LoginGUI.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-2386">
+            <state relative-caret-position="319">
               <caret line="210" column="74" selection-start-line="210" selection-start-column="74" selection-end-line="210" selection-end-column="74" />
               <folding>
                 <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Usuario.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/domain/Usuario.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="130">
-              <caret line="21" selection-start-line="21" selection-end-line="21" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Pasajero.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/domain/Pasajero.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="661">
-              <caret line="174" selection-start-line="174" selection-end-line="174" />
-              <folding>
-                <element signature="e#1372#1373#0" expanded="true" />
-                <element signature="e#1392#1393#0" expanded="true" />
-                <element signature="e#1433#1434#0" expanded="true" />
-                <element signature="e#1460#1461#0" expanded="true" />
-                <element signature="e#1492#1493#0" expanded="true" />
-                <element signature="e#1514#1515#0" expanded="true" />
-                <element signature="e#1559#1560#0" expanded="true" />
-                <element signature="e#1590#1591#0" expanded="true" />
-                <element signature="e#1617#1618#0" expanded="true" />
-                <element signature="e#1634#1635#0" expanded="true" />
-                <element signature="e#1669#1670#0" expanded="true" />
-                <element signature="e#1690#1691#0" expanded="true" />
-                <element signature="e#1731#1732#0" expanded="true" />
-                <element signature="e#1762#1763#0" expanded="true" />
-                <element signature="e#1825#1826#0" expanded="true" />
-                <element signature="e#1874#1875#0" expanded="true" />
-                <element signature="e#1906#1907#0" expanded="true" />
-                <element signature="e#1928#1929#0" expanded="true" />
-                <element signature="e#1973#1974#0" expanded="true" />
-                <element signature="e#2004#2005#0" expanded="true" />
-                <element signature="e#2040#2041#0" expanded="true" />
-                <element signature="e#2066#2067#0" expanded="true" />
-                <element signature="e#2119#2120#0" expanded="true" />
-                <element signature="e#2158#2159#0" expanded="true" />
-                <element signature="e#2189#2190#0" expanded="true" />
-                <element signature="e#2213#2214#0" expanded="true" />
-                <element signature="e#2259#2260#0" expanded="true" />
-                <element signature="e#2294#2295#0" expanded="true" />
-                <element signature="e#2339#2340#0" expanded="true" />
-                <element signature="e#2371#2372#0" expanded="true" />
-                <element signature="e#2410#2411#0" expanded="true" />
-                <element signature="e#2438#2439#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -228,10 +158,10 @@
         <option value="$PROJECT_DIR$/src/swing/LoginGUI.java" />
         <option value="$PROJECT_DIR$/src/domain/Habitacion.java" />
         <option value="$PROJECT_DIR$/src/Generecidad/MapaGenerico.java" />
-        <option value="$PROJECT_DIR$/src/swing/RecepcionistaGUI.java" />
         <option value="$PROJECT_DIR$/src/domain/Pasajero.java" />
         <option value="$PROJECT_DIR$/src/swing/MenuAddReservaGUI.java" />
         <option value="$PROJECT_DIR$/src/domain/Hotel.java" />
+        <option value="$PROJECT_DIR$/src/swing/RecepcionistaGUI.java" />
       </list>
     </option>
   </component>
@@ -403,17 +333,17 @@
       <window_info anchor="right" id="Capture Analysis" order="3" />
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
       <window_info anchor="right" id="Maven Projects" order="3" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.18443316" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.250423" />
       <window_info anchor="bottom" id="Version Control" order="7" />
       <window_info anchor="bottom" id="Terminal" order="7" />
       <window_info id="Capture Tool" order="2" />
       <window_info id="Designer" order="2" />
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2606383" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2606383" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info id="UI Designer" order="2" />
       <window_info anchor="right" id="Theme Preview" order="3" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.20642978" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.40609136" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -428,17 +358,10 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="11" />
+      <option name="time" value="19" />
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/domain/MiniBar.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="912">
-          <caret line="41" column="10" selection-start-line="41" selection-start-column="10" selection-end-line="41" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/swing/RegistroGUI.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="5136">
@@ -802,6 +725,26 @@
         </state>
       </provider>
     </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_161/src.zip!/javax/swing/plaf/basic/BasicButtonListener.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="146">
+          <caret line="251" selection-start-line="251" selection-end-line="251" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/swing/MenuAddReservaGUI.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-393">
+          <caret line="92" column="40" selection-start-line="92" selection-start-column="40" selection-end-line="92" selection-end-column="40" />
+          <folding>
+            <element signature="e#3491#3492#0" expanded="true" />
+            <element signature="e#3546#3547#0" expanded="true" />
+            <element signature="e#3589#3590#0" expanded="true" />
+            <element signature="e#3643#3644#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/swing/PasajeroGUI.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-444">
@@ -809,10 +752,24 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/domain/Hotel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="668">
+          <caret line="241" column="49" lean-forward="true" selection-start-line="241" selection-start-column="49" selection-end-line="241" selection-end-column="49" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#4575#4576#0" expanded="true" />
+            <element signature="e#4615#4616#0" expanded="true" />
+            <element signature="e#9231#9232#0" expanded="true" />
+            <element signature="e#9265#9266#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/domain/Pasajero.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="661">
-          <caret line="174" selection-start-line="174" selection-end-line="174" />
+        <state relative-caret-position="133">
+          <caret line="38" column="39" selection-start-line="38" selection-start-column="39" selection-end-line="38" selection-end-column="39" />
           <folding>
             <element signature="e#1372#1373#0" expanded="true" />
             <element signature="e#1392#1393#0" expanded="true" />
@@ -852,7 +809,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/swing/LoginGUI.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2386">
+        <state relative-caret-position="319">
           <caret line="210" column="74" selection-start-line="210" selection-start-column="74" selection-end-line="210" selection-end-column="74" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -860,43 +817,14 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/swing/MenuAddReservaGUI.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1964">
-          <caret line="18" selection-start-line="18" selection-end-line="18" />
-          <folding>
-            <element signature="e#3756#3757#0" expanded="true" />
-            <element signature="e#3776#3777#0" expanded="true" />
-            <element signature="e#3491#3492#0" expanded="true" />
-            <element signature="e#3546#3547#0" expanded="true" />
-            <element signature="e#3589#3590#0" expanded="true" />
-            <element signature="e#3643#3644#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/swing/RecepcionistaGUI.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="51" column="36" lean-forward="true" selection-start-line="51" selection-start-column="36" selection-end-line="51" selection-end-column="36" />
+        <state relative-caret-position="153">
+          <caret line="61" column="37" lean-forward="true" selection-start-line="61" selection-start-column="37" selection-end-line="61" selection-end-column="37" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#1764#1765#0" expanded="true" />
             <element signature="e#1824#1825#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/domain/Hotel.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="201">
-          <caret line="240" column="16" selection-start-line="240" selection-start-column="16" selection-end-line="240" selection-end-column="16" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#4575#4576#0" expanded="true" />
-            <element signature="e#4615#4616#0" expanded="true" />
-            <element signature="e#9231#9232#0" expanded="true" />
-            <element signature="e#9265#9266#0" expanded="true" />
           </folding>
         </state>
       </provider>
