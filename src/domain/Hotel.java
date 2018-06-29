@@ -26,12 +26,12 @@ public class Hotel{
 	private ArrayList<Habitacion> listaHabitaciones;
 	Recepcionista conserje;
 	MapaGenerico<String, Reserva> mapaHabitacionesReservada;
-	ArrayList<Pasajero> pasajero;
+	ArrayList<Pasajero> listaPasajero;
 	public Hotel() {
 		listaHabitaciones = new ArrayList<>();
 		conserje=new Recepcionista();
 		mapaHabitacionesReservada=new MapaGenerico<>();
-		pasajero=new ArrayList<>();
+		listaPasajero=new ArrayList<>();
 	}
 
 	//////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -89,6 +89,11 @@ public class Hotel{
 		}
 		return usu;
 	}
+
+	public void agregarPasajero(String nombreRecib, String apellidoRecib, String dniRecib, String numTarjetaCreditoRecib, String telefonoRecib,
+								String nacionalidadRecib, int idPasajeroRecib){
+		listaPasajero.add(new Pasajero(nombreRecib,apellidoRecib,dniRecib,numTarjetaCreditoRecib,telefonoRecib,nacionalidadRecib,idPasajeroRecib));
+	}
 	
 
 	////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -107,13 +112,13 @@ public class Hotel{
 		{
 			costoPedidodelPasajero = minibar.darComidaToPasajeroYretornaCosto(nombreComidaAPedir, cantidadComidAPedir);
 			
+			return costoPedidodelPasajero;
+			
 		}
 		else
 		{
 			throw new PasajeroNoEstaEnHotelException("Exception");  
-		}
-		
-		return costoPedidodelPasajero;
+		}		
 	}
 
 	///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -174,10 +179,14 @@ public class Hotel{
 	}
 
 	public void listar_Habitaciones_Disponibles(int cantidadPersona) throws LimiteExcepcion,Exception{
+		System.out.println("entra aca?");
 		int i=0;
 		if (listaHabitaciones != null){
+			System.out.println("entra aca IF?");
 			for (Habitacion e : listaHabitaciones){
+				System.out.println("entra aca? FOR");
 				if ((e.getOcupada() == false) && (e.getCantidadPersona() >= cantidadPersona)) {
+					System.out.println("entra aca? ultimo IF");
 					System.out.println(e.toString());
 					i=1;
 				}
@@ -195,10 +204,12 @@ public class Hotel{
 		
 		if (listaHabitaciones != null){
 			for (Habitacion e : listaHabitaciones){
-				if ((( e.getOcupada() == false ) && ( e.getNumero_habitacion() == numero_de_habitacion))){	
+				if ((( e.getOcupada() == false ) && ( e.getNumero_habitacion() == numero_de_habitacion))){
+					System.out.println("entra al primer if ??");
 					return e;
 				}
-				else if(( e.getOcupada()) &&  (e.getNumero_habitacion() == numero_de_habitacion)){
+				else if(( e.getOcupada() == true) &&  (e.getNumero_habitacion() == numero_de_habitacion)){
+					System.out.println("entra al segundo if ??");
 					System.out.println("La habitacion esta ocupada");
 					return null;
 				}
@@ -222,8 +233,10 @@ public class Hotel{
 
 		try {
 			while(op){
-				listar_Habitaciones_Disponibles(1);
-				Habitacion habitacion= buscar_Habitacion(23);// MArcer: aca necesito un scaner ente
+				//listar_Habitaciones_Disponibles(1);
+				Habitacion habitacion= buscar_Habitacion(2);// MArcer: aca necesito un scaner ente
+				System.out.println("prueba toString");
+				System.out.println(habitacion.toString());
 				habitacion.setOcupada(true);
 				aux.add(habitacion);
 				op = false;
@@ -231,8 +244,14 @@ public class Hotel{
 
 			checkIn = new Date(anio,mes,dia);
 			checkOut = new Date(anio,mes,dia);
+			//Hacer una validacion si esta el pasajero o no esta
+			//en caso que no este, agregarlo a la lista
+			if(validarPasajeroEnLista(pasajero)==false){ //si no esta, se agrega
+				System.out.println("Se agrego el pasajero a la lista");
+			}
 			Reserva reserva=new Reserva(checkIn, checkOut, aux);//aca deberia crear la reserva
-			mapaHabitacionesReservada.addReserva_A_pasajero(pasajero.getDni(),reserva,aux);//le pasamos el DNI
+			mapaHabitacionesReservada.addReserva_A_pasajero(pasajero.getDni(),reserva,aux,pasajero);//le pasamos el DNI
+			System.out.println(reserva.listaHabitaciones);
 		} catch (LimiteExcepcion e) {
 			e.printStackTrace();
 		} catch (Exception e) {
@@ -280,5 +299,28 @@ public class Hotel{
 		pasajero.arreglo_Consumo(jsonObject);
 		return costo;
 	}
-	
+
+	/**
+	 * Agrega un pasajero a la lista
+	 * @param pasajero
+	 */
+	public void agregarPasajeroToLista(Pasajero pasajero){
+		listaPasajero.add(pasajero);
+	}
+
+	/**
+	 * Realiza una validacion por criterio de dni si el pasajero esta en la lista
+	 * @param pasajero
+	 * @return
+	 */
+	public boolean validarPasajeroEnLista(Pasajero pasajero){
+		int i=0;
+		while(listaPasajero.get(i).getDni() != pasajero.getDni()){
+			i++;
+		}
+		if(listaPasajero.get(i).getDni() == pasajero.getDni()){
+			return true;
+		}
+		return false;
+	}
 }

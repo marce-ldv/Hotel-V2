@@ -1,12 +1,15 @@
 package domain;
 
 import java.util.ArrayList;
+
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-public class Pasajero 
-{
+import exepciones.ComidaInexistenteException;
+import exepciones.NoHaySuficienteComidaException;
+
+public class Pasajero {
 	private String nombre;
 	private String apellido;
 	private String dni;
@@ -15,16 +18,13 @@ public class Pasajero
 	private String nacionalidad;
 	private int idPasajero;
 	ArrayList<Reserva> listaReserva;
+	ArrayList<Servicio> servicios;
 	private Integer CantidadPersona;
 	private Integer estadoPasajero; // 0 = ya se fue / 1 = todavia no llego / 2 = esta en el hotel
-	
 
-	
 	// constructores
-	
-	
-	public Pasajero() 
-	{
+
+	public Pasajero() {
 		nombre = null;
 		apellido = null;
 		dni = null;
@@ -32,12 +32,12 @@ public class Pasajero
 		telefono = null;
 		nacionalidad = null;
 		idPasajero = 0;
-		listaReserva=new ArrayList<>();
+		listaReserva = new ArrayList<>();
+		servicios = new ArrayList<>();
 	}
-	
-	public Pasajero(String nombreRecib, String apellidoRecib, String dniRecib, String numTarjetaCreditoRecib, String telefonoRecib,
-			String nacionalidadRecib, int idPasajeroRecib) 
-	{
+
+	public Pasajero(String nombreRecib, String apellidoRecib, String dniRecib, String numTarjetaCreditoRecib,
+			String telefonoRecib, String nacionalidadRecib, int idPasajeroRecib) {
 		nombre = nombreRecib;
 		apellido = apellidoRecib;
 		dni = dniRecib;
@@ -45,11 +45,11 @@ public class Pasajero
 		telefono = telefonoRecib;
 		nacionalidad = nacionalidadRecib;
 		idPasajero = idPasajeroRecib;
-		listaReserva=new ArrayList<>();
+		listaReserva = new ArrayList<>();
 	}
 
 	// setters y getters
-	
+
 	public String getNombre() {
 		return nombre;
 	}
@@ -98,7 +98,6 @@ public class Pasajero
 		this.nacionalidad = nacionalidad;
 	}
 
-	
 	public int getIdPasajero() {
 		return idPasajero;
 	}
@@ -107,72 +106,76 @@ public class Pasajero
 		this.idPasajero = idPasajero;
 	}
 
-	public void add_Reserva(Reserva reserva)
-	{
+	public void add_Reserva(Reserva reserva) {
 		listaReserva.add(reserva);
 	}
-	
-	public Integer getEstadoPasajero()
-	{
+
+	public Integer getEstadoPasajero() {
 		return estadoPasajero;
 	}
-	
+
 	// metodos
-	public void listar_Reserva()
-	{
-		if(listaReserva!=null)
-		{
-			for(Reserva e: listaReserva )
-			{
+	public void listar_Reserva() {
+		if (listaReserva != null) {
+			for (Reserva e : listaReserva) {
 				e.toString();
 			}
-		
+
 		}
 	}
-	public void eliminar_ultimaReserva()
-	{
-		if(listaReserva!=null)
-		{
-			for(Reserva e: listaReserva )
-			{
-				if(e.isCompletado()==false)
-				{
+
+	public void eliminar_ultimaReserva() {
+		if (listaReserva != null) {
+			for (Reserva e : listaReserva) {
+				if (e.isCompletado() == false) {
 					listaReserva.remove(e);
 					System.out.println("La reserva:" + e.toString() + "fue eliminada");
 				}
 			}
 		}
 	}
+	
+	public void pedirComida (String nombre, int cantidadComida) {
+		MiniBar a = new MiniBar<>();
+		float precio;
+		try {
+			precio = a.darComidaToPasajeroYretornaCosto(nombre, cantidadComida);
+			if(precio!=0) {
+				Servicio e =new Servicio(nombre, precio, cantidadComida);
+				servicios.add(e);
+			}
+			else {
+				System.out.println("No se pudo realizar el pedido.");
+			}
+		} catch (NoHaySuficienteComidaException e1) {
+			e1.printStackTrace();
+		} catch (ComidaInexistenteException e1) {
+			e1.printStackTrace();
+		}		
+	}
 
-	public Reserva ultima_Posicion_Valida_Reserva()
-	{
-		if(listaReserva!=null)
-		{
-			for(Reserva e: listaReserva )
-			{
-				if(e.isCompletado()==false)
-				{
+	public Reserva ultima_Posicion_Valida_Reserva() {
+		if (listaReserva != null) {
+			for (Reserva e : listaReserva) {
+				if (e.isCompletado() == false) {
 					return e;
 				}
 			}
-		}
-		else
-		{
+		} else {
 			System.out.println("no hay una reserva pendiente");
 		}
 		return null;
 	}
 
-	public JSONArray arreglo_Consumo(JSONObject consumo)
-	{
+	public JSONArray arreglo_Consumo(JSONObject consumo) {
 		JSONArray jsonArray = new JSONArray();
 		jsonArray.put(consumo);
 		return jsonArray;
 	}
+<<<<<<< HEAD
 	
 	public JSONObject getFormatoJSON() throws JSONException 
 	{
-			
 			JSONObject jsonObject = new JSONObject();
 			JSONArray jsonArray = new JSONArray();
 			jsonObject.put("nombre", nombre);			
@@ -188,16 +191,47 @@ public class Pasajero
 			jsonObject.put("cantidad de personas", CantidadPersona);
 			jsonObject.put("estado de pasajeros", estadoPasajero);
 			
+=======
+>>>>>>> c2efdb9839a5f256e22bd9381cc8b6a197048059
 
-			return jsonObject;		
+	public JSONObject getFormatoJSON() throws JSONException {
+
+		JSONObject jsonObject = new JSONObject();
+		JSONArray jsonArray = new JSONArray();
+		JSONArray jsonArrayb = new JSONArray();
+		jsonObject.put("nombre", nombre);
+		jsonObject.put("apellido", apellido);
+		jsonObject.put("dni", dni);
+		jsonObject.put("numTarjetaCredito", numTarjetaCredito);
+		jsonObject.put("telefono", telefono);
+		jsonObject.put("nacionalidad", nacionalidad);
+		jsonObject.put("idPasajero", idPasajero);
+		for (Reserva e : listaReserva) {
+			jsonArray.put(e);
+		}
+		for (Servicio f: servicios) {
+			jsonArrayb.put(f);
+		}
+		jsonObject.put("reserva", jsonArray);
+		jsonObject.put("consumido", jsonArrayb);		
+		jsonObject.put("cantidad de personas", CantidadPersona);
+		jsonObject.put("estado de pasajeros", estadoPasajero);
+
+		return jsonObject;
+	}
+	
+	public void mostrarServicios () {
+		for(Servicio e: servicios)
+		{
+			System.out.println(e);
+		}
 	}
 
-	
 	@Override
-	public String toString() 
-	{
+	public String toString() {
 		return "Pasajero [nombre=" + nombre + ", apellido=" + apellido + ", dni=" + dni + ", numTarjetaCredito="
-				+ numTarjetaCredito + ", telefono=" + telefono + ", Nacionalidad=" + nacionalidad   + ", idPasajero=" + idPasajero + "]";
+				+ numTarjetaCredito + ", telefono=" + telefono + ", Nacionalidad=" + nacionalidad + ", idPasajero="
+				+ idPasajero +", servicios"+ servicios.toString() +"]";
 	}
-	
+
 }

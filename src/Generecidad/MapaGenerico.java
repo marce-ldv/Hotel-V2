@@ -72,7 +72,7 @@ public class MapaGenerico<K, T> {
 		return null;
 	}
 
-	public <K extends Pasajero> void addReserva_A_pasajero(String k, Reserva reserva, ArrayList<Habitacion> listaHabitaciones) throws LimiteExcepcion {
+	public <K extends Pasajero> void addReserva_A_pasajero(String k, Reserva reserva, ArrayList<Habitacion> listaHabitaciones,Pasajero pasajero) throws LimiteExcepcion {
 		int i = 0;
 		Reserva a;
 		Iterator it = mapaGenerico.entrySet().iterator();
@@ -80,23 +80,21 @@ public class MapaGenerico<K, T> {
 			Map.Entry me = (Map.Entry<K, T>) it.next();
 			K d = (K) me.getKey();
 			T t = (T) me.getValue();
-			if (k == d.getDni()) 
-			{
-				a=d.ultima_Posicion_Valida_Reserva();
-				if(a.isCompletado()==false && a!=null)
-				{
+			if (k == d.getDni()){ //si el dni coindcide con el string.. then
+				a = pasajero.ultima_Posicion_Valida_Reserva();
+
+				if(a.isCompletado()==false && a!=null){
 					a.add(listaHabitaciones);
 					i=1;
 				}
-				else
-				{
-					d.add_Reserva(reserva);
+				else{
+					pasajero.add_Reserva(reserva);
 					i = 1;
 				}
 			}
 		}
 		if (i == 0) {
-			throw new LimiteExcepcion("El pasajero no existe");
+			pasajero.add_Reserva(reserva);
 		}
 
 	}
