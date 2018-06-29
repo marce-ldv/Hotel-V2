@@ -151,9 +151,26 @@ public class Pasajero
 			}
 		}
 	}
-	
-	
-	
+
+	public Reserva ultima_Posicion_Valida_Reserva()
+	{
+		if(listaReserva!=null)
+		{
+			for(Reserva e: listaReserva )
+			{
+				if(e.isCompletado()==false)
+				{
+					return e;
+				}
+			}
+		}
+		else
+		{
+			System.out.println("no hay una reserva pendiente");
+		}
+		return null;
+	}
+
 	public JSONObject getFormatoJSON() throws JSONException 
 	{
 			
