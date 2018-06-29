@@ -5,6 +5,9 @@ import java.util.ArrayList;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import exepciones.ComidaInexistenteException;
+import exepciones.NoHaySuficienteComidaException;
+
 public class MiniBar <T extends AlimentosParaConsumo>// recibira alimentos
 {
 
@@ -41,7 +44,7 @@ public class MiniBar <T extends AlimentosParaConsumo>// recibira alimentos
 	 * @return costoTotalComida
 	 * */
 	
-	public int darComidaToPasajeroYretornaCosto (String nombreComida, int cantidadComida) 
+	public int darComidaToPasajeroYretornaCosto (String nombreComida, int cantidadComida) throws NoHaySuficienteComidaException,ComidaInexistenteException
 	{
 		int costoTotalComida = 0;
 		
@@ -58,12 +61,13 @@ public class MiniBar <T extends AlimentosParaConsumo>// recibira alimentos
 				else
 				{
 					System.out.println("Solo hay " + e.getCantidad() + " " + e.getNombre()); // esto deberia ser una excepcion
+					throw new NoHaySuficienteComidaException("Excepcion");
 				}
 				
 			}
 			else
 			{
-				System.out.println("Esa comida no esta en el menu"); // esto tambien deberia ser una excepcion
+				throw new ComidaInexistenteException("Excepcion");  // esto tambien deberia ser una excepcion
 			}
 		}
 		return costoTotalComida;

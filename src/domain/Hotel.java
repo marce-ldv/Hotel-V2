@@ -10,11 +10,14 @@ import org.json.JSONObject;
 
 import Generecidad.MapaGenerico;
 import exepciones.CampoVacioException;
+import exepciones.ComidaInexistenteException;
 import exepciones.InicioSesionException;
 import exepciones.InvalidPasswordException;
 import exepciones.InvalidUsernameAndPasswordException;
 import exepciones.InvalidUsernameException;
 import exepciones.LimiteExcepcion;
+import exepciones.NoHaySuficienteComidaException;
+import exepciones.PasajeroNoEstaEnHotelException;
 import files.JsonUtiles;
 import swing.LoginGUI;
 
@@ -23,10 +26,12 @@ public class Hotel{
 	private List<Habitacion> listaHabitaciones;
 	Recepcionista conserje;
 	MapaGenerico<String, Reserva> mapaHabitacionesReservada;
+	ArrayList<Pasajero> pasajero;
 	public Hotel() {
 		listaHabitaciones = new ArrayList<>();
 		conserje=new Recepcionista();
 		mapaHabitacionesReservada=new MapaGenerico<>();
+		pasajero=new ArrayList<>();
 	}
 
 	//////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -123,17 +128,29 @@ public class Hotel{
 	 * @author Ignacio Chiaradia
 	 */
 	
-	public float pedirComida(Pasajero p, MiniBar minibar, String nombreComidaAPedir, int cantidadComidAPedir) 
+	public float pedirComida(Pasajero p, MiniBar minibar, String nombreComidaAPedir, int cantidadComidAPedir) throws PasajeroNoEstaEnHotelException
 	{
 		float costoPedidodelPasajero = 0;
 		
 		if(p.getEstadoPasajero() == 2)
 		{
-			costoPedidodelPasajero = minibar.darComidaToPasajeroYretornaCosto(nombreComidaAPedir, cantidadComidAPedir);
+			try
+			{
+				costoPedidodelPasajero = minibar.darComidaToPasajeroYretornaCosto(nombreComidaAPedir, cantidadComidAPedir);				
+			}
+			catch(NoHaySuficienteComidaException e)
+			{
+				e.getMessage();				
+			}
+			catch(ComidaInexistenteException e)
+			{
+				e.getMessage();				
+			}
+			
 		}
 		else
 		{
-			System.out.println("Usted no se encuentra en el hotel");  // futura excepcion
+			throw new PasajeroNoEstaEnHotelException("Exception");  
 		}
 		
 		return costoPedidodelPasajero;
@@ -262,7 +279,6 @@ public class Hotel{
 			e.printStackTrace();
 		}
 	}
-
 	
 	public void llegada_Pasajero_Al_hotel(Pasajero pasajero)// solo lo elimino de la lista de reserva pero no habilito las habitaciones ni completo la reserva del pasajero hasta que se vaya
 	{
@@ -281,6 +297,28 @@ public class Hotel{
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+	}
+	public double fin_Estadia(Pasajero pasajero)
+	{
+		JSONObject jsonObject=new JSONObject();
+		double costo;
+		Reserva reserva=pasajero.ultima_Posicion_Valida_Reserva();
+		reserva.setCompletado(true);
+		costo=reserva.costo_total_habitaciones();
+		reserva.habilitar_habitaciones();
+		Date checkIn=reserva.getCheck_In();
+		Date checkOut=reserva.getCheck_Out();
+		costo= ( costo * ( checkIn.getTime() - checkOut.getTime() ) );
+		
+		try {
+			jsonObject.put("costo habitacion", costo);
+		} catch (JSONException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		pasajero.arreglo_Consumo(jsonObject);
+		return costo;
 	}
 	
 }
