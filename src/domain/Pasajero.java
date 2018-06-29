@@ -172,7 +172,6 @@ public class Pasajero
 	
 	public JSONObject getFormatoJSON() throws JSONException 
 	{
-			
 			JSONObject jsonObject = new JSONObject();
 			JSONArray jsonArray = new JSONArray();
 			jsonObject.put("nombre", nombre);			
