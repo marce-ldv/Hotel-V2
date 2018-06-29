@@ -190,10 +190,7 @@ public class Pasajero {
 		jsonArray.put(consumo);
 		return jsonArray;
 	}
-<<<<<<< HEAD
 
-=======
->>>>>>> 6ae44bbf5f3465f3b8a1633c18415bbdd728d941
 	public JSONObject getFormatoJSON() throws JSONException {
 
 		JSONObject jsonObject = new JSONObject();

@@ -128,4 +128,6 @@ public class MenuFormReservaGUI extends JFrame {
 		btnAceptar.setBounds(10, 446, 267, 58);
 		panel.add(btnAceptar);
 	}
+
+
 }
