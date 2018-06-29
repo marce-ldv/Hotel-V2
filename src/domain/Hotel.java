@@ -136,19 +136,7 @@ public class Hotel{
 		p.crearFactura(p.getNombre(), resultado);
 	}
 
-	///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-<<<<<<< HEAD
-	/* El verga muy corta(Chiappe) */
-	/* El verga corta (Chiappe) */
-=======
-	/* El verga corta(Chiappe) */
 
->>>>>>> 1bc6873e87e749de1b029e82c0032fcec7cb3ab6
-	/**
-	 * Aca va los mentodos de Chiappe
-	 * 
-	 * @author Chiappe
-	 */
 
 	//public void add_mapa_reserva(Reserva reserva)
 	public void add(Habitacion habitacion){
