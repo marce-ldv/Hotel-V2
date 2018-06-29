@@ -1,5 +1,7 @@
 package swing;
 
+import domain.Pasajero;
+
 import java.awt.BorderLayout;
 import java.awt.EventQueue;
 
@@ -8,25 +10,28 @@ import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 import javax.swing.JTextField;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JButton;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 
 public class MenuFormReservaGUI extends JFrame {
 
 	private JPanel contentPane;
-	private JTextField textField;
+	private JTextField txtNombre;
 	private JLabel lblNombre;
 	private JLabel lblApellido;
-	private JTextField textField_1;
+	private JTextField txtApellido;
 	private JLabel lblDni;
-	private JTextField textField_2;
+	private JTextField txtDni;
 	private JLabel lblNumTarjCredito;
-	private JTextField textField_3;
+	private JTextField txtNumTarjCredito;
 	private JLabel lblTelefono;
-	private JTextField textField_4;
+	private JTextField txtTelefono;
 	private JLabel lblNacionalidad;
-	private JTextField textField_5;
+	private JTextField txtNacionalidad;
 	private JLabel lbl_idPasajero;
-	private JTextField textField_6;
+	private JTextField txtIdPasajero;
 	private JButton btnAceptar;
 
 	/**
@@ -61,10 +66,10 @@ public class MenuFormReservaGUI extends JFrame {
 		contentPane.add(panel, BorderLayout.CENTER);
 		panel.setLayout(null);
 		
-		textField = new JTextField();
-		textField.setBounds(162, 15, 438, 37);
-		panel.add(textField);
-		textField.setColumns(10);
+		txtNombre = new JTextField();
+		txtNombre.setBounds(162, 15, 438, 37);
+		panel.add(txtNombre);
+		txtNombre.setColumns(10);
 		
 		lblNombre = new JLabel("Nombre: ");
 		lblNombre.setBounds(10, 15, 142, 37);
@@ -74,60 +79,86 @@ public class MenuFormReservaGUI extends JFrame {
 		lblApellido.setBounds(10, 63, 142, 37);
 		panel.add(lblApellido);
 		
-		textField_1 = new JTextField();
-		textField_1.setColumns(10);
-		textField_1.setBounds(162, 63, 438, 37);
-		panel.add(textField_1);
+		txtApellido = new JTextField();
+		txtApellido.setColumns(10);
+		txtApellido.setBounds(162, 63, 438, 37);
+		panel.add(txtApellido);
 		
 		lblDni = new JLabel("Dni: ");
 		lblDni.setBounds(10, 111, 142, 37);
 		panel.add(lblDni);
 		
-		textField_2 = new JTextField();
-		textField_2.setColumns(10);
-		textField_2.setBounds(162, 111, 438, 37);
-		panel.add(textField_2);
+		txtDni = new JTextField();
+		txtDni.setColumns(10);
+		txtDni.setBounds(162, 111, 438, 37);
+		panel.add(txtDni);
 		
 		lblNumTarjCredito = new JLabel("Num tarjeta credito: ");
 		lblNumTarjCredito.setBounds(10, 159, 142, 37);
 		panel.add(lblNumTarjCredito);
 		
-		textField_3 = new JTextField();
-		textField_3.setColumns(10);
-		textField_3.setBounds(162, 159, 438, 37);
-		panel.add(textField_3);
+		txtNumTarjCredito = new JTextField();
+		txtNumTarjCredito.setColumns(10);
+		txtNumTarjCredito.setBounds(162, 159, 438, 37);
+		panel.add(txtNumTarjCredito);
 		
 		lblTelefono = new JLabel("Telefono: ");
 		lblTelefono.setBounds(10, 207, 142, 37);
 		panel.add(lblTelefono);
 		
-		textField_4 = new JTextField();
-		textField_4.setColumns(10);
-		textField_4.setBounds(162, 207, 438, 37);
-		panel.add(textField_4);
+		txtTelefono = new JTextField();
+		txtTelefono.setColumns(10);
+		txtTelefono.setBounds(162, 207, 438, 37);
+		panel.add(txtTelefono);
 		
 		lblNacionalidad = new JLabel("Nacionalidad: ");
 		lblNacionalidad.setBounds(10, 255, 142, 37);
 		panel.add(lblNacionalidad);
 		
-		textField_5 = new JTextField();
-		textField_5.setColumns(10);
-		textField_5.setBounds(162, 255, 438, 37);
-		panel.add(textField_5);
+		txtNacionalidad = new JTextField();
+		txtNacionalidad.setColumns(10);
+		txtNacionalidad.setBounds(162, 255, 438, 37);
+		panel.add(txtNacionalidad);
 		
 		lbl_idPasajero = new JLabel("id Pasajero: ");
 		lbl_idPasajero.setBounds(10, 303, 142, 37);
 		panel.add(lbl_idPasajero);
 		
-		textField_6 = new JTextField();
-		textField_6.setColumns(10);
-		textField_6.setBounds(162, 303, 438, 37);
-		panel.add(textField_6);
+		txtIdPasajero = new JTextField();
+		txtIdPasajero.setColumns(10);
+		txtIdPasajero.setBounds(162, 303, 438, 37);
+		panel.add(txtIdPasajero);
 		
 		btnAceptar = new JButton("Aceptar ");
+		btnAceptar.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				Pasajero p = devuelvePasajeroCargado();
+				dispose();
+			}
+		});
 		btnAceptar.setBounds(10, 446, 267, 58);
 		panel.add(btnAceptar);
 	}
 
+	public Pasajero devuelvePasajeroCargado(){
+		Pasajero pasajero = new Pasajero();
+		String nombre = txtNombre.getText();
+		String apellido = txtNombre.getText();
+		String dni = txtNombre.getText();
+		String numTarjCredito = txtNombre.getText();
+		String telefono = txtNombre.getText();
+		String nacionalidad = txtNacionalidad.getText();
+		int idPasajero = 22;
+
+		pasajero.setNombre(nombre);
+		pasajero.setApellido(apellido);
+		pasajero.setDni(dni);
+		pasajero.setNumTarjetaCredito(numTarjCredito);
+		pasajero.setTelefono(telefono);
+		pasajero.setNacionalidad(nacionalidad);
+		pasajero.setIdPasajero(idPasajero);
+
+		return pasajero;
+	}
 
 }

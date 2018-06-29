@@ -4,6 +4,7 @@ import java.awt.BorderLayout;
 import java.awt.EventQueue;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.Scanner;
 
 import javax.swing.*;
 import javax.swing.border.EmptyBorder;
@@ -39,6 +40,7 @@ public class RecepcionistaGUI extends JFrame {
 	 * Create the frame.
 	 */
 	public RecepcionistaGUI() {
+
 		Recepcionista recepcionista = new Recepcionista();
 		Pasajero pasajero = new Pasajero();
 		Hotel hotel = new Hotel();
@@ -58,9 +60,19 @@ public class RecepcionistaGUI extends JFrame {
 			public void actionPerformed(ActionEvent arg0) {
 				JOptionPane.showMessageDialog(null,"Este boton agrega una reserva");
 
+<<<<<<< HEAD
 				Pasajero pasajero=new Pasajero("pepe", "benitez", "2323234", "32432422", "6756754456",
 						"Venezuela", 1);
 				hotel.reservar_Habitacion(pasajero);
+=======
+				//form pasajero
+				//Pasajero pasajero=new Pasajero("pepe", "benitez", "2323234", "32432422", "6756754456",
+				//		"Venezuela", 1);
+				//formReservaGUI.setVisible(true);
+				//Pasajero pasajeroCargado = formReservaGUI.devuelvePasajeroCargado();
+
+				hotel.reservar_Habitacion(cargarPasajeroScanner());
+>>>>>>> ac61535c02fe8a7017d7488a947f56e24fc48866
 				JOptionPane.showMessageDialog(null,"El pasajero se agrego exitosamente");
 				//hotel.reservar_Habitacion(new Pasajero("peasdpe", "benisadtez", "234567", "32432422", "6756754456","Peru", 2));
 				try{
@@ -171,5 +183,27 @@ public class RecepcionistaGUI extends JFrame {
 		});
 		button_5.setBounds(22, 197, 406, 41);
 		contentPane.add(button_5);
+	}
+
+	public Pasajero cargarPasajeroScanner(){
+		Scanner sc = new Scanner(System.in);
+		Pasajero pasajero = new Pasajero();
+
+		System.out.println("Nombre: ");
+		pasajero.setNombre(sc.next());
+		System.out.println("Apellido: ");
+		pasajero.setApellido(sc.next());
+		System.out.println("Dni: ");
+		pasajero.setDni(sc.next());
+		System.out.println("Num tarjeta de credito: ");
+		pasajero.setNumTarjetaCredito(sc.next());
+		System.out.println("Telefono: ");
+		pasajero.setTelefono(sc.next());
+		System.out.println("Nacionalidad: ");
+		pasajero.setNacionalidad(sc.next());
+		System.out.println("ID pasajero: ");
+		pasajero.setIdPasajero(sc.nextInt());
+
+		return pasajero;
 	}
 }
