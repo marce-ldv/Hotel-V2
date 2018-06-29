@@ -67,10 +67,13 @@ public class RecepcionistaGUI extends JFrame {
 					e.printStackTrace();
 				}
 				System.out.println("lista la reserva?");
-				hotel.listarReservaPasajero(pasajero);
-				hotel.cancelarReserva(pasajero);
+				//hotel.listarReservaPasajero(pasajero);
+				hotel.listarMapReservas();
+				hotel.llegada_Pasajero_Al_hotel(pasajero);
+				hotel.fin_Estadia(pasajero);
+				/*hotel.cancelarReserva(pasajero);
 				System.out.println("sera eliminada?");
-				hotel.listarReservaPasajero(pasajero);
+				hotel.listarReservaPasajero(pasajero);*/
 			}
 		});
 		btnNewButton.setBounds(22, 41, 406, 41);

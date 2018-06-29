@@ -113,9 +113,6 @@ public class Pasajero {
 	public Integer getEstadoPasajero() {
 		return estadoPasajero;
 	}
-	
-	
-
 	public ArrayList<Servicio> getServicios() {
 		return servicios;
 	}

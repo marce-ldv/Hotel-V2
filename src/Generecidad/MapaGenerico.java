@@ -32,7 +32,9 @@ public class MapaGenerico<K, T> {
 		Iterator it = mapaGenerico.entrySet().iterator();
 		while (it.hasNext()) {
 			Map.Entry me = (Map.Entry<K, T>) it.next();
+			K d = (K) me.getKey();
 			T t = (T) me.getValue();
+			System.out.println("DNI:"+d);
 			System.out.println(t.toString());
 		}
 	}

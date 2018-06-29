@@ -279,8 +279,9 @@ public class Hotel{
 	{
 		try {
 			mapaHabitacionesReservada.eliminarPorClave(pasajero.getDni());
+			System.out.println("el pasajero llego al hotel");
 		} catch (LimiteExcepcion e) {
-			// TODO Auto-generated catch block
+			System.out.println("Se rompe en llegada_Pasajero_Al_hotel");
 			e.printStackTrace();
 		}
 	}
@@ -303,17 +304,23 @@ public class Hotel{
 		reserva.habilitar_habitaciones();
 		Date checkIn=reserva.getCheck_In();
 		Date checkOut=reserva.getCheck_Out();
+		System.out.println("costo:" + costo);
 		costo= ( costo * ( checkIn.getTime() - checkOut.getTime() ) );
-		
+		System.out.println("costo:" + costo);
 		try {
 			jsonObject.put("costo habitacion", costo);
 		} catch (JSONException e) {
-			// TODO Auto-generated catch block
+			System.out.println("se rompe en el put");
 			e.printStackTrace();
 		}
 		
 		pasajero.arreglo_Consumo(jsonObject);
 		return costo;
+	}
+	
+	public void listarMapReservas()
+	{
+		mapaHabitacionesReservada.listar();
 	}
 	public void listarReservaPasajero(Pasajero pasajero)
 	{
