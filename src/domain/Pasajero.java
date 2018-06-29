@@ -119,6 +119,12 @@ public class Pasajero
 	{
 		listaReserva.add(reserva);
 	}
+	
+	public Integer getEstadoPasajero()
+	{
+		return estadoPasajero;
+	}
+	
 	// metodos
 	public void listar_Reserva()
 	{
@@ -145,6 +151,8 @@ public class Pasajero
 			}
 		}
 	}
+	
+	
 	
 	public JSONObject getFormatoJSON() throws JSONException 
 	{
