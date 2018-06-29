@@ -5,6 +5,8 @@ import java.util.ArrayList;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import exepciones.NoHaySuficienteComidaException;
+
 public class MiniBar <T extends AlimentosParaConsumo>// recibira alimentos
 {
 
@@ -41,7 +43,7 @@ public class MiniBar <T extends AlimentosParaConsumo>// recibira alimentos
 	 * @return costoTotalComida
 	 * */
 	
-	public int darComidaToPasajeroYretornaCosto (String nombreComida, int cantidadComida) 
+	public int darComidaToPasajeroYretornaCosto (String nombreComida, int cantidadComida) throws NoHaySuficienteComidaException
 	{
 		int costoTotalComida = 0;
 		
@@ -58,6 +60,7 @@ public class MiniBar <T extends AlimentosParaConsumo>// recibira alimentos
 				else
 				{
 					System.out.println("Solo hay " + e.getCantidad() + " " + e.getNombre()); // esto deberia ser una excepcion
+					throw new NoHaySuficienteComidaException("Excepcion");
 				}
 				
 			}
