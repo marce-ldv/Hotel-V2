@@ -1,6 +1,7 @@
 package domain;
 
 import java.util.ArrayList;
+
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -140,7 +141,7 @@ public class Pasajero {
 		try {
 			precio = a.darComidaToPasajeroYretornaCosto(nombre, cantidadComida);
 			if(precio!=0) {
-				Servicio e =new Servicio(nombre, precio);
+				Servicio e =new Servicio(nombre, precio, cantidadComida);
 				servicios.add(e);
 			}
 			else {

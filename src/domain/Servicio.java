@@ -4,11 +4,13 @@ public class Servicio {
 	
 	private String nombre;
 	private float valor;
+	private int cantidad;
 	
 	
-	public Servicio(String nombre, float valor) {
+	public Servicio(String nombre, float valor, int cantidad) {
 		this.nombre = nombre;
 		this.valor = valor;
+		this.cantidad=cantidad;
 	}
 
 
@@ -32,11 +34,23 @@ public class Servicio {
 	}
 
 
+	public int getCantidad() {
+		return cantidad;
+	}
+
+
+	public void setCantidad(int cantidad) {
+		this.cantidad = cantidad;
+	}
+
+
 	@Override
 	public String toString() {
-		return "nombre=" + nombre + ", valor=" + valor + " ";
+		return "Servicio [nombre=" + nombre + ", valor=" + valor + ", cantidad=" + cantidad + "]";
 	}
+
 	
+
 	
 
 	

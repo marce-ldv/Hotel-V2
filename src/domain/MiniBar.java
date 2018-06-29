@@ -8,10 +8,10 @@ import org.json.JSONObject;
 import exepciones.ComidaInexistenteException;
 import exepciones.NoHaySuficienteComidaException;
 
-public class MiniBar <T extends AlimentosParaConsumo>// recibira alimentos
+public class MiniBar <T extends Servicio>// recibira alimentos
 {
 
-	private ArrayList<AlimentosParaConsumo> alimentos;
+	private ArrayList<Servicio> alimentos;
 	//private ArrayList<BebidasParaConsumo> bebidas;
 	//private ArrayList<PostresParaConsumo> postres;
 	
@@ -19,12 +19,12 @@ public class MiniBar <T extends AlimentosParaConsumo>// recibira alimentos
 	
 	public MiniBar() 
 	{	
-		alimentos = new ArrayList<AlimentosParaConsumo>();
+		alimentos = new ArrayList<Servicio>();
 		//bebidas = new ArrayList<BebidasParaConsumo>();
 		//postres = new ArrayList<PostresParaConsumo>();		
 	}
 	
-	public MiniBar(ArrayList<AlimentosParaConsumo> alimentosRecib) 
+	public MiniBar(ArrayList<Servicio> alimentosRecib) 
 	{	
 		alimentos = alimentosRecib;
 	}
@@ -34,7 +34,7 @@ public class MiniBar <T extends AlimentosParaConsumo>// recibira alimentos
 	
 	public void agregarAlimentos (String nombre, int precio, int cantidad) 
 	{
-		AlimentosParaConsumo b = new AlimentosParaConsumo (nombre, precio, cantidad);
+		Servicio b = new Servicio (nombre, precio, cantidad);
 		alimentos.add(b);
 	}
 	
@@ -62,7 +62,7 @@ public class MiniBar <T extends AlimentosParaConsumo>// recibira alimentos
 	{
 		float costoTotalComida = 0;
 		
-		for(AlimentosParaConsumo e: alimentos)  // se recorre el array por completo
+		for(Servicio e: alimentos)  // se recorre el array por completo
 		{
 			if(nombreComida.equals(e.getNombre()))  
 			{
@@ -87,7 +87,7 @@ public class MiniBar <T extends AlimentosParaConsumo>// recibira alimentos
 		return costoTotalComida;
 	}
 	
-	public void listarElementos(ArrayList<AlimentosParaConsumo> arr) 
+	public void listarElementos(ArrayList<Servicio> arr) 
 	{
 		int i = 0;
 		
@@ -101,8 +101,7 @@ public class MiniBar <T extends AlimentosParaConsumo>// recibira alimentos
 	{										
 		ArrayList<Integer> arrGastos = new ArrayList<Integer>();
 			
-		
-		
+				
 		return 0;
 	}*/
 	
