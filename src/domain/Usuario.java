@@ -26,18 +26,6 @@ public class Usuario {
         this.idUsuario = idUsuario;
 }
 
-    public String getUsuario() {
-        return usuario;
-    }
-
-    public String getPassword() {
-        return password;
-    }
-
-    public Integer getIdUsuario() {
-        return idUsuario;
-    }
-
     /**
      * Recibe los datos de un usario que se registro en el JFrame RegistrarPAsajeroGUI, esa informacion la conviene en un
      * objeto JSON y la retorna
@@ -59,7 +47,9 @@ public class Usuario {
         }if(tipoCliente==1){
             tipoC = "Empleado";
         }if(tipoCliente==2){
-            tipoC = "Conserje";
+            tipoC = "Recepcionista";
+        }if(tipoCliente==3){
+            tipoC = "Pasajero";
         }
 
         JSONObject pasajeroDatos = new JSONObject();
@@ -89,8 +79,17 @@ public class Usuario {
         public void setUsuario(String usuario) {
         this.usuario = usuario;
     }
-
-    public void setPassword(String password) {
+        public void setPassword(String password) {
         this.password = password;
     }
+        public String getUsuario() {
+        return usuario;
+    }
+        public String getPassword() {
+        return password;
+    }
+        public Integer getIdUsuario() {
+        return idUsuario;
+    }
+
 }

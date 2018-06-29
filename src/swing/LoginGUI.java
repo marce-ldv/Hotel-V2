@@ -202,24 +202,27 @@ public class LoginGUI extends JFrame implements ActionListener{
         //Ahora podemos usar esa variable contrasenia para enviarla como parametro en el metodo
 
             try {
-
                 try {
                     hotel.loguearse(textFieldUsername.getText(),contrasenia);
                     JOptionPane.showMessageDialog(null,"Te has logeado");
                     if(jcomboLogin.getSelectedIndex() == 0) {
                     	 AdministradorGUI adminGUI = new AdministradorGUI();
+                    	 JOptionPane.showMessageDialog(null,"admin gui");
                     	 adminGUI.setVisible(true);
                     	 this.dispose();
                     }else if(jcomboLogin.getSelectedIndex() == 1) {
                     	EmpleadoGUI empleadoGUI = new EmpleadoGUI();
+                        JOptionPane.showMessageDialog(null,"empleado gui");
                     	empleadoGUI.setVisible(true);
                     	this.dispose();
                     }else if(jcomboLogin.getSelectedIndex() == 2) {
                     	RecepcionistaGUI recepcionistaGUI = new RecepcionistaGUI();
+                        JOptionPane.showMessageDialog(null,"recepcionista gui");
                     	recepcionistaGUI.setVisible(true);
                     	this.dispose();
                     }else if(jcomboLogin.getSelectedIndex() == 3) {
                     	PasajeroGUI pasajeroGUI = new PasajeroGUI();
+                        JOptionPane.showMessageDialog(null,"pasajero gui");
                     	pasajeroGUI.setVisible(true);
                     	this.dispose();
                     }
@@ -317,14 +320,14 @@ public class LoginGUI extends JFrame implements ActionListener{
         JavaUtiles utiles = new JavaUtiles();
         int varSelected = jcomboLogin.getSelectedIndex();
         if(varSelected == 0){
-            JOptionPane.showMessageDialog(null,"Administrador");
+            //JOptionPane.showMessageDialog(null,"");
             return utiles.getDirectorioAdmin();
         }else if(varSelected == 1 || varSelected == 2){
-            JOptionPane.showMessageDialog(null,"Empleado");
+            //JOptionPane.showMessageDialog(null,""); empleado o recepcionista
             return utiles.getDirectorioUsuarioEstandar();
         }else if(varSelected == 2){
-            JOptionPane.showMessageDialog(null,"Conserje");
-            return utiles.getDirectorioUsuarioEstandar();
+            //JOptionPane.showMessageDialog(null,""); Pasajero
+            return utiles.getDirectorioPasajero();
         }
         return "";
     }
