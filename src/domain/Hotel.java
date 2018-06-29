@@ -10,11 +10,13 @@ import org.json.JSONObject;
 
 import Generecidad.MapaGenerico;
 import exepciones.CampoVacioException;
+import exepciones.ComidaInexistenteException;
 import exepciones.InicioSesionException;
 import exepciones.InvalidPasswordException;
 import exepciones.InvalidUsernameAndPasswordException;
 import exepciones.InvalidUsernameException;
 import exepciones.LimiteExcepcion;
+import exepciones.NoHaySuficienteComidaException;
 import files.JsonUtiles;
 import swing.LoginGUI;
 
@@ -129,7 +131,19 @@ public class Hotel{
 		
 		if(p.getEstadoPasajero() == 2)
 		{
-			costoPedidodelPasajero = minibar.darComidaToPasajeroYretornaCosto(nombreComidaAPedir, cantidadComidAPedir);
+			try
+			{
+				costoPedidodelPasajero = minibar.darComidaToPasajeroYretornaCosto(nombreComidaAPedir, cantidadComidAPedir);				
+			}
+			catch(NoHaySuficienteComidaException e)
+			{
+				e.getMessage();				
+			}
+			catch(ComidaInexistenteException e)
+			{
+				e.getMessage();				
+			}
+			
 		}
 		else
 		{
