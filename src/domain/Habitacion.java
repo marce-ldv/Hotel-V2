@@ -7,18 +7,17 @@ public class Habitacion {
 		
 	private int numero_habitacion;
 	private boolean ocupada; //incluye si esta reservada como ocuapda
-	private int valor_habitacion; //Simple, Doble, Deluxe
-	private int cantidad_de_dias;
-	private int cantidadPersona;
 	private double costo;
+	private int cantidadPersona;
+	
 	
 	public Habitacion() {}
 	
-	public Habitacion(int numero_habitacion, boolean ocupada, int valor_habitacion,int cantidadPersona) {//en tipo habitacion se tiene que usar variable 
+	public Habitacion(int numero_habitacion, boolean ocupada, double costo,int cantidadPersona) {//en tipo habitacion se tiene que usar variable 
 		this.numero_habitacion = numero_habitacion;
 		this.ocupada = ocupada;	
 		this.cantidadPersona=cantidadPersona;
-		costo=(cantidad_de_dias*valor_habitacion);
+		this.costo=costo;
 	}
 
 
@@ -43,26 +42,6 @@ public class Habitacion {
 	}
 
 
-	public int getValor_habitacion() {
-		return valor_habitacion;
-	}
-
-
-	public void setValor_habitacion(int valor_habitacion) {
-		this.valor_habitacion = valor_habitacion;
-	}
-
-
-	public int getCantidad_de_dias() {
-		return cantidad_de_dias;
-	}
-
-
-	public void setCantidad_de_dias(int cantidad_de_dias) {
-		this.cantidad_de_dias = cantidad_de_dias;
-	}
-
-
 	public double getCosto() {
 		return costo;
 	}
@@ -83,8 +62,6 @@ public class Habitacion {
 				real="desocupada";
 			}
 			A.put("Ocupada: ", real);
-			A.put("Valor habitacion: ", getValor_habitacion());
-			A.put("Cantidad de dias: ", getCantidad_de_dias());
 			A.put("Costo: ", getCosto());
 			
 		} catch (JSONException e) {
@@ -101,6 +78,11 @@ public class Habitacion {
 	public void setCantidadPersona(int nuevacantidadPersona) {
 		cantidadPersona = nuevacantidadPersona;
 	}
-	
+	@Override
+	public String toString() 
+	{
+		System.out.println("entra? asdsa");
+		return "Habitacion [numeero=" + numero_habitacion + ", ocupada=" + ocupada + ", costo=" + costo + ", Capacidad=" + cantidadPersona + ", Nacionalidad=" + costo + "]";
+	}
 
 }
