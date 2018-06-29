@@ -112,13 +112,13 @@ public class Hotel{
 		{
 			costoPedidodelPasajero = minibar.darComidaToPasajeroYretornaCosto(nombreComidaAPedir, cantidadComidAPedir);
 			
+			return costoPedidodelPasajero;
+			
 		}
 		else
 		{
 			throw new PasajeroNoEstaEnHotelException("Exception");  
-		}
-		
-		return costoPedidodelPasajero;
+		}		
 	}
 
 	///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
