@@ -19,9 +19,11 @@ import exepciones.LimiteExcepcion;
 import exepciones.NoHaySuficienteComidaException;
 import exepciones.PasajeroNoEstaEnHotelException;
 import files.JsonUtiles;
+import interfaces.Interfaz_Habitaciones;
+import interfaces.Interfaz_Pasajero;
 import swing.LoginGUI;
 
-public class Hotel{
+public class Hotel implements Interfaz_Habitaciones, Interfaz_Pasajero {
 
 	private ArrayList<Habitacion> listaHabitaciones;
 	Recepcionista conserje;
@@ -143,29 +145,31 @@ public class Hotel{
 		listaHabitaciones.add(habitacion);
 	}
 
-	public void listarHabitaciones() throws LimiteExcepcion {
+	public void listarHabitaciones()  {
 		if (listaHabitaciones != null) {
 			for (Habitacion e : listaHabitaciones) {
 				System.out.println(e.toString());
 			}
-		} 
-		else {
-			throw new LimiteExcepcion("lista vacia");
-		}
+			}
+		
 
 	}
-
-	public void listar_Habitaciones_Disponibles() throws LimiteExcepcion,Exception{
-		if (listaHabitaciones != null) {
-			for (Habitacion e : listaHabitaciones){
-				if (e.getOcupada() == false){
-					System.out.println(e.toString());
+	@Override
+	public void listar_Habitaciones_Disponibles() throws LimiteExcepcion, Exception {
+		 
+			if (listaHabitaciones != null) {
+				for (Habitacion e : listaHabitaciones){
+					if (e.getOcupada() == false){
+						System.out.println(e.toString());
+					}
 				}
 			}
-		} else {
-			throw new LimiteExcepcion("lista vacia");
+			else
+			{
+				System.out.println("lista vacia");
+			}
 		}
-	}
+	
 
 	public void listar_Habitaciones_Ocupadas()throws LimiteExcepcion,Exception {
 		if (listaHabitaciones != null) {
@@ -273,7 +277,7 @@ public class Hotel{
 			e.printStackTrace();
 		}
 	}
-	
+	@Override
 	public void llegada_Pasajero_Al_hotel(Pasajero pasajero)// solo lo elimino de la lista de reserva pero no habilito las habitaciones ni completo la reserva del pasajero hasta que se vaya
 	{
 		try {
@@ -349,4 +353,6 @@ public class Hotel{
 		}
 		return false;
 	}
+
+
 }
