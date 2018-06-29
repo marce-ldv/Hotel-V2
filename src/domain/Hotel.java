@@ -20,6 +20,7 @@ import exepciones.NoHaySuficienteComidaException;
 import exepciones.PasajeroNoEstaEnHotelException;
 import files.JsonUtiles;
 import swing.LoginGUI;
+import swing.MenuAddReservaGUI;
 
 public class Hotel{
 
@@ -115,9 +116,9 @@ public class Hotel{
 	 */
 	
 
-	public void pedirComida (Pasajero p, String nombre, int cantidad)
+	public void pedirServicio (Pasajero p, String nombre, int cantidad)
 	{
-		p.pedirComidass(nombre, cantidad);
+		p.pedirServicios(nombre, cantidad);
 	}
 	
 	public float costoFinal (Pasajero p) {
@@ -137,6 +138,9 @@ public class Hotel{
 	}
 
 	///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+<<<<<<< HEAD
+	/* El verga corta(Chiappe) */
+=======
 	
 	
 	
@@ -144,6 +148,7 @@ public class Hotel{
 	
 	
 	/* El verga corta (Chiappe) */
+>>>>>>> 6ae44bbf5f3465f3b8a1633c18415bbdd728d941
 	/**
 	 * Aca va los mentodos de Chiappe
 	 * 
@@ -246,9 +251,20 @@ public class Hotel{
 
 		try {
 			while(op){
+				//num hab , num cant personas
 				//listar_Habitaciones_Disponibles(1);
+
+				/////
+				//MenuAddReservaGUI addReservaGUI = new MenuAddReservaGUI();
+				//addReservaGUI.setVisible(true);
+
+				//int numHab = addReservaGUI.getJcomboBoxNumHabitacion();
+				//System.out.println("el num de hab es: "+numHab);
+				//int cantPers = addReservaGUI.getJcomboBoxCantPersonas();
+				//System.out.println("el num de cant pers es: "+cantPers);
+
+				//Habitacion habitacion= buscar_Habitacion(numHab);// MArcer: aca necesito un scaner ente
 				Habitacion habitacion= buscar_Habitacion(2);// MArcer: aca necesito un scaner ente
-				System.out.println("prueba toString");
 				System.out.println(habitacion.toString());
 				habitacion.setOcupada(true);
 				aux.add(habitacion);

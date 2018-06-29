@@ -149,11 +149,11 @@ public class Pasajero {
 		}
 	}
 	
-	public void pedirComidass (String nombre, int cantidadComida) {
+	public void pedirServicios (String nombre, int cantidadComida) {
 		MiniBar a = new MiniBar<>();
 		float precio;
 		try {
-			precio = a.darComidaToPasajeroYretornaCosto(nombre, cantidadComida);
+			precio = a.darServicioToPasajeroYretornaCosto(nombre, cantidadComida);
 			if(precio!=0) {
 				Servicio e =new Servicio(nombre, precio, cantidadComida);
 				servicios.add(e);
@@ -187,6 +187,10 @@ public class Pasajero {
 		jsonArray.put(consumo);
 		return jsonArray;
 	}
+<<<<<<< HEAD
+
+=======
+>>>>>>> 6ae44bbf5f3465f3b8a1633c18415bbdd728d941
 	public JSONObject getFormatoJSON() throws JSONException {
 
 		JSONObject jsonObject = new JSONObject();
@@ -206,7 +210,7 @@ public class Pasajero {
 			jsonArrayb.put(f.pasarA_JSON());
 		}
 		jsonObject.put("reserva", jsonArray);
-		jsonObject.put("consumido", jsonArrayb);		
+		jsonObject.put("consumido", jsonArrayb);
 		jsonObject.put("cantidad de personas", CantidadPersona);
 		jsonObject.put("estado de pasajeros", estadoPasajero);
 

@@ -8,48 +8,32 @@ import org.json.JSONObject;
 import exepciones.ComidaInexistenteException;
 import exepciones.NoHaySuficienteComidaException;
 
-public class MiniBar <T extends Servicio>// recibira alimentos
+public class MiniBar <T extends Servicio>
 {
 
-	private ArrayList<Servicio> alimentos;
-	//private ArrayList<BebidasParaConsumo> bebidas;
-	//private ArrayList<PostresParaConsumo> postres;
+	private ArrayList<Servicio> servicios;
 	
 	// constructores	
 	
 	public MiniBar() 
 	{	
-		alimentos = new ArrayList<Servicio>();
-		//bebidas = new ArrayList<BebidasParaConsumo>();
-		//postres = new ArrayList<PostresParaConsumo>();		
+		servicios = new ArrayList<Servicio>();		
 	}
 	
-	public MiniBar(ArrayList<Servicio> alimentosRecib) 
+	public MiniBar(ArrayList<Servicio> serviciosRecib) 
 	{	
-		alimentos = alimentosRecib;
+		servicios = serviciosRecib;
 	}
 	
 	//metodos
 	
 	
-	public void agregarAlimentos (String nombre, int precio, int cantidad) 
+	public void agregarServicios (String nombre, int precio, int cantidad) 
 	{
 		Servicio b = new Servicio (nombre, precio, cantidad);
-		alimentos.add(b);
+		servicios.add(b);
 	}
 	
-/*	public void agregarBebidas (String nombre, int precio, int cantidad) 
-	{
-		BebidasParaConsumo b = new BebidasParaConsumo (nombre, precio, cantidad);
-		bebidas.add(b);
-	}
-	
-	public void agregarPostres (String nombre, int precio, int cantidad) 
-	{
-		PostresParaConsumo b = new PostresParaConsumo (nombre, precio, cantidad);
-		postres.add(b);
-	}
-	*/
 	
 	/**
 	 * este metodo da la comida al pasajero y retorna el costo de lo que el mismo consumio
@@ -58,11 +42,11 @@ public class MiniBar <T extends Servicio>// recibira alimentos
 	 * @return costoTotalComida
 	 * */
 	
-	public float darComidaToPasajeroYretornaCosto (String nombreComida, int cantidadComida) throws NoHaySuficienteComidaException,ComidaInexistenteException
+	public float darServicioToPasajeroYretornaCosto (String nombreComida, int cantidadComida) throws NoHaySuficienteComidaException,ComidaInexistenteException
 	{
 		float costoTotalComida = 0;
 		
-		for(Servicio e: alimentos)  // se recorre el array por completo
+		for(Servicio e: servicios)  // se recorre el array por completo
 		{
 			if(nombreComida.equals(e.getNombre()))  
 			{
@@ -97,19 +81,12 @@ public class MiniBar <T extends Servicio>// recibira alimentos
 		}		
 	}	
 	
-	/*public float costoTotal(int idPasajero) // ir metiendo al arreglo los valores de los productos del minibar
-	{										
-		ArrayList<Integer> arrGastos = new ArrayList<Integer>();
-			
-				
-		return 0;
-	}*/
-	
+
 	public JSONObject getFormatoJSON() throws JSONException 
 	{
 			
 			JSONObject jsonObject = new JSONObject();
-			jsonObject.put("alimentos", alimentos);			
+			jsonObject.put("alimentos", servicios);			
 
 			return jsonObject;
 		
@@ -118,7 +95,7 @@ public class MiniBar <T extends Servicio>// recibira alimentos
 	@Override
 	public String toString() 
 	{
-		return "MiniBar [alimentos=" + alimentos + "]";
+		return "MiniBar [alimentos=" + servicios + "]";
 	}
 	
 	
