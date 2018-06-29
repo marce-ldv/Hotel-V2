@@ -130,24 +130,13 @@ public class Hotel{
 	 * @author Ignacio Chiaradia
 	 */
 	
-	public float pedirComida(Pasajero p, MiniBar minibar, String nombreComidaAPedir, int cantidadComidAPedir) throws PasajeroNoEstaEnHotelException
+	public float pedirComida(Pasajero p, MiniBar minibar, String nombreComidaAPedir, int cantidadComidAPedir) throws PasajeroNoEstaEnHotelException, ComidaInexistenteException, NoHaySuficienteComidaException
 	{
 		float costoPedidodelPasajero = 0;
 		
 		if(p.getEstadoPasajero() == 2)
 		{
-			try
-			{
-				costoPedidodelPasajero = minibar.darComidaToPasajeroYretornaCosto(nombreComidaAPedir, cantidadComidAPedir);				
-			}
-			catch(NoHaySuficienteComidaException e)
-			{
-				e.getMessage();				
-			}
-			catch(ComidaInexistenteException e)
-			{
-				e.getMessage();				
-			}
+			costoPedidodelPasajero = minibar.darComidaToPasajeroYretornaCosto(nombreComidaAPedir, cantidadComidAPedir);
 			
 		}
 		else

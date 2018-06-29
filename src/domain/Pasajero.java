@@ -169,6 +169,7 @@ public class Pasajero
 		jsonArray.put(consumo);
 		return jsonArray;
 	}
+	
 	public JSONObject getFormatoJSON() throws JSONException 
 	{
 			
