@@ -106,20 +106,56 @@ public class RecepcionistaGUI extends JFrame {
 			public void actionPerformed(ActionEvent e) {
 				//hotel.add(habitacion);
 				JOptionPane.showMessageDialog(null,"Este boton agrega una habitacion");
+				hotel.add(new Habitacion(1,false,2000,2));
+				hotel.add(new Habitacion(2,false,3000,2));
+				hotel.add(new Habitacion(3,false,1500,1));
+				hotel.add(new Habitacion(4,false,2000,2));
+				hotel.add(new Habitacion(5,false,4500,1));
+				hotel.add(new Habitacion(6,false,2000,2));
+				hotel.add(new Habitacion(7,false,2000,2));
+				hotel.add(new Habitacion(8,false,5400,3));
+				hotel.add(new Habitacion(9,false,2000,2));
+				hotel.add(new Habitacion(10,false,3400,2));
+				hotel.add(new Habitacion(12,false,2000,4));
+				hotel.add(new Habitacion(13,false,2000,2));
+				hotel.add(new Habitacion(14,false,2300,2));
+				hotel.add(new Habitacion(15,false,2000,2));
+				hotel.add(new Habitacion(16,false,5900,6));
+				hotel.add(new Habitacion(17,false,2000,2));
+				hotel.add(new Habitacion(18,false,2000,2));
+				hotel.add(new Habitacion(19,false,2300,2));
+				hotel.add(new Habitacion(20,false,2000,2));
+				hotel.add(new Habitacion(21,false,2100,2));
+				hotel.add(new Habitacion(22,false,2000,2));
+				hotel.add(new Habitacion(23,false,4300,2));
+				hotel.add(new Habitacion(24,false,1100,5));
+				hotel.add(new Habitacion(25,false,5400,2));
+				hotel.add(new Habitacion(26,false,3100,3));
+				hotel.add(new Habitacion(27,false,1980,2));
+				hotel.add(new Habitacion(28,false,1300,2));
 				try {
+<<<<<<< HEAD
 					System.out.println("entra?");
 					hotel.agregarHabitacionesManualmente();
 					
 					hotel.listar_Habitaciones_Disponibles();
 						
 					System.out.println("entra?");
+=======
+					//hotel.agregarHabitacionesManualmente();
+					hotel.add(habitacion);
+>>>>>>> 41a30549ba5a2f0628e29ff2c944ddc94b43256a
 					hotel.listarHabitaciones();
 				} catch (LimiteExcepcion e1) {
 					// TODO Auto-generated catch block
 					e1.printStackTrace();
+<<<<<<< HEAD
 				} catch (Exception e1) {
 					// TODO Auto-generated catch block
 					e1.printStackTrace();
+=======
+					e1.informa();
+>>>>>>> 41a30549ba5a2f0628e29ff2c944ddc94b43256a
 				}
 			}
 		});
