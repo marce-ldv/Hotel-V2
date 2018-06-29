@@ -60,13 +60,15 @@ public class RecepcionistaGUI extends JFrame {
 			public void actionPerformed(ActionEvent arg0) {
 				JOptionPane.showMessageDialog(null,"Este boton agrega una reserva");
 
+
+		
 				//form pasajero
-				//Pasajero pasajero=new Pasajero("pepe", "benitez", "2323234", "32432422", "6756754456",
-				//		"Venezuela", 1);
+			Pasajero pasajero=new Pasajero("pepe", "benitez", "2323234", "32432422", "6756754456","Venezuela", 1);
 				//formReservaGUI.setVisible(true);
+				hotel.reservar_Habitacion(pasajero);
 				//Pasajero pasajeroCargado = formReservaGUI.devuelvePasajeroCargado();
 
-				hotel.reservar_Habitacion(cargarPasajeroScanner());
+				//hotel.reservar_Habitacion(cargarPasajeroScanner());
 				JOptionPane.showMessageDialog(null,"El pasajero se agrego exitosamente");
 				//hotel.reservar_Habitacion(new Pasajero("peasdpe", "benisadtez", "234567", "32432422", "6756754456","Peru", 2));
 				try{
@@ -103,9 +105,11 @@ public class RecepcionistaGUI extends JFrame {
 		JButton button_2 = new JButton("Ver habitaciones disponibles");
 		button_2.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				
 				JOptionPane.showMessageDialog(null,"Este boton comprueba habitaciones disponibles");
 				try {
 					hotel.listar_Habitaciones_Disponibles();
+					
 				} catch (LimiteExcepcion e1) {
 					// TODO Auto-generated catch block
 					e1.printStackTrace();
@@ -121,6 +125,7 @@ public class RecepcionistaGUI extends JFrame {
 		JButton button_3 = new JButton("Finalizar estadia");
 		button_3.setBounds(22, 353, 406, 41);
 		contentPane.add(button_3);
+		
 		
 		JButton button_4 = new JButton("Calcular costo total");
 		button_4.setBounds(22, 301, 406, 41);
