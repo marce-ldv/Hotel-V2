@@ -1,16 +1,6 @@
 package domain;
 
-import exepciones.CampoVacioException;
-import exepciones.InvalidPasswordException;
-import exepciones.InicioSesionException;
-import exepciones.InvalidPasswordException;
-import exepciones.InvalidUsernameAndPasswordException;
-import exepciones.InvalidUsernameException;
-import exepciones.LimiteExcepcion;
-import files.JsonUtiles;
-
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 
 import org.json.JSONArray;
@@ -18,6 +8,13 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import Generecidad.MapaGenerico;
+import exepciones.CampoVacioException;
+import exepciones.InicioSesionException;
+import exepciones.InvalidPasswordException;
+import exepciones.InvalidUsernameAndPasswordException;
+import exepciones.InvalidUsernameException;
+import exepciones.LimiteExcepcion;
+import files.JsonUtiles;
 import swing.LoginGUI;
 
 public class Hotel{
@@ -118,12 +115,28 @@ public class Hotel{
 	}
 
 	////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-	/* Nacho Ignacio */
+	/* Ignacio Chiaradia */
 	/**
-	 * Aca va los mentodos de Nacho
+	 * Aca va los metodos de Nacho
 	 * 
-	 * @author Nacho Ignacio
+	 * @author Ignacio Chiaradia
 	 */
+	
+	public float pedirComida(Pasajero p, MiniBar minibar, String nombreComidaAPedir, int cantidadComidAPedir) 
+	{
+		float costoPedidodelPasajero = 0;
+		
+		if(p.getEstadoPasajero() == 2)
+		{
+			costoPedidodelPasajero = minibar.darComidaToPasajeroYretornaCosto(nombreComidaAPedir, cantidadComidAPedir);
+		}
+		else
+		{
+			System.out.println("Usted no se encuentra en el hotel");  // futura excepcion
+		}
+		
+		return costoPedidodelPasajero;
+	}
 
 	///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 	/* Rodri */
