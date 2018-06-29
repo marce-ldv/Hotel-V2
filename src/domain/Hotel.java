@@ -81,6 +81,38 @@ public class Hotel{
 		}
 		return usu;
 	}
+	
+	public void agregarHabitacionesManualmente() {
+		Hotel hotel = new Hotel();
+		
+		hotel.add(new Habitacion(1,false,2000,2));
+		hotel.add(new Habitacion(2,false,3000,2));
+		hotel.add(new Habitacion(3,false,1500,1));
+		hotel.add(new Habitacion(4,false,2000,2));
+		hotel.add(new Habitacion(5,false,4500,1));
+		hotel.add(new Habitacion(6,false,2000,2));
+		hotel.add(new Habitacion(7,false,2000,2));
+		hotel.add(new Habitacion(8,false,5400,3));
+		hotel.add(new Habitacion(9,false,2000,2));
+		hotel.add(new Habitacion(10,false,3400,2));
+		hotel.add(new Habitacion(12,false,2000,4));
+		hotel.add(new Habitacion(13,false,2000,2));
+		hotel.add(new Habitacion(14,false,2300,2));
+		hotel.add(new Habitacion(15,false,2000,2));
+		hotel.add(new Habitacion(16,false,5900,6));
+		hotel.add(new Habitacion(17,false,2000,2));
+		hotel.add(new Habitacion(18,false,2000,2));
+		hotel.add(new Habitacion(19,false,2300,2));
+		hotel.add(new Habitacion(20,false,2000,2));
+		hotel.add(new Habitacion(21,false,2100,2));
+		hotel.add(new Habitacion(22,false,2000,2));
+		hotel.add(new Habitacion(23,false,4300,2));
+		hotel.add(new Habitacion(24,false,1100,5));
+		hotel.add(new Habitacion(25,false,5400,2));
+		hotel.add(new Habitacion(26,false,3100,3));
+		hotel.add(new Habitacion(27,false,1980,2));
+		hotel.add(new Habitacion(28,false,1300,2));
+	}
 
 	////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 	/* Ignacio Chiaradia */
@@ -200,33 +232,36 @@ public class Hotel{
 		System.out.println("no se encontro la habitacion");
 		return null;
 	}
-	/*
+
 	public void reservar_Habitacion(Pasajero pasajero){
-		int i=0;
+
 		ArrayList<Habitacion> aux=new ArrayList<>();
+		int anio=0, mes=0, dia=0;
+		Date checkIn=null;
+		Date checkOut=null;
+		boolean op = true;
+		//agregar metodo de type input
+
 		try {
-			               //aca deberia crear la reserva <------------------------------atento!
-			//tambien deberia agregarla a la lista de reserva<------------------------
-			//agrego la fecha
-			while(condicion!=true)
-			{
+			while(op){
+				listar_Habitaciones_Disponibles(1);
 				Habitacion habitacion= buscar_Habitacion(23);// MArcer: aca necesito un scaner ente
+				habitacion.setOcupada(true);
 				aux.add(habitacion);
+				op = false;
 			}
-			
-			Reserva reserva=new Reserva(12-34-5332, 23-34-5332, aux);
-			mapaHabitacionesReservada.addReserva_A_pasajero(pasajero.getDni(),reserva);//le sapamos el DNI
-			//pasajero.addHabitacion(habitacion, fecha); // terminar
-			habitacion.setOcupada(true);
-			
+
+			checkIn = new Date(anio,mes,dia);
+			checkOut = new Date(anio,mes,dia);
+			Reserva reserva=new Reserva(checkIn, checkOut, aux);//aca deberia crear la reserva
+			mapaHabitacionesReservada.addReserva_A_pasajero(pasajero.getDni(),reserva,aux);//le pasamos el DNI
 		} catch (LimiteExcepcion e) {
 			e.printStackTrace();
 		} catch (Exception e) {
-			
 			e.printStackTrace();
 		}
 	}
-	*/
+
 	
 	public void llegada_Pasajero_Al_hotel(Pasajero pasajero)// solo lo elimino de la lista de reserva pero no habilito las habitaciones ni completo la reserva del pasajero hasta que se vaya
 	{
