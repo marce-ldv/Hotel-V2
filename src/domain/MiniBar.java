@@ -21,6 +21,8 @@ public class MiniBar <T extends AlimentosParaConsumo>// recibira alimentos
 	public MiniBar() 
 	{	
 		alimentos = new ArrayList<>();
+		bebidas = new ArrayList<>();
+		postres = new ArrayList<>();
 		
 	}
 	
