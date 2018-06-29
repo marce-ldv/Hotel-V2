@@ -172,27 +172,6 @@ public class Pasajero {
 		jsonArray.put(consumo);
 		return jsonArray;
 	}
-<<<<<<< HEAD
-	
-	public JSONObject getFormatoJSON() throws JSONException 
-	{
-			JSONObject jsonObject = new JSONObject();
-			JSONArray jsonArray = new JSONArray();
-			jsonObject.put("nombre", nombre);			
-			jsonObject.put("apellido", apellido);
-			jsonObject.put("dni", dni);
-			jsonObject.put("numTarjetaCredito", numTarjetaCredito);
-			jsonObject.put("telefono", telefono);			
-			jsonObject.put("nacionalidad", nacionalidad);				
-			jsonObject.put("idPasajero", idPasajero);		
-			for (Reserva e : listaReserva) {
-				jsonArray.put(e);
-			}
-			jsonObject.put("cantidad de personas", CantidadPersona);
-			jsonObject.put("estado de pasajeros", estadoPasajero);
-			
-=======
->>>>>>> c2efdb9839a5f256e22bd9381cc8b6a197048059
 
 	public JSONObject getFormatoJSON() throws JSONException {
 
@@ -213,7 +192,7 @@ public class Pasajero {
 			jsonArrayb.put(f);
 		}
 		jsonObject.put("reserva", jsonArray);
-		jsonObject.put("consumido", jsonArrayb);		
+		jsonObject.put("consumido", jsonArrayb);
 		jsonObject.put("cantidad de personas", CantidadPersona);
 		jsonObject.put("estado de pasajeros", estadoPasajero);
 

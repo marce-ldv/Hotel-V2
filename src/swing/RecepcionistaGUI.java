@@ -14,7 +14,6 @@ import domain.Hotel;
 import domain.Pasajero;
 import domain.Recepcionista;
 import exepciones.LimiteExcepcion;
-import jdk.nashorn.internal.scripts.JO;
 
 public class RecepcionistaGUI extends JFrame {
 
