@@ -10,7 +10,7 @@ public class ComidaInexistenteException extends Exception
 	@Override
 	public String getMessage()
 	{
-		return super.getMessage()+" la cantidad de alimentos pedidos es mayor a la actual";
+		return super.getMessage()+" la comida que usted ha pedido no esta en el menu";
 	}
 	
 
