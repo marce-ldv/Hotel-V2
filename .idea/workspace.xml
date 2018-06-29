@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ddcf32c1-ddd4-4489-8636-92153bcb28b5" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/src/domain/Habitacion.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/domain/Habitacion.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/domain/Hotel.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/domain/Hotel.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/domain/Hotel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/domain/Hotel.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/bin/" />
@@ -18,12 +18,12 @@
       <file leaf-file-name="Hotel.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/domain/Hotel.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="375">
-              <caret line="214" column="45" lean-forward="true" selection-start-line="214" selection-start-column="45" selection-end-line="214" selection-end-column="45" />
+            <state relative-caret-position="457">
+              <caret line="230" selection-start-line="230" selection-end-line="230" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#3505#3506#0" expanded="true" />
-                <element signature="e#3545#3546#0" expanded="true" />
+                <element signature="e#4663#4664#0" expanded="true" />
+                <element signature="e#4703#4704#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -115,7 +115,7 @@
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="1" />
     <option name="y" value="17" />
     <option name="width" value="1340" />
@@ -272,7 +272,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1376" height="744" extended-state="7" />
+    <frame x="-8" y="-8" width="1376" height="744" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info anchor="right" id="Palette" order="3" />
@@ -320,8 +320,8 @@
           <caret line="125" column="33" selection-start-line="125" selection-start-column="33" selection-end-line="125" selection-end-column="33" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#3505#3506#0" expanded="true" />
-            <element signature="e#3545#3546#0" expanded="true" />
+            <element signature="e#4663#4664#0" expanded="true" />
+            <element signature="e#4703#4704#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -415,8 +415,8 @@
           <caret line="125" column="33" lean-forward="true" selection-start-line="125" selection-start-column="33" selection-end-line="125" selection-end-column="33" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#3505#3506#0" expanded="true" />
-            <element signature="e#3545#3546#0" expanded="true" />
+            <element signature="e#4663#4664#0" expanded="true" />
+            <element signature="e#4703#4704#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -441,8 +441,8 @@
           <caret line="169" column="29" selection-start-line="169" selection-start-column="29" selection-end-line="169" selection-end-column="29" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#3505#3506#0" expanded="true" />
-            <element signature="e#3545#3546#0" expanded="true" />
+            <element signature="e#4663#4664#0" expanded="true" />
+            <element signature="e#4703#4704#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -467,8 +467,8 @@
           <caret line="169" column="29" selection-start-line="169" selection-start-column="29" selection-end-line="169" selection-end-column="29" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#3505#3506#0" expanded="true" />
-            <element signature="e#3545#3546#0" expanded="true" />
+            <element signature="e#4663#4664#0" expanded="true" />
+            <element signature="e#4703#4704#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -577,12 +577,12 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/domain/Hotel.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="375">
-          <caret line="214" column="45" lean-forward="true" selection-start-line="214" selection-start-column="45" selection-end-line="214" selection-end-column="45" />
+        <state relative-caret-position="457">
+          <caret line="230" selection-start-line="230" selection-end-line="230" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#3505#3506#0" expanded="true" />
-            <element signature="e#3545#3546#0" expanded="true" />
+            <element signature="e#4663#4664#0" expanded="true" />
+            <element signature="e#4703#4704#0" expanded="true" />
           </folding>
         </state>
       </provider>
