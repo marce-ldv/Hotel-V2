@@ -5,8 +5,7 @@ import java.awt.EventQueue;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-import javax.swing.JFrame;
-import javax.swing.JPanel;
+import javax.swing.*;
 import javax.swing.border.EmptyBorder;
 import javax.xml.ws.Holder;
 
@@ -15,8 +14,6 @@ import domain.Hotel;
 import domain.Pasajero;
 import domain.Recepcionista;
 import exepciones.LimiteExcepcion;
-
-import javax.swing.JButton;
 
 public class RecepcionistaGUI extends JFrame {
 
@@ -58,6 +55,7 @@ public class RecepcionistaGUI extends JFrame {
 		JButton btnNewButton = new JButton("Agregar reserva");
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
+				JOptionPane.showMessageDialog(null,"Este boton agrega una reserva");
 				hotel.reservar_Habitacion(pasajero);
 			}
 		});
@@ -67,7 +65,7 @@ public class RecepcionistaGUI extends JFrame {
 		JButton button = new JButton("Listar Reserva");
 		button.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				
+				JOptionPane.showMessageDialog(null,"Este boton lista una reserva");
 			}
 		});
 		button.setBounds(22, 93, 406, 41);
@@ -80,6 +78,7 @@ public class RecepcionistaGUI extends JFrame {
 		JButton button_2 = new JButton("Ver habitaciones disponibles");
 		button_2.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				JOptionPane.showMessageDialog(null,"Este boton comprueba habitaciones disponibles");
 				try {
 					hotel.listar_Habitaciones_Disponibles();
 				} catch (LimiteExcepcion e1) {
@@ -106,6 +105,7 @@ public class RecepcionistaGUI extends JFrame {
 		button_5.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				//hotel.add(habitacion);
+				JOptionPane.showMessageDialog(null,"Este boton agrega una habitacion");
 				hotel.agregarHabitacionesManualmente();
 			}
 		});

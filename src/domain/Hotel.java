@@ -75,6 +75,8 @@ public class Hotel{
 					usu = new Usuario();
 					usu.setPassword(pass);
 					usu.setUsuario(user);
+					System.out.println(jsonObject.getString("username")+" user "+user);
+					System.out.println(jsonObject.getString("password")+" pass "+pass);
 				} else {
 					throw new InvalidPasswordException();
 				}

@@ -2,6 +2,7 @@ package swing;
 
 import app.JavaUtiles;
 import domain.Hotel;
+import domain.Recepcionista;
 import domain.Usuario;
 import exepciones.*;
 import files.JsonUtiles;
@@ -206,9 +207,12 @@ public class LoginGUI extends JFrame implements ActionListener{
                     hotel.loguearse(textFieldUsername.getText(),contrasenia);
                     JOptionPane.showMessageDialog(null,"Te has logeado");
                     if(jcomboLogin.getSelectedIndex() == 0) {
-                    	 AdministradorGUI adminGUI = new AdministradorGUI();
-                    	 JOptionPane.showMessageDialog(null,"admin gui");
-                    	 adminGUI.setVisible(true);
+                    	 //AdministradorGUI adminGUI = new AdministradorGUI();
+                    	 //JOptionPane.showMessageDialog(null,"admin gui");
+                    	 //adminGUI.setVisible(true);
+                        //prueba de mientras q admin instancie la GUI de Recepcionista
+                        RecepcionistaGUI recepcionistaGUI = new RecepcionistaGUI();
+                        recepcionistaGUI.setVisible(true);
                     	 this.dispose();
                     }else if(jcomboLogin.getSelectedIndex() == 1) {
                     	EmpleadoGUI empleadoGUI = new EmpleadoGUI();
