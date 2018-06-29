@@ -192,7 +192,7 @@ public class Hotel{
 		
 		
 		ArrayList<Habitacion> aux=new ArrayList<>();
-		int año, mes , dia;
+		int anio, mes , dia;
 		Date checkIn;
 		Date checkOut;
 		
@@ -206,9 +206,9 @@ public class Hotel{
 			}
 			
 			
-			checkIn=new Date(año,mes,dia);
+			checkIn=new Date(anio,mes,dia);
 			
-			checkOut=new Date(año,mes,dia);
+			checkOut=new Date(anio,mes,dia);
 
 			Reserva reserva=new Reserva(checkIn, checkOut, aux);//aca deberia crear la reserva
 			
