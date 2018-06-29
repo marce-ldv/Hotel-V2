@@ -105,7 +105,8 @@ public class RecepcionistaGUI extends JFrame {
 		JButton button_5 = new JButton("Agregar habitacion");
 		button_5.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				hotel.add(habitacion);
+				//hotel.add(habitacion);
+				hotel.agregarHabitacionesManualmente();
 			}
 		});
 		button_5.setBounds(22, 197, 406, 41);
