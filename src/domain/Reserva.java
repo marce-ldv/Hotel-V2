@@ -15,7 +15,7 @@ public class Reserva {
 	private Date check_Out;
 	ArrayList<Habitacion> listaHabitaciones;
 	private boolean completado;
-
+	
 	public Reserva(Date check_In,Date check_Out,ArrayList<Habitacion>listaHabitaciones)
 	{
 		this.check_In=check_In;
@@ -54,6 +54,40 @@ public class Reserva {
 		}
 	}
 	
+	public void habilitar_habitaciones()
+	{
+		if(listaHabitaciones!=null)
+		{
+			for(Habitacion e: listaHabitaciones )
+			{
+				e.setOcupada(false);
+			}
+		
+		}
+	}
+	
+	public void desabilitar_habitaciones()
+	{
+		if(listaHabitaciones!=null)
+		{
+			for(Habitacion e: listaHabitaciones )
+			{
+				e.setOcupada(true);
+			}
+		}
+	}
+	public double costo_total_habitaciones()
+	{
+		double i=0;
+		if(listaHabitaciones!=null)
+		{
+			for(Habitacion e: listaHabitaciones )
+			{
+				i=i+e.getCosto();
+			}
+		}
+		return i;
+	}
 	public ArrayList<Habitacion> retornar_lista_Habitaciones()
 	{
 		return listaHabitaciones;

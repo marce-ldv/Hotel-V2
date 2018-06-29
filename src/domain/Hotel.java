@@ -1,6 +1,7 @@
 package domain;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 import org.json.JSONArray;
@@ -261,7 +262,6 @@ public class Hotel{
 			e.printStackTrace();
 		}
 	}
-
 	
 	public void llegada_Pasajero_Al_hotel(Pasajero pasajero)// solo lo elimino de la lista de reserva pero no habilito las habitaciones ni completo la reserva del pasajero hasta que se vaya
 	{
@@ -280,6 +280,18 @@ public class Hotel{
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+	}
+	public double fin_Estadia(Pasajero pasajero)
+	{
+		double costo;
+		Reserva reserva=pasajero.ultima_Posicion_Valida_Reserva();
+		reserva.setCompletado(true);
+		costo=reserva.costo_total_habitaciones();
+		reserva.habilitar_habitaciones();
+		Date checkIn=reserva.getCheck_In();
+		Date checkOut=reserva.getCheck_Out();
+		costo= ( costo * ( checkIn.getTime() - checkOut.getTime() ) );
+		return costo;
 	}
 	
 }

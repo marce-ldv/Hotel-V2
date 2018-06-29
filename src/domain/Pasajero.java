@@ -184,6 +184,8 @@ public class Pasajero
 			jsonObject.put("nacionalidad", nacionalidad);				
 			jsonObject.put("idPasajero", idPasajero);		
 			jsonArray.put("consumo");
+			jsonArray.put("listaReserva");
+			
 
 			return jsonObject;		
 	}
