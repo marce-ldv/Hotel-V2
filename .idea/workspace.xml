@@ -2,22 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ddcf32c1-ddd4-4489-8636-92153bcb28b5" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/domain/Hotel.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/domain/Hotel.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/domain/MiniBar.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/domain/MiniBar.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/domain/Pasajero.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/domain/Pasajero.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/domain/Usuario.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/domain/Usuario.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/swing/LoginGUI$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/swing/LoginGUI$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/swing/LoginGUI$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/swing/LoginGUI$2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/swing/LoginGUI$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/swing/LoginGUI$3.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/swing/LoginGUI$4.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/swing/LoginGUI$4.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/swing/LoginGUI.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/swing/LoginGUI.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/registroAdmin.json" beforeDir="false" afterPath="$PROJECT_DIR$/registroAdmin.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/registroPasajeros.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/registroUsuarioEstandar.json" beforeDir="false" afterPath="$PROJECT_DIR$/registroUsuarioEstandar.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/domain/Hotel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/domain/Hotel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/domain/Usuario.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/domain/Usuario.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/swing/LoginGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/swing/LoginGUI.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/swing/RecepcionistaGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/swing/RecepcionistaGUI.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/bin/" />
@@ -56,8 +40,8 @@
       <file leaf-file-name="RecepcionistaGUI.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/swing/RecepcionistaGUI.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="155">
-              <caret line="107" column="84" selection-start-line="107" selection-start-column="84" selection-end-line="107" selection-end-column="84" />
+            <state relative-caret-position="96">
+              <caret line="22" column="29" lean-forward="true" selection-start-line="22" selection-start-column="29" selection-end-line="22" selection-end-column="29" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#1764#1765#0" expanded="true" />
@@ -286,12 +270,12 @@
       <window_info anchor="right" id="Capture Analysis" order="3" />
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
       <window_info anchor="right" id="Maven Projects" order="3" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.3536379" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.24365482" />
       <window_info anchor="bottom" id="Version Control" order="7" />
       <window_info anchor="bottom" id="Terminal" order="7" />
       <window_info id="Capture Tool" order="2" />
       <window_info id="Designer" order="2" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2606383" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2606383" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info id="UI Designer" order="2" />
@@ -709,8 +693,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/swing/RecepcionistaGUI.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="155">
-          <caret line="107" column="84" selection-start-line="107" selection-start-column="84" selection-end-line="107" selection-end-column="84" />
+        <state relative-caret-position="96">
+          <caret line="22" column="29" lean-forward="true" selection-start-line="22" selection-start-column="29" selection-end-line="22" selection-end-column="29" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#1764#1765#0" expanded="true" />
