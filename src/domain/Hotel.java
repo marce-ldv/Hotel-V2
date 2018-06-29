@@ -291,6 +291,7 @@ public class Hotel{
 		Date checkIn=reserva.getCheck_In();
 		Date checkOut=reserva.getCheck_Out();
 		costo= ( costo * ( checkIn.getTime() - checkOut.getTime() ) );
+		
 		return costo;
 	}
 	
