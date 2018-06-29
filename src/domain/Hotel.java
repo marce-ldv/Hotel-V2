@@ -115,9 +115,9 @@ public class Hotel{
 	 */
 	
 
-	public void pedirComida (Pasajero p, String nombre, int cantidad)
+	public void pedirServicio (Pasajero p, String nombre, int cantidad)
 	{
-		p.pedirComidass(nombre, cantidad);
+		p.pedirServicios(nombre, cantidad);
 	}
 	
 	public float costoFinal (Pasajero p) {

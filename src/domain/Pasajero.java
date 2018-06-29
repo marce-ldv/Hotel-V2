@@ -152,11 +152,11 @@ public class Pasajero {
 		}
 	}
 	
-	public void pedirComidass (String nombre, int cantidadComida) {
+	public void pedirServicios (String nombre, int cantidadComida) {
 		MiniBar a = new MiniBar<>();
 		float precio;
 		try {
-			precio = a.darComidaToPasajeroYretornaCosto(nombre, cantidadComida);
+			precio = a.darServicioToPasajeroYretornaCosto(nombre, cantidadComida);
 			if(precio!=0) {
 				Servicio e =new Servicio(nombre, precio, cantidadComida);
 				servicios.add(e);
