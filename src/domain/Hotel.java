@@ -20,7 +20,6 @@ import exepciones.NoHaySuficienteComidaException;
 import exepciones.PasajeroNoEstaEnHotelException;
 import files.JsonUtiles;
 import swing.LoginGUI;
-import swing.MenuAddReservaGUI;
 
 public class Hotel{
 
@@ -138,17 +137,8 @@ public class Hotel{
 	}
 
 	///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-<<<<<<< HEAD
 	/* El verga corta(Chiappe) */
-=======
-	
-	
-	
-	
-	
-	
-	/* El verga corta (Chiappe) */
->>>>>>> 6ae44bbf5f3465f3b8a1633c18415bbdd728d941
+
 	/**
 	 * Aca va los mentodos de Chiappe
 	 * 
