@@ -60,19 +60,15 @@ public class RecepcionistaGUI extends JFrame {
 			public void actionPerformed(ActionEvent arg0) {
 				JOptionPane.showMessageDialog(null,"Este boton agrega una reserva");
 
-<<<<<<< HEAD
-				Pasajero pasajero=new Pasajero("pepe", "benitez", "2323234", "32432422", "6756754456",
-						"Venezuela", 1);
-				hotel.reservar_Habitacion(pasajero);
-=======
+
+		
 				//form pasajero
-				//Pasajero pasajero=new Pasajero("pepe", "benitez", "2323234", "32432422", "6756754456",
-				//		"Venezuela", 1);
+			Pasajero pasajero=new Pasajero("pepe", "benitez", "2323234", "32432422", "6756754456","Venezuela", 1);
 				//formReservaGUI.setVisible(true);
+				hotel.reservar_Habitacion(pasajero);
 				//Pasajero pasajeroCargado = formReservaGUI.devuelvePasajeroCargado();
 
-				hotel.reservar_Habitacion(cargarPasajeroScanner());
->>>>>>> ac61535c02fe8a7017d7488a947f56e24fc48866
+				//hotel.reservar_Habitacion(cargarPasajeroScanner());
 				JOptionPane.showMessageDialog(null,"El pasajero se agrego exitosamente");
 				//hotel.reservar_Habitacion(new Pasajero("peasdpe", "benisadtez", "234567", "32432422", "6756754456","Peru", 2));
 				try{
