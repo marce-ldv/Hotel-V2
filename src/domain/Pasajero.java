@@ -1,17 +1,9 @@
 package domain;
 
-import java.lang.reflect.Array;
 import java.util.ArrayList;
-import java.util.Date;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Scanner;
-
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
-
-import Generecidad.MapaGenerico;
 
 public class Pasajero 
 {
@@ -171,6 +163,12 @@ public class Pasajero
 		return null;
 	}
 
+	public JSONArray arreglo_Consumo(JSONObject consumo)
+	{
+		JSONArray jsonArray = new JSONArray();
+		jsonArray.put(consumo);
+		return jsonArray;
+	}
 	public JSONObject getFormatoJSON() throws JSONException 
 	{
 			
