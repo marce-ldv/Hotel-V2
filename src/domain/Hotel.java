@@ -29,6 +29,8 @@ public class Hotel implements Interfaz_Habitaciones, Interfaz_Pasajero {
 	Recepcionista conserje;
 	MapaGenerico<String, Reserva> mapaHabitacionesReservada;
 	ArrayList<Pasajero> listaPasajero;
+	MiniBar<Servicio> miniBar;
+	
 	public Hotel() {
 		listaHabitaciones = new ArrayList<>();
 		conserje=new Recepcionista();
@@ -107,6 +109,18 @@ public class Hotel implements Interfaz_Habitaciones, Interfaz_Pasajero {
 	 */
 	
 	
+	public void agregarServicioMiniBarHotel(String nombreServicio, int precioServicio, int cantidadServicio)
+	{
+		miniBar.agregarServicios(nombreServicio, precioServicio, cantidadServicio);
+	}
+	
+	
+	public void listarServicios(ArrayList<Servicio> arr)
+	{
+		miniBar.listarElementos(arr);
+	}
+	
+	
 
 	///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 	/* Rodri */
@@ -122,22 +136,27 @@ public class Hotel implements Interfaz_Habitaciones, Interfaz_Pasajero {
 		p.pedirServicios(nombre, cantidad);
 	}
 	
-	public float costoFinal (Pasajero p) {
+	public float costoFinal (Pasajero p) 
+	{
 		float costoServicios=0;
+		
 		for(Servicio e: p.getServicios())
 		{
 			costoServicios+=e.getValor();
 		}
+		
 		costoServicios+=fin_Estadia(p);
 		return costoServicios;
 	}
 	
 	
-	public void facturar (Pasajero p) {
+	public void facturar (Pasajero p) 
+	{
 		float resultado= costoFinal(p);
 		p.crearFactura(p.getNombre(), resultado);
 	}
 
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 
 	//public void add_mapa_reserva(Reserva reserva)
