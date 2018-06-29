@@ -226,7 +226,7 @@ public class Hotel implements Interfaz_Habitaciones, Interfaz_Pasajero {
 		System.out.println("no se encontro la habitacion");
 		return null;
 	}
-
+	@Override
 	public void reservar_Habitacion(Pasajero pasajero){
 
 		ArrayList<Habitacion> aux=new ArrayList<>();
@@ -353,6 +353,8 @@ public class Hotel implements Interfaz_Habitaciones, Interfaz_Pasajero {
 		}
 		return false;
 	}
+
+	
 
 
 }
