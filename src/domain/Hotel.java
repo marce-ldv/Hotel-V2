@@ -104,22 +104,7 @@ public class Hotel{
 	 * @author Ignacio Chiaradia
 	 */
 	
-	public float pedirComida(Pasajero p, MiniBar minibar, String nombreComidaAPedir, int cantidadComidAPedir) throws PasajeroNoEstaEnHotelException, ComidaInexistenteException, NoHaySuficienteComidaException
-	{
-		float costoPedidodelPasajero = 0;
-		
-		if(p.getEstadoPasajero() == 2)
-		{
-			costoPedidodelPasajero = minibar.darComidaToPasajeroYretornaCosto(nombreComidaAPedir, cantidadComidAPedir);
-			
-			return costoPedidodelPasajero;
-			
-		}
-		else
-		{
-			throw new PasajeroNoEstaEnHotelException("Exception");  
-		}		
-	}
+	
 
 	///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 	/* Rodri */
@@ -129,10 +114,39 @@ public class Hotel{
 	 * @author Rodri
 	 */
 	
+<<<<<<< HEAD
 
+=======
+	public void pedirComida (Pasajero p, String nombre, int cantidad)
+	{
+		p.pedirComidass(nombre, cantidad);
+	}
+	
+	public float costoFinal (Pasajero p) {
+		float costoServicios=0;
+		for(Servicio e: p.getServicios())
+		{
+			costoServicios+=e.getValor();
+		}
+		costoServicios+=fin_Estadia(p);
+		return costoServicios;
+	}
+	
+	
+	public void facturar (Pasajero p) {
+		float resultado= costoFinal(p);
+		p.crearFactura(p.getNombre(), resultado);
+	}
+>>>>>>> 67516de2e503fabb8f5625ad213cf073acf4f7ea
 
 	///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-	/* El verga larga(Chiappe) */
+	
+	
+	
+	
+	
+	
+	/* El verga corta (Chiappe) */
 	/**
 	 * Aca va los mentodos de Chiappe
 	 * 

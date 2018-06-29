@@ -117,6 +117,8 @@ public class Reserva {
 	public void setCompletado(boolean completado) {
 		this.completado = completado;
 	}
+	
+	
 
 	
 }

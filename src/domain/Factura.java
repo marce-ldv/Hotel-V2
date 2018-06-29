@@ -7,7 +7,6 @@ import java.util.Date;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-
 //hola chicos
 
 public class Factura {
@@ -39,14 +38,23 @@ public class Factura {
 	private double monto_total;
 	private char tipo;
 	private DateFormat formato = new SimpleDateFormat("dd/MM/yyyy");
-	
-	
-	
-	
-	
 
 	// Constructores
-	
+
+	public Factura(String nombre_comprador, double monto_total) {
+		this.nombre_comprador = nombre_comprador;
+		comprador_condicion_frente_al_iva = "responsable inscripto";
+		Index++;
+		this.nro_de_compra = Index;
+		fecha_de_emision = new Date();
+		if (comprador_condicion_frente_al_iva.equals("responsable inscripto")) {
+			tipo = 'A';
+		} else {
+			tipo = 'B';
+		}
+		this.monto_total = monto_total;
+	}
+
 	public Factura(String nombre_comprador, String cuit_comprador, String domicilio_comprador,
 			String condicion_de_venta, String comprador_condicion_frente_al_iva, int nro_de_compra, int cantidad_dias,
 			double descuento, double monto_total) {
@@ -65,7 +73,7 @@ public class Factura {
 		} else {
 			tipo = 'B';
 		}
-		this.monto_total=monto_total*(1-(descuento/100))*1.21;
+		this.monto_total = monto_total * (1 - (descuento / 100)) * 1.21;
 	}
 
 	public Factura(String nombre_comprador, String cuit_comprador, String domicilio_comprador,
@@ -229,10 +237,8 @@ public class Factura {
 	public void setCantidad_dias(int cantidad_dias) {
 		this.cantidad_dias = cantidad_dias;
 	}
-	
-	//datos fijos
-	
-	
+
+	// datos fijos
 
 	public void imprimirFactura() {
 		System.out.println(" Datos de la empresa\n\n Nombre empresa:" + Nombre_empresa + "\n Razon social:"
@@ -247,7 +253,7 @@ public class Factura {
 				+ cantidad_dias + "\n Monton habitacion: " + monto_habitacion + "\n Otros conceptos: " + otros_conceptos
 				+ "\n Descuento: " + descuento + "\n Tipo:" + tipo + "\n Monto total:" + monto_total);
 	}
-	
+
 	public String getNombre_empresa() {
 		return Nombre_empresa;
 	}
@@ -284,10 +290,9 @@ public class Factura {
 		this.descuento = descuento;
 	}
 
-	
-	public JSONObject pasarA_Json () {
-		JSONObject A= new JSONObject ();
-		String datando=formato.format(getFecha_de_emision());
+	public JSONObject pasarA_Json() {
+		JSONObject A = new JSONObject();
+		String datando = formato.format(getFecha_de_emision());
 		try {
 			A.put("Nombre de la empresa: ", getNombre_empresa());
 			A.put("Razon social: ", getRazon_social());
@@ -303,20 +308,20 @@ public class Factura {
 			A.put("Condicion de venta: ", getCondicion_de_venta());
 			A.put("Comprador condicion frente al IVA: ", getComprador_condicion_frente_al_iva());
 			A.put("Numero de compra: ", getNro_de_compra());
-			A.put("Fecha de emision",datando);
+			A.put("Fecha de emision", datando);
 			A.put("Monto minibar: ", getMonto_minibar());
 			A.put("Cantidad de dias: ", getCantidad_dias());
 			A.put("Monto de la habitacion: ", getMonto_habitacion());
 			A.put("Otros conceptos: ", getOtros_conceptos());
 			A.put("Descuento: ", getMonto_total());
 			A.put("Tipo de factura: ", getTipo());
-			
+
 		} catch (JSONException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		return A;	
-		
+		return A;
+
 	}
-	
+
 }
