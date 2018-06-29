@@ -23,10 +23,12 @@ public class Hotel{
 	private List<Habitacion> listaHabitaciones;
 	Recepcionista conserje;
 	MapaGenerico<String, Reserva> mapaHabitacionesReservada;
+	ArrayList<Pasajero> pasajero;
 	public Hotel() {
 		listaHabitaciones = new ArrayList<>();
 		conserje=new Recepcionista();
 		mapaHabitacionesReservada=new MapaGenerico<>();
+		pasajero=new ArrayList<>();
 	}
 
 	//////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -283,6 +285,7 @@ public class Hotel{
 	}
 	public double fin_Estadia(Pasajero pasajero)
 	{
+		JSONObject jsonObject=new JSONObject();
 		double costo;
 		Reserva reserva=pasajero.ultima_Posicion_Valida_Reserva();
 		reserva.setCompletado(true);
@@ -292,6 +295,14 @@ public class Hotel{
 		Date checkOut=reserva.getCheck_Out();
 		costo= ( costo * ( checkIn.getTime() - checkOut.getTime() ) );
 		
+		try {
+			jsonObject.put("costo habitacion", costo);
+		} catch (JSONException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		pasajero.arreglo_Consumo(jsonObject);
 		return costo;
 	}
 	
