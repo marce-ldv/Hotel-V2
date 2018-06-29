@@ -168,10 +168,11 @@ public class Hotel{
 		listaHabitaciones.add(habitacion);
 	}
 
-	public void listar() throws LimiteExcepcion {
+	public void listarHabitaciones() throws LimiteExcepcion {
 		if (listaHabitaciones != null) {
 			for (Habitacion e : listaHabitaciones) {
-				e.toString();
+				System.out.println("asdasdsasda");
+				System.out.println(e.toString());
 			}
 		} 
 		else {
@@ -184,7 +185,7 @@ public class Hotel{
 		if (listaHabitaciones != null) {
 			for (Habitacion e : listaHabitaciones){
 				if (e.getOcupada() == false){
-					e.toString();
+					System.out.println(e.toString());
 				}
 			}
 		} else {
@@ -196,7 +197,7 @@ public class Hotel{
 		if (listaHabitaciones != null) {
 			for (Habitacion e : listaHabitaciones){
 				if (e.getOcupada()){
-					e.toString();
+					System.out.println(e.toString());
 				}
 			}
 		} else {
@@ -209,7 +210,7 @@ public class Hotel{
 		if (listaHabitaciones != null){
 			for (Habitacion e : listaHabitaciones){
 				if ((e.getOcupada() == false) && (e.getCantidadPersona() >= cantidadPersona)) {
-					e.toString();
+					System.out.println(e.toString());
 					i=1;
 				}
 			}

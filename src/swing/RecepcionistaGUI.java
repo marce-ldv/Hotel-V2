@@ -106,7 +106,15 @@ public class RecepcionistaGUI extends JFrame {
 			public void actionPerformed(ActionEvent e) {
 				//hotel.add(habitacion);
 				JOptionPane.showMessageDialog(null,"Este boton agrega una habitacion");
-				hotel.agregarHabitacionesManualmente();
+				try {
+					System.out.println("entra?");
+					hotel.agregarHabitacionesManualmente();
+					System.out.println("entra?");
+					hotel.listarHabitaciones();
+				} catch (LimiteExcepcion e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				}
 			}
 		});
 		button_5.setBounds(22, 197, 406, 41);
