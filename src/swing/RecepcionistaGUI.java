@@ -134,28 +134,16 @@ public class RecepcionistaGUI extends JFrame {
 				hotel.add(new Habitacion(27,false,1980,2));
 				hotel.add(new Habitacion(28,false,1300,2));
 				try {
-<<<<<<< HEAD
-					System.out.println("entra?");
-					hotel.agregarHabitacionesManualmente();
-					
-					hotel.listar_Habitaciones_Disponibles();
-						
-					System.out.println("entra?");
-=======
+		
 					//hotel.agregarHabitacionesManualmente();
 					hotel.add(habitacion);
->>>>>>> 41a30549ba5a2f0628e29ff2c944ddc94b43256a
 					hotel.listarHabitaciones();
 				} catch (LimiteExcepcion e1) {
 					// TODO Auto-generated catch block
 					e1.printStackTrace();
-<<<<<<< HEAD
 				} catch (Exception e1) {
 					// TODO Auto-generated catch block
 					e1.printStackTrace();
-=======
-					e1.informa();
->>>>>>> 41a30549ba5a2f0628e29ff2c944ddc94b43256a
 				}
 			}
 		});
