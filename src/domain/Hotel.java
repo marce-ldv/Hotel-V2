@@ -171,7 +171,6 @@ public class Hotel{
 	public void listarHabitaciones() throws LimiteExcepcion {
 		if (listaHabitaciones != null) {
 			for (Habitacion e : listaHabitaciones) {
-				System.out.println("asdasdsasda");
 				System.out.println(e.toString());
 			}
 		} 
