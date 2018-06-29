@@ -119,6 +119,12 @@ public class Pasajero
 	{
 		listaReserva.add(reserva);
 	}
+	
+	public Integer getEstadoPasajero()
+	{
+		return estadoPasajero;
+	}
+	
 	// metodos
 	public void listar_Reserva()
 	{
@@ -145,6 +151,7 @@ public class Pasajero
 			}
 		}
 	}
+
 	public Reserva ultima_Posicion_Valida_Reserva()
 	{
 		if(listaReserva!=null)
@@ -163,6 +170,7 @@ public class Pasajero
 		}
 		return null;
 	}
+
 	public JSONObject getFormatoJSON() throws JSONException 
 	{
 			
