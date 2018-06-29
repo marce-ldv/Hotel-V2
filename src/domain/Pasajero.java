@@ -165,7 +165,7 @@ public class Pasajero {
 		for (Reserva e : listaReserva) {
 			jsonArray.put(e);
 		}
-		for (servicios f: servicios) {
+		for (Servicio f: servicios) {
 			jsonArrayb.put(f);
 		}
 		jsonObject.put("reserva", jsonArray);

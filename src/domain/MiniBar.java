@@ -48,9 +48,9 @@ public class MiniBar <T extends AlimentosParaConsumo>// recibira alimentos
 	 * @return costoTotalComida
 	 * */
 	
-	public int darComidaToPasajeroYretornaCosto (String nombreComida, int cantidadComida) throws NoHaySuficienteComidaException,ComidaInexistenteException
+	public float darComidaToPasajeroYretornaCosto (String nombreComida, int cantidadComida) throws NoHaySuficienteComidaException,ComidaInexistenteException
 	{
-		int costoTotalComida = 0;
+		float costoTotalComida = 0;
 		
 		for(AlimentosParaConsumo e: alimentos)  // se recorre el array por completo
 		{
@@ -58,7 +58,7 @@ public class MiniBar <T extends AlimentosParaConsumo>// recibira alimentos
 			{
 				if(e.getCantidad() >= cantidadComida) // si la cantidad de alimentos es mayor o igual a la que piede el pasajero 
 				{
-					costoTotalComida = cantidadComida * e.getPrecio();	// el costo total sera la cantidad de productos que pidio por el precio del mismo	
+					costoTotalComida = cantidadComida * e.getValor();	// el costo total sera la cantidad de productos que pidio por el precio del mismo	
 					
 					e.setCantidad(e.getCantidad() - cantidadComida);		// se modifica la cantidad de la comida que pidio 
 				}
