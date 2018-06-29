@@ -128,6 +128,8 @@ public class Hotel{
 	 * 
 	 * @author Rodri
 	 */
+	
+
 
 	///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 	/* El verga larga(Chiappe) */
@@ -246,12 +248,14 @@ public class Hotel{
 			checkOut = new Date(anio,mes,dia);
 			//Hacer una validacion si esta el pasajero o no esta
 			//en caso que no este, agregarlo a la lista
-			if(validarPasajeroEnLista(pasajero)==false){ //si no esta, se agrega
+			/*if(validarPasajeroEnLista(pasajero)==false){ //si no esta, se agrega
 				System.out.println("Se agrego el pasajero a la lista");
-			}
+			}*/
 			Reserva reserva=new Reserva(checkIn, checkOut, aux);//aca deberia crear la reserva
 			mapaHabitacionesReservada.addReserva_A_pasajero(pasajero.getDni(),reserva,aux,pasajero);//le pasamos el DNI
-			System.out.println(reserva.listaHabitaciones);
+			//System.out.println("la lista de la resrva:");
+			//System.out.println(reserva.listaHabitaciones);
+			
 		} catch (LimiteExcepcion e) {
 			e.printStackTrace();
 		} catch (Exception e) {
@@ -298,6 +302,10 @@ public class Hotel{
 		
 		pasajero.arreglo_Consumo(jsonObject);
 		return costo;
+	}
+	public void listarReservaPasajero(Pasajero pasajero)
+	{
+		pasajero.listar_Reserva();
 	}
 
 	/**

@@ -80,11 +80,8 @@ public class Habitacion {
 	@Override
 	public String toString() 
 	{
-<<<<<<< HEAD
 		return "Habitacion [numeero=" + numero_habitacion + ", ocupada=" + ocupada + ", costo=" + costo + ", Capacidad=" + cantidadPersona +  "]";
-=======
-		return "Habitacion [numeero=" + numero_habitacion + ", ocupada=" + ocupada + ", costo=" + costo + ", Capacidad=" + cantidadPersona +"]";
->>>>>>> 6b9e4e81ad67b820977bd3bd3ea63e09baf1d991
+
 	}
 
 }

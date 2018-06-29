@@ -48,7 +48,7 @@ public class Reserva {
 		{
 			for(Habitacion e: listaHabitaciones )
 			{
-				e.toString();
+				System.out.println(e.toString());
 			}
 		
 		}
@@ -66,6 +66,10 @@ public class Reserva {
 		}
 	}
 	
+	public int cantidadHabitaciones()
+	{
+		return listaHabitaciones.size();
+	}
 	public void desabilitar_habitaciones()
 	{
 		if(listaHabitaciones!=null)
@@ -105,7 +109,7 @@ public class Reserva {
 	
 	public String toString()
 	{
-		return "Pasajero [check_In: " + check_In + ", check_Out:" + check_Out + ", Habitaciones:" + listaHabitaciones +"]";
+		return "Reserva [check_In: " + check_In + ", check_Out:" + check_Out + ",Cantida Habitaciones:" + cantidadHabitaciones() +"]";
 	}
 	public boolean isCompletado() {
 		return completado;
