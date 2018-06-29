@@ -1,6 +1,6 @@
 package domain;
 
-public abstract class Servicio {
+public class Servicio {
 	
 	private String nombre;
 	private float valor;
@@ -30,8 +30,6 @@ public abstract class Servicio {
 	public void setValor(float valor) {
 		this.valor = valor;
 	}
-	
-	public abstract void pasarA_Json ();
 
 
 	@Override

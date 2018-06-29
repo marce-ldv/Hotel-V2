@@ -26,9 +26,5 @@ public class AlimentosParaConsumo extends Servicio {
 		return "AlimentosParaConsumo ["+ super.toString() +"cantidad=" + cantidad + "]";
 	}
 
-	@Override
-	public void pasarA_Json() {
-		
-	}
 	
 }

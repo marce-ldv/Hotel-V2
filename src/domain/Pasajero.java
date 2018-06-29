@@ -5,6 +5,9 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import exepciones.ComidaInexistenteException;
+import exepciones.NoHaySuficienteComidaException;
+
 public class Pasajero {
 	private String nombre;
 	private String apellido;
@@ -129,6 +132,25 @@ public class Pasajero {
 				}
 			}
 		}
+	}
+	
+	public void pedirComida (String nombre, int cantidadComida) {
+		MiniBar a = new MiniBar<>();
+		float precio;
+		try {
+			precio = a.darComidaToPasajeroYretornaCosto(nombre, cantidadComida);
+			if(precio!=0) {
+				Servicio e =new Servicio(nombre, precio);
+				servicios.add(e);
+			}
+			else {
+				System.out.println("No se pudo realizar el pedido.");
+			}
+		} catch (NoHaySuficienteComidaException e1) {
+			e1.printStackTrace();
+		} catch (ComidaInexistenteException e1) {
+			e1.printStackTrace();
+		}		
 	}
 
 	public Reserva ultima_Posicion_Valida_Reserva() {
