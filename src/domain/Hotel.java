@@ -70,7 +70,7 @@ public class Hotel{
 				throw new CampoVacioException("Uno de los campos se encuentra vacio ");
 			}
 			JSONObject jsonObject = jsonArray.getJSONObject(i);
-			if (jsonObject.getString("usernane").equals(user)) {
+			if (jsonObject.getString("username").equals(user)) {
 				if (jsonObject.getString("password").equals(pass)) {
 					usu = new Usuario();
 					usu.setPassword(pass);
