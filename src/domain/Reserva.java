@@ -53,7 +53,22 @@ public class Reserva {
 		
 		}
 	}
-
+	
+	public ArrayList<Habitacion> retornar_lista_Habitaciones()
+	{
+		return listaHabitaciones;
+	}
+	
+	public void add(ArrayList<Habitacion> habitaciomnes)
+	{
+		listaHabitaciones.addAll(habitaciomnes);
+	}
+	
+	public void add(Habitacion habitacion)
+	{
+		listaHabitaciones.add(habitacion);
+	}
+	
 	public String toString()
 	{
 		return "Pasajero [check_In: " + check_In + ", check_Out:" + check_Out + ", Habitaciones:" + listaHabitaciones +"]";

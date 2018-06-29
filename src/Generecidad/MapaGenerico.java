@@ -1,5 +1,6 @@
 package Generecidad;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
@@ -7,6 +8,7 @@ import java.util.Map;
 import org.json.JSONArray;
 import org.json.JSONException;
 
+import domain.Habitacion;
 import domain.Pasajero;
 import domain.Reserva;
 import exepciones.LimiteExcepcion;
@@ -70,20 +72,31 @@ public class MapaGenerico<K, T> {
 		return null;
 	}
 
-	public <K extends Pasajero> void addReserva_A_pasajero(String k, Reserva reserva) throws LimiteExcepcion {
+	public <K extends Pasajero> void addReserva_A_pasajero(String k, Reserva reserva, ArrayList<Habitacion> listaHabitaciones) throws LimiteExcepcion {
 		int i = 0;
+		Reserva a;
 		Iterator it = mapaGenerico.entrySet().iterator();
 		while (it.hasNext()) {
 			Map.Entry me = (Map.Entry<K, T>) it.next();
 			K d = (K) me.getKey();
 			T t = (T) me.getValue();
-			if (k == d.getDni()) {
-				d.add_Reserva(reserva);
-				i = 1;
+			if (k == d.getDni()) 
+			{
+				a=d.ultima_Posicion_Valida_Reserva();
+				if(a.isCompletado()==false && a!=null)
+				{
+					a.add(listaHabitaciones);
+					i=1;
+				}
+				else
+				{
+					d.add_Reserva(reserva);
+					i = 1;
+				}
 			}
 		}
 		if (i == 0) {
-			throw new LimiteExcepcion("Es la primera vez en el hotel");
+			throw new LimiteExcepcion("El pasajero no existe");
 		}
 
 	}
