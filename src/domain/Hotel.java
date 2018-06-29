@@ -17,6 +17,7 @@ import exepciones.InvalidUsernameAndPasswordException;
 import exepciones.InvalidUsernameException;
 import exepciones.LimiteExcepcion;
 import exepciones.NoHaySuficienteComidaException;
+import exepciones.PasajeroNoEstaEnHotelException;
 import files.JsonUtiles;
 import swing.LoginGUI;
 
@@ -69,7 +70,7 @@ public class Hotel{
 				throw new CampoVacioException("Uno de los campos se encuentra vacio ");
 			}
 			JSONObject jsonObject = jsonArray.getJSONObject(i);
-			if (jsonObject.getString("usernane").equals(user)) {
+			if (jsonObject.getString("username").equals(user)) {
 				if (jsonObject.getString("password").equals(pass)) {
 					usu = new Usuario();
 					usu.setPassword(pass);
@@ -127,7 +128,7 @@ public class Hotel{
 	 * @author Ignacio Chiaradia
 	 */
 	
-	public float pedirComida(Pasajero p, MiniBar minibar, String nombreComidaAPedir, int cantidadComidAPedir) 
+	public float pedirComida(Pasajero p, MiniBar minibar, String nombreComidaAPedir, int cantidadComidAPedir) throws PasajeroNoEstaEnHotelException
 	{
 		float costoPedidodelPasajero = 0;
 		
@@ -149,7 +150,7 @@ public class Hotel{
 		}
 		else
 		{
-			System.out.println("Usted no se encuentra en el hotel");  // futura excepcion
+			throw new PasajeroNoEstaEnHotelException("Exception");  
 		}
 		
 		return costoPedidodelPasajero;
