@@ -110,9 +110,6 @@ public class RecepcionistaGUI extends JFrame {
 				try {
 					hotel.listar_Habitaciones_Disponibles();
 					
-				} catch (LimiteExcepcion e1) {
-					// TODO Auto-generated catch block
-					e1.printStackTrace();
 				} catch (Exception e1) {
 					// TODO Auto-generated catch block
 					e1.printStackTrace();
@@ -168,9 +165,6 @@ public class RecepcionistaGUI extends JFrame {
 					//hotel.agregarHabitacionesManualmente();
 					hotel.add(habitacion);
 					hotel.listarHabitaciones();
-				} catch (LimiteExcepcion e1) {
-					// TODO Auto-generated catch block
-					e1.printStackTrace();
 				} catch (Exception e1) {
 					// TODO Auto-generated catch block
 					e1.printStackTrace();
