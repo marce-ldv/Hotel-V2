@@ -109,9 +109,15 @@ public class RecepcionistaGUI extends JFrame {
 				try {
 					System.out.println("entra?");
 					hotel.agregarHabitacionesManualmente();
+					
+					hotel.listar_Habitaciones_Disponibles();
+						
 					System.out.println("entra?");
 					hotel.listarHabitaciones();
 				} catch (LimiteExcepcion e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				} catch (Exception e1) {
 					// TODO Auto-generated catch block
 					e1.printStackTrace();
 				}

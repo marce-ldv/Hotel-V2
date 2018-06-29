@@ -23,7 +23,7 @@ import swing.LoginGUI;
 
 public class Hotel{
 
-	private List<Habitacion> listaHabitaciones;
+	private ArrayList<Habitacion> listaHabitaciones;
 	Recepcionista conserje;
 	MapaGenerico<String, Reserva> mapaHabitacionesReservada;
 	ArrayList<Pasajero> pasajero;
