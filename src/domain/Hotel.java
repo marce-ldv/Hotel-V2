@@ -20,7 +20,6 @@ import exepciones.NoHaySuficienteComidaException;
 import exepciones.PasajeroNoEstaEnHotelException;
 import files.JsonUtiles;
 import swing.LoginGUI;
-import swing.MenuAddReservaGUI;
 
 public class Hotel{
 
@@ -116,9 +115,9 @@ public class Hotel{
 	 */
 	
 
-	public void pedirComida (Pasajero p, String nombre, int cantidad)
+	public void pedirServicio (Pasajero p, String nombre, int cantidad)
 	{
-		p.pedirComidass(nombre, cantidad);
+		p.pedirServicios(nombre, cantidad);
 	}
 	
 	public float costoFinal (Pasajero p) {
@@ -138,8 +137,13 @@ public class Hotel{
 	}
 
 	///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+<<<<<<< HEAD
 	/* El verga muy corta(Chiappe) */
 	/* El verga corta (Chiappe) */
+=======
+	/* El verga corta(Chiappe) */
+
+>>>>>>> 1bc6873e87e749de1b029e82c0032fcec7cb3ab6
 	/**
 	 * Aca va los mentodos de Chiappe
 	 * 
@@ -286,8 +290,9 @@ public class Hotel{
 	{
 		try {
 			mapaHabitacionesReservada.eliminarPorClave(pasajero.getDni());
+			System.out.println("el pasajero llego al hotel");
 		} catch (LimiteExcepcion e) {
-			// TODO Auto-generated catch block
+			System.out.println("Se rompe en llegada_Pasajero_Al_hotel");
 			e.printStackTrace();
 		}
 	}
@@ -310,17 +315,23 @@ public class Hotel{
 		reserva.habilitar_habitaciones();
 		Date checkIn=reserva.getCheck_In();
 		Date checkOut=reserva.getCheck_Out();
+		System.out.println("costo:" + costo);
 		costo= ( costo * ( checkIn.getTime() - checkOut.getTime() ) );
-		
+		System.out.println("costo:" + costo);
 		try {
 			jsonObject.put("costo habitacion", costo);
 		} catch (JSONException e) {
-			// TODO Auto-generated catch block
+			System.out.println("se rompe en el put");
 			e.printStackTrace();
 		}
 		
 		pasajero.arreglo_Consumo(jsonObject);
 		return costo;
+	}
+	
+	public void listarMapReservas()
+	{
+		mapaHabitacionesReservada.listar();
 	}
 	public void listarReservaPasajero(Pasajero pasajero)
 	{
