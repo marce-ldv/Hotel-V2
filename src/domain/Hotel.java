@@ -17,6 +17,7 @@ import exepciones.InvalidUsernameAndPasswordException;
 import exepciones.InvalidUsernameException;
 import exepciones.LimiteExcepcion;
 import exepciones.NoHaySuficienteComidaException;
+import exepciones.PasajeroNoEstaEnHotelException;
 import files.JsonUtiles;
 import swing.LoginGUI;
 
@@ -125,7 +126,7 @@ public class Hotel{
 	 * @author Ignacio Chiaradia
 	 */
 	
-	public float pedirComida(Pasajero p, MiniBar minibar, String nombreComidaAPedir, int cantidadComidAPedir) 
+	public float pedirComida(Pasajero p, MiniBar minibar, String nombreComidaAPedir, int cantidadComidAPedir) throws PasajeroNoEstaEnHotelException
 	{
 		float costoPedidodelPasajero = 0;
 		
@@ -147,7 +148,7 @@ public class Hotel{
 		}
 		else
 		{
-			System.out.println("Usted no se encuentra en el hotel");  // futura excepcion
+			throw new PasajeroNoEstaEnHotelException("Exception");  
 		}
 		
 		return costoPedidodelPasajero;
