@@ -2,16 +2,21 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ddcf32c1-ddd4-4489-8636-92153bcb28b5" name="Default" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/MigLayout.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/miglayout-core-javadoc.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/miglayout-core-sources.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/miglayout-core.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/miglayout-swing-javadoc.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/miglayout-swing-sources.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/miglayout-swing.jar" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/bin/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Hotel V2.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Hotel V2.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bin/domain/Hotel.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/domain/Hotel.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/swing/LoginGUI$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/swing/LoginGUI$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/swing/LoginGUI$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/swing/LoginGUI$2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/swing/LoginGUI$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/swing/LoginGUI$3.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/swing/LoginGUI$4.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/swing/LoginGUI$4.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/swing/LoginGUI.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/swing/LoginGUI.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/swing/RecepcionistaGUI$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/swing/RecepcionistaGUI$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/swing/RecepcionistaGUI.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/swing/RecepcionistaGUI.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/domain/Hotel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/domain/Hotel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/swing/LoginGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/swing/LoginGUI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/swing/RecepcionistaGUI.java" beforeDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/bin/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -23,20 +28,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="Main.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/app/Main.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="552">
-              <caret line="24" column="26" selection-start-line="24" selection-start-column="26" selection-end-line="24" selection-end-column="26" />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="Hotel.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/domain/Hotel.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="96">
-              <caret line="131" column="33" selection-start-line="131" selection-start-column="33" selection-end-line="131" selection-end-column="33" />
+            <state relative-caret-position="744">
+              <caret line="215" column="10" selection-start-line="215" selection-start-column="10" selection-end-line="215" selection-end-column="10" />
             </state>
           </provider>
         </entry>
@@ -89,15 +85,6 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Pasajero.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/domain/Pasajero.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="96">
-              <caret line="15" column="13" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="Habitacion.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/domain/Habitacion.java">
           <provider selected="true" editor-type-id="text-editor">
@@ -125,11 +112,14 @@
         <option value="$PROJECT_DIR$/src/domain/Habitacion.java" />
         <option value="$PROJECT_DIR$/src/domain/ListaDeHabitaciones.java" />
         <option value="$PROJECT_DIR$/src/domain/Recepcionista.java" />
-        <option value="$PROJECT_DIR$/src/domain/Hotel.java" />
         <option value="$PROJECT_DIR$/src/domain/MiniBar.java" />
         <option value="$PROJECT_DIR$/src/domain/Usuario.java" />
         <option value="$PROJECT_DIR$/src/exepciones/InvalidPasswordException.java" />
         <option value="$PROJECT_DIR$/src/swing/LoginGUI.java" />
+        <option value="$PROJECT_DIR$/src/domain/asd.form" />
+        <option value="$PROJECT_DIR$/src/swing/RecepcionistaGUI.java" />
+        <option value="$PROJECT_DIR$/src/swing/RecepcionistaGUI.form" />
+        <option value="$PROJECT_DIR$/src/domain/Hotel.java" />
       </list>
     </option>
   </component>
@@ -203,6 +193,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -290,6 +281,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1376" height="744" extended-state="7" />
+    <editor active="true" />
     <layout>
       <window_info anchor="right" id="Palette" order="3" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -543,10 +535,38 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/domain/Hotel.java">
+    <entry file="file://$PROJECT_DIR$/src/swing/PruebaGUI.java">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/swing/PruebaGUI.jfd">
+      <provider selected="true" editor-type-id="JFormDesigner">
+        <state paletteWidth="0" propertiesWidth="0" structureHeight="0" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/domain/asd.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="96">
-          <caret line="131" column="33" selection-start-line="131" selection-start-column="33" selection-end-line="131" selection-end-column="33" />
+          <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/domain/asd.form">
+      <provider selected="true" editor-type-id="ui-designer" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/swing/RecepcionistaGUI.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="144">
+          <caret line="6" column="4" lean-forward="true" selection-start-line="6" selection-start-column="4" selection-end-line="6" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/swing/RecepcionistaGUI.form">
+      <provider selected="true" editor-type-id="ui-designer" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/domain/Hotel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="744">
+          <caret line="215" column="10" selection-start-line="215" selection-start-column="10" selection-end-line="215" selection-end-column="10" />
         </state>
       </provider>
     </entry>

@@ -187,12 +187,13 @@ public class Hotel{
 		System.out.println("no se encontro la habitacion");
 		return null;
 	}
-	/*
+
 	public void reservar_Habitacion(Pasajero pasajero){
+		/*
 		int i=0;
 		ArrayList<Habitacion> aux=new ArrayList<>();
 		try {
-			               //aca deberia crear la reserva <------------------------------atento!
+			//aca deberia crear la reserva <------------------------------atento!
 			//tambien deberia agregarla a la lista de reserva<------------------------
 			//agrego la fecha
 			while(condicion!=true)
@@ -200,10 +201,10 @@ public class Hotel{
 				Habitacion habitacion= buscar_Habitacion(23);// MArcer: aca necesito un scaner ente
 				aux.add(habitacion);
 			}
-			
+
 			Reserva reserva=new Reserva(12-34-5332, 23-34-5332, aux);
 			mapaHabitacionesReservada.addReserva_A_pasajero(pasajero.getDni(),reserva);//le sapamos el DNI
-			//pasajero.addHabitacion(habitacion, fecha); // terminar
+			pasajero.addHabitacion(habitacion, fecha); // terminar
 			habitacion.setOcupada(true);
 			
 		} catch (LimiteExcepcion e) {
@@ -212,8 +213,9 @@ public class Hotel{
 			
 			e.printStackTrace();
 		}
+		*/
 	}
-	*/
+
 	
 	public void llegada_Pasajero_Al_hotel(Pasajero pasajero)// solo lo elimino de la lista de reserva pero no habilito las habitaciones ni completo la reserva del pasajero hasta que se vaya
 	{
