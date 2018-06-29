@@ -3,14 +3,15 @@ package domain;
 import java.util.ArrayList;
 import java.util.Date;
 
+import org.json.JSONArray;
 import org.json.JSONException;
+import org.json.JSONObject;
 
 import Generecidad.MapaGenerico;
 import exepciones.LimiteExcepcion;
 
 public class Reserva {
 
-	// private Integer DNI;
 	private Date check_In;
 	private Date check_Out;
 	ArrayList<Habitacion> listaHabitaciones;
@@ -114,7 +115,24 @@ public class Reserva {
 		this.completado = completado;
 	}
 	
-	
+	public JSONObject getFormatoJSON() throws JSONException {
+
+		JSONObject jsonObject = new JSONObject();
+		JSONArray jsonArray = new JSONArray();
+		jsonObject.put("check_In", check_In);
+		jsonObject.put("check_Out", check_Out);
+		jsonObject.put("completado", completado);
+		
+		for (Habitacion e : listaHabitaciones) 
+		{
+			jsonArray.put(e);
+		}
+		
+		jsonObject.put("listaHabitaciones", jsonArray);		
+		
+		return jsonObject;
+	}
+
 
 	
 }
