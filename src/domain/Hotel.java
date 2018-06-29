@@ -189,23 +189,30 @@ public class Hotel{
 	}
 
 	public void reservar_Habitacion(Pasajero pasajero){
-		/*
-		int i=0;
+		
+		
 		ArrayList<Habitacion> aux=new ArrayList<>();
+		int año, mes , dia;
+		Date checkIn;
+		Date checkOut;
+		
 		try {
-			//aca deberia crear la reserva <------------------------------atento!
-			//tambien deberia agregarla a la lista de reserva<------------------------
-			//agrego la fecha
+	
 			while(condicion!=true)
 			{
 				Habitacion habitacion= buscar_Habitacion(23);// MArcer: aca necesito un scaner ente
+				habitacion.setOcupada(true);
 				aux.add(habitacion);
 			}
+			
+			
+			checkIn=new Date(año,mes,dia);
+			
+			checkOut=new Date(año,mes,dia);
 
-			Reserva reserva=new Reserva(12-34-5332, 23-34-5332, aux);
-			mapaHabitacionesReservada.addReserva_A_pasajero(pasajero.getDni(),reserva);//le sapamos el DNI
-			pasajero.addHabitacion(habitacion, fecha); // terminar
-			habitacion.setOcupada(true);
+			Reserva reserva=new Reserva(checkIn, checkOut, aux);//aca deberia crear la reserva
+			
+			mapaHabitacionesReservada.addReserva_A_pasajero(pasajero.getDni(),reserva,aux);//le pasamos el DNI
 			
 		} catch (LimiteExcepcion e) {
 			e.printStackTrace();
@@ -213,7 +220,7 @@ public class Hotel{
 			
 			e.printStackTrace();
 		}
-		*/
+		
 	}
 
 	
