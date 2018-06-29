@@ -12,18 +12,16 @@ public class MiniBar <T extends AlimentosParaConsumo>// recibira alimentos
 {
 
 	private ArrayList<AlimentosParaConsumo> alimentos;
-	private ArrayList<AlimentosParaConsumo> postres;
-	private ArrayList<AlimentosParaConsumo> bebidas;
-
+	//private ArrayList<BebidasParaConsumo> bebidas;
+	//private ArrayList<PostresParaConsumo> postres;
 	
 	// constructores	
 	
 	public MiniBar() 
 	{	
-		alimentos = new ArrayList<>();
-		bebidas = new ArrayList<>();
-		postres = new ArrayList<>();
-		
+		alimentos = new ArrayList<AlimentosParaConsumo>();
+		//bebidas = new ArrayList<BebidasParaConsumo>();
+		//postres = new ArrayList<PostresParaConsumo>();		
 	}
 	
 	public MiniBar(ArrayList<AlimentosParaConsumo> alimentosRecib) 
@@ -40,6 +38,18 @@ public class MiniBar <T extends AlimentosParaConsumo>// recibira alimentos
 		alimentos.add(b);
 	}
 	
+/*	public void agregarBebidas (String nombre, int precio, int cantidad) 
+	{
+		BebidasParaConsumo b = new BebidasParaConsumo (nombre, precio, cantidad);
+		bebidas.add(b);
+	}
+	
+	public void agregarPostres (String nombre, int precio, int cantidad) 
+	{
+		PostresParaConsumo b = new PostresParaConsumo (nombre, precio, cantidad);
+		postres.add(b);
+	}
+	*/
 	
 	/**
 	 * este metodo da la comida al pasajero y retorna el costo de lo que el mismo consumio
